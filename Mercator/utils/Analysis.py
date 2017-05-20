@@ -28,7 +28,7 @@ class Analysis(threading.Thread):
                     'classes': []}
             for r in result_classes:
                 #skip dupe class names
-                if r['name'] in [v for k,v in data['classes'] if k=='name']:
+                if r['name'] in [c['name'] for c in data['classes']]:
                     continue
                 class_data = {'name': r['name'],
                               'component_type': r['component_type']}
