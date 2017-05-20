@@ -1,0 +1,4534 @@
+{
+    "directed": true,
+    "graph": {},
+    "links": [
+            {
+            "source": "Lru/andrey/notepad/MainActivity;",
+            "target": "Lru/andrey/notepad/ObjectArrayAdapter;"
+        }
+    ],
+    "multigraph": true,
+    "nodes": [
+        {
+            "access_flags": "public",
+            "component_type": null,
+            "fields": [
+                {
+                    "access_flags": "private final",
+                    "name": "context",
+                    "xref_read": [
+                        {
+                            "class": "Lru/andrey/notepad/ObjectArrayAdapter;",
+                            "method": "getView"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/ObjectArrayAdapter;",
+                            "method": "access;"
+                        }
+                    ],
+                    "xref_write": [
+                        {
+                            "class": "Lru/andrey/notepad/ObjectArrayAdapter;",
+                            "method": "<init>"
+                        }
+                    ]
+                },
+                {
+                    "access_flags": "private final",
+                    "name": "obj",
+                    "xref_read": [
+                        {
+                            "class": "Lru/andrey/notepad/ObjectArrayAdapter;",
+                            "method": "getView"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/ObjectArrayAdapter;",
+                            "method": "access;"
+                        }
+                    ],
+                    "xref_write": [
+                        {
+                            "class": "Lru/andrey/notepad/ObjectArrayAdapter;",
+                            "method": "<init>"
+                        }
+                    ]
+                }
+            ],
+            "group": 1,
+            "id": 2624,
+            "methods": [
+                {
+                    "access_flags": "public constructor",
+                    "info": {
+                        "params": [
+                            [
+                                2,
+                                "android.app.Activity"
+                            ],
+                            [
+                                3,
+                                "java.util.ArrayList"
+                            ]
+                        ],
+                        "registers": [
+                            0,
+                            1
+                        ],
+                        "return": "void"
+                    },
+                    "name": "<init>",
+                    "source": null,
+                    "xref_from": [
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "update"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "onTextChanged"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "onCreate"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "onResume"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "find"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "update"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "onResume"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "onPostExecute"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "onPostExecute"
+                        }
+                    ],
+                    "xref_to": [
+                        {
+                            "class": "Landroid/widget/ArrayAdapter;",
+                            "method": "<init>"
+                        }
+                    ]
+                },
+                {
+                    "access_flags": "static synthetic",
+                    "info": {
+                        "params": [
+                            [
+                                1,
+                                "ru.andrey.notepad.ObjectArrayAdapter"
+                            ]
+                        ],
+                        "registers": [
+                            0,
+                            0
+                        ],
+                        "return": "android.app.Activity"
+                    },
+                    "name": "access;",
+                    "source": null,
+                    "xref_from": [
+                        {
+                            "class": "Lru/andrey/notepad/ObjectArrayAdapter;",
+                            "method": "onClick"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/ObjectArrayAdapter;",
+                            "method": "onClick"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/ObjectArrayAdapter;",
+                            "method": "onClick"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/ObjectArrayAdapter;",
+                            "method": "onClick"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/ObjectArrayAdapter;",
+                            "method": "onClick"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/ObjectArrayAdapter;",
+                            "method": "onClick"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/ObjectArrayAdapter;",
+                            "method": "onClick"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/ObjectArrayAdapter;",
+                            "method": "onClick"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/ObjectArrayAdapter;",
+                            "method": "onClick"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/ObjectArrayAdapter;",
+                            "method": "onClick"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/ObjectArrayAdapter;",
+                            "method": "onClick"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/ObjectArrayAdapter;",
+                            "method": "onClick"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/ObjectArrayAdapter;",
+                            "method": "onClick"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/ObjectArrayAdapter;",
+                            "method": "onClick"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/ObjectArrayAdapter;",
+                            "method": "onClick"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/ObjectArrayAdapter;",
+                            "method": "onClick"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/ObjectArrayAdapter;",
+                            "method": "onClick"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/ObjectArrayAdapter;",
+                            "method": "onClick"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/ObjectArrayAdapter;",
+                            "method": "onClick"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/ObjectArrayAdapter;",
+                            "method": "onClick"
+                        }
+                    ],
+                    "xref_to": []
+                },
+                {
+                    "access_flags": "static synthetic",
+                    "info": {
+                        "params": [
+                            [
+                                1,
+                                "ru.andrey.notepad.ObjectArrayAdapter"
+                            ]
+                        ],
+                        "registers": [
+                            0,
+                            0
+                        ],
+                        "return": "java.util.ArrayList"
+                    },
+                    "name": "access;",
+                    "source": null,
+                    "xref_from": [
+                        {
+                            "class": "Lru/andrey/notepad/ObjectArrayAdapter;",
+                            "method": "onClick"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/ObjectArrayAdapter;",
+                            "method": "onClick"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/ObjectArrayAdapter;",
+                            "method": "onClick"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/ObjectArrayAdapter;",
+                            "method": "onItemClick"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/ObjectArrayAdapter;",
+                            "method": "onClick"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/ObjectArrayAdapter;",
+                            "method": "onClick"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/ObjectArrayAdapter;",
+                            "method": "onClick"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/ObjectArrayAdapter;",
+                            "method": "onClick"
+                        }
+                    ],
+                    "xref_to": []
+                },
+                {
+                    "access_flags": "public",
+                    "info": {
+                        "params": [
+                            [
+                                13,
+                                "int"
+                            ],
+                            [
+                                14,
+                                "android.view.View"
+                            ],
+                            [
+                                15,
+                                "android.view.ViewGroup"
+                            ]
+                        ],
+                        "registers": [
+                            0,
+                            12
+                        ],
+                        "return": "android.view.View"
+                    },
+                    "name": "getView",
+                    "source": null,
+                    "xref_from": [],
+                    "xref_to": [
+                        {
+                            "class": "Lru/andrey/notepad/ObjectModel;",
+                            "method": "getName"
+                        },
+                        {
+                            "class": "Landroid/widget/ImageView;",
+                            "method": "setVisibility"
+                        },
+                        {
+                            "class": "Landroid/view/View;",
+                            "method": "findViewById"
+                        },
+                        {
+                            "class": "Ljava/util/ArrayList;",
+                            "method": "get"
+                        },
+                        {
+                            "class": "Landroid/view/View;",
+                            "method": "findViewById"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/ObjectArrayAdapter;",
+                            "method": "<init>"
+                        },
+                        {
+                            "class": "Landroid/widget/ImageView;",
+                            "method": "setImageResource"
+                        },
+                        {
+                            "class": "Landroid/widget/ImageView;",
+                            "method": "setOnClickListener"
+                        },
+                        {
+                            "class": "Landroid/widget/ImageView;",
+                            "method": "setImageResource"
+                        },
+                        {
+                            "class": "Landroid/content/SharedPreferences;",
+                            "method": "getBoolean"
+                        },
+                        {
+                            "class": "Landroid/widget/ImageView;",
+                            "method": "setImageResource"
+                        },
+                        {
+                            "class": "Ljava/util/ArrayList;",
+                            "method": "get"
+                        },
+                        {
+                            "class": "Ljava/lang/String;",
+                            "method": "startsWith"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/ObjectModel;",
+                            "method": "getBody"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/ObjectModel;",
+                            "method": "getName"
+                        },
+                        {
+                            "class": "Ljava/lang/String;",
+                            "method": "startsWith"
+                        },
+                        {
+                            "class": "Ljava/util/ArrayList;",
+                            "method": "get"
+                        },
+                        {
+                            "class": "Landroid/content/SharedPreferences;",
+                            "method": "getBoolean"
+                        },
+                        {
+                            "class": "Landroid/widget/ImageView;",
+                            "method": "setOnClickListener"
+                        },
+                        {
+                            "class": "Landroid/view/View;",
+                            "method": "findViewById"
+                        },
+                        {
+                            "class": "Landroid/widget/ImageView;",
+                            "method": "setImageResource"
+                        },
+                        {
+                            "class": "Landroid/view/View;",
+                            "method": "findViewById"
+                        },
+                        {
+                            "class": "Ljava/lang/String;",
+                            "method": "startsWith"
+                        },
+                        {
+                            "class": "Landroid/preference/PreferenceManager;",
+                            "method": "getDefaultSharedPreferences"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/ObjectModel;",
+                            "method": "getName"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/ObjectModel;",
+                            "method": "getDate"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/DataBaseHelper;",
+                            "method": "getHelper"
+                        },
+                        {
+                            "class": "Ljava/util/ArrayList;",
+                            "method": "get"
+                        },
+                        {
+                            "class": "Ljava/util/ArrayList;",
+                            "method": "get"
+                        },
+                        {
+                            "class": "Landroid/util/TypedValue;",
+                            "method": "applyDimension"
+                        },
+                        {
+                            "class": "Landroid/widget/ImageView;",
+                            "method": "setVisibility"
+                        },
+                        {
+                            "class": "Ljava/util/ArrayList;",
+                            "method": "get"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/ObjectModel;",
+                            "method": "getName"
+                        },
+                        {
+                            "class": "Landroid/widget/ImageView;",
+                            "method": "setVisibility"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/ObjectModel;",
+                            "method": "getBody"
+                        },
+                        {
+                            "class": "Ljava/lang/String;",
+                            "method": "startsWith"
+                        },
+                        {
+                            "class": "Landroid/widget/ImageView;",
+                            "method": "setImageResource"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/ObjectModel;",
+                            "method": "getBody"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/ObjectArrayAdapter;",
+                            "method": "<init>"
+                        },
+                        {
+                            "class": "Landroid/view/View;",
+                            "method": "findViewById"
+                        },
+                        {
+                            "class": "Landroid/util/Log;",
+                            "method": "d"
+                        },
+                        {
+                            "class": "Landroid/view/View;",
+                            "method": "findViewById"
+                        },
+                        {
+                            "class": "Landroid/app/Activity;",
+                            "method": "getLayoutInflater"
+                        },
+                        {
+                            "class": "Ljava/util/ArrayList;",
+                            "method": "get"
+                        },
+                        {
+                            "class": "Landroid/widget/ImageView;",
+                            "method": "setLayoutParams"
+                        },
+                        {
+                            "class": "Landroid/widget/TextView;",
+                            "method": "setText"
+                        },
+                        {
+                            "class": "Landroid/widget/TextView;",
+                            "method": "setText"
+                        },
+                        {
+                            "class": "Landroid/view/View;",
+                            "method": "setTag"
+                        },
+                        {
+                            "class": "Ljava/util/ArrayList;",
+                            "method": "get"
+                        },
+                        {
+                            "class": "Ljava/util/ArrayList;",
+                            "method": "get"
+                        },
+                        {
+                            "class": "Ljava/lang/String;",
+                            "method": "startsWith"
+                        },
+                        {
+                            "class": "Landroid/widget/ImageView;",
+                            "method": "setImageResource"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/ObjectModel;",
+                            "method": "getBody"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/ObjectArrayAdapter;",
+                            "method": "<init>"
+                        },
+                        {
+                            "class": "Landroid/view/LayoutInflater;",
+                            "method": "inflate"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/ObjectArrayAdapter;",
+                            "method": "<init>"
+                        },
+                        {
+                            "class": "Landroid/widget/ImageView;",
+                            "method": "getLayoutParams"
+                        },
+                        {
+                            "class": "Landroid/preference/PreferenceManager;",
+                            "method": "getDefaultSharedPreferences"
+                        },
+                        {
+                            "class": "Landroid/widget/ImageView;",
+                            "method": "setVisibility"
+                        },
+                        {
+                            "class": "Ljava/util/ArrayList;",
+                            "method": "get"
+                        },
+                        {
+                            "class": "Ljava/lang/String;",
+                            "method": "startsWith"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/ObjectModel;",
+                            "method": "getBody"
+                        },
+                        {
+                            "class": "Landroid/widget/ImageView;",
+                            "method": "setOnClickListener"
+                        },
+                        {
+                            "class": "Ljava/lang/String;",
+                            "method": "startsWith"
+                        },
+                        {
+                            "class": "Landroid/widget/ImageView;",
+                            "method": "setImageResource"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/ObjectModel;",
+                            "method": "getBody"
+                        },
+                        {
+                            "class": "Landroid/view/View;",
+                            "method": "findViewById"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/DataBaseHelper;",
+                            "method": "checkName"
+                        },
+                        {
+                            "class": "Landroid/view/View;",
+                            "method": "findViewById"
+                        },
+                        {
+                            "class": "Landroid/content/res/Resources;",
+                            "method": "getDisplayMetrics"
+                        },
+                        {
+                            "class": "Landroid/widget/LinearLayout;",
+                            "method": "setMargins"
+                        },
+                        {
+                            "class": "Ljava/util/ArrayList;",
+                            "method": "get"
+                        },
+                        {
+                            "class": "Landroid/view/View;",
+                            "method": "getTag"
+                        },
+                        {
+                            "class": "Landroid/app/Activity;",
+                            "method": "getResources"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/ObjectModel;",
+                            "method": "getBody"
+                        },
+                        {
+                            "class": "Landroid/widget/ImageView;",
+                            "method": "setImageResource"
+                        }
+                    ]
+                }
+            ],
+            "name": "Lru/andrey/notepad/ObjectArrayAdapter;",
+            "source": null,
+            "xref_from": [
+                {
+                    "class": "Lru/andrey/notepad/ObjectArrayAdapter;",
+                    "method": "onClick"
+                },
+                {
+                    "class": "Lru/andrey/notepad/ObjectArrayAdapter;",
+                    "method": "onClick"
+                },
+                {
+                    "class": "Lru/andrey/notepad/ObjectArrayAdapter;",
+                    "method": "onClick"
+                },
+                {
+                    "class": "Lru/andrey/notepad/ObjectArrayAdapter;",
+                    "method": "onClick"
+                },
+                {
+                    "class": "Lru/andrey/notepad/ObjectArrayAdapter;",
+                    "method": "onClick"
+                },
+                {
+                    "class": "Lru/andrey/notepad/ObjectArrayAdapter;",
+                    "method": "onClick"
+                },
+                {
+                    "class": "Lru/andrey/notepad/ObjectArrayAdapter;",
+                    "method": "onClick"
+                },
+                {
+                    "class": "Lru/andrey/notepad/ObjectArrayAdapter;",
+                    "method": "onClick"
+                },
+                {
+                    "class": "Lru/andrey/notepad/ObjectArrayAdapter;",
+                    "method": "onClick"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "update"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "find"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "find"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "update"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "onResume"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "onResume"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "update"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "onCreate"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "onCreate"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "update"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "onResume"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "onResume"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "onPostExecute"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "onPostExecute"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "onPostExecute"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "onPostExecute"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "onTextChanged"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "onTextChanged"
+                },
+                {
+                    "class": "Lru/andrey/notepad/ObjectArrayAdapter;",
+                    "method": "onItemClick"
+                },
+                {
+                    "class": "Lru/andrey/notepad/ObjectArrayAdapter;",
+                    "method": "onClick"
+                },
+                {
+                    "class": "Lru/andrey/notepad/ObjectArrayAdapter;",
+                    "method": "onClick"
+                },
+                {
+                    "class": "Lru/andrey/notepad/ObjectArrayAdapter;",
+                    "method": "onClick"
+                },
+                {
+                    "class": "Lru/andrey/notepad/ObjectArrayAdapter;",
+                    "method": "onClick"
+                },
+                {
+                    "class": "Lru/andrey/notepad/ObjectArrayAdapter;",
+                    "method": "onClick"
+                },
+                {
+                    "class": "Lru/andrey/notepad/ObjectArrayAdapter;",
+                    "method": "onClick"
+                },
+                {
+                    "class": "Lru/andrey/notepad/ObjectArrayAdapter;",
+                    "method": "onClick"
+                },
+                {
+                    "class": "Lru/andrey/notepad/ObjectArrayAdapter;",
+                    "method": "onClick"
+                },
+                {
+                    "class": "Lru/andrey/notepad/ObjectArrayAdapter;",
+                    "method": "onClick"
+                },
+                {
+                    "class": "Lru/andrey/notepad/ObjectArrayAdapter;",
+                    "method": "onClick"
+                },
+                {
+                    "class": "Lru/andrey/notepad/ObjectArrayAdapter;",
+                    "method": "onClick"
+                },
+                {
+                    "class": "Lru/andrey/notepad/ObjectArrayAdapter;",
+                    "method": "onClick"
+                },
+                {
+                    "class": "Lru/andrey/notepad/ObjectArrayAdapter;",
+                    "method": "onClick"
+                },
+                {
+                    "class": "Lru/andrey/notepad/ObjectArrayAdapter;",
+                    "method": "onClick"
+                },
+                {
+                    "class": "Lru/andrey/notepad/ObjectArrayAdapter;",
+                    "method": "onClick"
+                },
+                {
+                    "class": "Lru/andrey/notepad/ObjectArrayAdapter;",
+                    "method": "onClick"
+                },
+                {
+                    "class": "Lru/andrey/notepad/ObjectArrayAdapter;",
+                    "method": "onClick"
+                },
+                {
+                    "class": "Lru/andrey/notepad/ObjectArrayAdapter;",
+                    "method": "onClick"
+                }
+            ],
+            "xref_to": [
+                {
+                    "class": "Lru/andrey/notepad/DataBaseHelper;",
+                    "method": "getHelper"
+                },
+                {
+                    "class": "Lru/andrey/notepad/DataBaseHelper;",
+                    "method": "checkName"
+                },
+                {
+                    "class": "Lru/andrey/notepad/ObjectArrayAdapter;",
+                    "method": "<init>"
+                },
+                {
+                    "class": "Lru/andrey/notepad/ObjectArrayAdapter;",
+                    "method": "getView"
+                },
+                {
+                    "class": "Lru/andrey/notepad/ObjectArrayAdapter;",
+                    "method": "getView"
+                },
+                {
+                    "class": "Lru/andrey/notepad/ObjectArrayAdapter;",
+                    "method": "<init>"
+                },
+                {
+                    "class": "Lru/andrey/notepad/ObjectArrayAdapter;",
+                    "method": "<init>"
+                },
+                {
+                    "class": "Lru/andrey/notepad/ObjectArrayAdapter;",
+                    "method": "getView"
+                },
+                {
+                    "class": "Lru/andrey/notepad/ObjectArrayAdapter;",
+                    "method": "<init>"
+                },
+                {
+                    "class": "Lru/andrey/notepad/ObjectArrayAdapter;",
+                    "method": "getView"
+                },
+                {
+                    "class": "Lru/andrey/notepad/ObjectModel;",
+                    "method": "getBody"
+                },
+                {
+                    "class": "Lru/andrey/notepad/ObjectModel;",
+                    "method": "getBody"
+                },
+                {
+                    "class": "Lru/andrey/notepad/ObjectModel;",
+                    "method": "getName"
+                },
+                {
+                    "class": "Lru/andrey/notepad/ObjectModel;",
+                    "method": "getBody"
+                },
+                {
+                    "class": "Lru/andrey/notepad/ObjectModel;",
+                    "method": "getDate"
+                },
+                {
+                    "class": "Lru/andrey/notepad/ObjectModel;",
+                    "method": "getName"
+                },
+                {
+                    "class": "Lru/andrey/notepad/ObjectModel;",
+                    "method": "getBody"
+                },
+                {
+                    "class": "Lru/andrey/notepad/ObjectModel;",
+                    "method": "getBody"
+                },
+                {
+                    "class": "Lru/andrey/notepad/ObjectModel;",
+                    "method": "getBody"
+                },
+                {
+                    "class": "Lru/andrey/notepad/ObjectModel;",
+                    "method": "getName"
+                },
+                {
+                    "class": "Lru/andrey/notepad/ObjectModel;",
+                    "method": "getName"
+                },
+                {
+                    "class": "Lru/andrey/notepad/ObjectModel;",
+                    "method": "getBody"
+                }
+            ]
+        },
+        {
+            "access_flags": "public",
+            "component_type": "activity",
+            "fields": [
+                {
+                    "access_flags": "private static final",
+                    "name": "CAM_REQUEST",
+                    "xref_read": [],
+                    "xref_write": []
+                },
+                {
+                    "access_flags": "private static final",
+                    "name": "CAM_REQUEST2",
+                    "xref_read": [],
+                    "xref_write": []
+                },
+                {
+                    "access_flags": "private static final",
+                    "name": "IDD_BAD_IMPORT",
+                    "xref_read": [],
+                    "xref_write": []
+                },
+                {
+                    "access_flags": "private static final",
+                    "name": "IDD_BAD_PASS",
+                    "xref_read": [],
+                    "xref_write": []
+                },
+                {
+                    "access_flags": "private static final",
+                    "name": "IDD_EXIT",
+                    "xref_read": [],
+                    "xref_write": []
+                },
+                {
+                    "access_flags": "private static final",
+                    "name": "IDD_IMPORT_PROGRESS",
+                    "xref_read": [],
+                    "xref_write": []
+                },
+                {
+                    "access_flags": "private static final",
+                    "name": "IDD_SAVE_PROGRESS",
+                    "xref_read": [],
+                    "xref_write": []
+                },
+                {
+                    "access_flags": "private static final",
+                    "name": "IDD_SUC_BACKUP",
+                    "xref_read": [],
+                    "xref_write": []
+                },
+                {
+                    "access_flags": "private static final",
+                    "name": "IDD_SUC_IMPORT",
+                    "xref_read": [],
+                    "xref_write": []
+                },
+                {
+                    "access_flags": "private static final",
+                    "name": "MENU_ITEM_1_ACTION",
+                    "xref_read": [],
+                    "xref_write": []
+                },
+                {
+                    "access_flags": "private static final",
+                    "name": "MENU_ITEM_2_ACTION",
+                    "xref_read": [],
+                    "xref_write": []
+                },
+                {
+                    "access_flags": "private static final",
+                    "name": "MENU_ITEM_3_ACTION",
+                    "xref_read": [],
+                    "xref_write": []
+                },
+                {
+                    "access_flags": "private static final",
+                    "name": "MENU_ITEM_4_ACTION",
+                    "xref_read": [],
+                    "xref_write": []
+                },
+                {
+                    "access_flags": "private static final",
+                    "name": "MENU_ITEM_5_ACTION",
+                    "xref_read": [],
+                    "xref_write": []
+                },
+                {
+                    "access_flags": "private static final",
+                    "name": "MENU_ITEM_6_ACTION",
+                    "xref_read": [],
+                    "xref_write": []
+                },
+                {
+                    "access_flags": "private static final",
+                    "name": "MENU_ITEM_7_ACTION",
+                    "xref_read": [],
+                    "xref_write": []
+                },
+                {
+                    "access_flags": "private static final",
+                    "name": "MENU_ITEM_8_ACTION",
+                    "xref_read": [],
+                    "xref_write": []
+                },
+                {
+                    "access_flags": "private static final",
+                    "name": "SELECT_PHOTO",
+                    "xref_read": [],
+                    "xref_write": []
+                },
+                {
+                    "access_flags": "static",
+                    "name": "arr",
+                    "xref_read": [
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "find"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "onResume"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "update"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "onCreate"
+                        }
+                    ],
+                    "xref_write": [
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "find"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "onResume"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "update"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "onCreate"
+                        }
+                    ]
+                },
+                {
+                    "access_flags": "static",
+                    "name": "cambmp",
+                    "xref_read": [],
+                    "xref_write": [
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "onActivityResult"
+                        }
+                    ]
+                },
+                {
+                    "access_flags": "static",
+                    "name": "ctx",
+                    "xref_read": [
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "update"
+                        }
+                    ],
+                    "xref_write": [
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "onCreate"
+                        }
+                    ]
+                },
+                {
+                    "access_flags": "static",
+                    "name": "dh",
+                    "xref_read": [
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "onResume"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "update"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "onCreate"
+                        }
+                    ],
+                    "xref_write": [
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "onCreate"
+                        }
+                    ]
+                },
+                {
+                    "access_flags": "static",
+                    "name": "isSearch",
+                    "xref_read": [
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "onResume"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "update"
+                        }
+                    ],
+                    "xref_write": [
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "<clinit>"
+                        }
+                    ]
+                },
+                {
+                    "access_flags": "static",
+                    "name": "lv",
+                    "xref_read": [
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "find"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "onResume"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "update"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "onCreate"
+                        }
+                    ],
+                    "xref_write": [
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "onCreate"
+                        }
+                    ]
+                },
+                {
+                    "access_flags": "static",
+                    "name": "object",
+                    "xref_read": [
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "find"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "onResume"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "update"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "onCreate"
+                        }
+                    ],
+                    "xref_write": [
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "onResume"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "<clinit>"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "update"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "onCreate"
+                        }
+                    ]
+                },
+                {
+                    "access_flags": "static",
+                    "name": "p",
+                    "xref_read": [
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "onActivityResult"
+                        }
+                    ],
+                    "xref_write": []
+                },
+                {
+                    "access_flags": "static",
+                    "name": "remPos",
+                    "xref_read": [],
+                    "xref_write": [
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "openMenu"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "<clinit>"
+                        }
+                    ]
+                },
+                {
+                    "access_flags": "static",
+                    "name": "sobject",
+                    "xref_read": [
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "find"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "onResume"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "update"
+                        }
+                    ],
+                    "xref_write": [
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "<clinit>"
+                        }
+                    ]
+                },
+                {
+                    "access_flags": "private final",
+                    "name": "CONTEXT_MENU_ID",
+                    "xref_read": [],
+                    "xref_write": [
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "<init>"
+                        }
+                    ]
+                },
+                {
+                    "access_flags": "0x0",
+                    "name": "IMAGE_MAX_SIZE",
+                    "xref_read": [
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "decodeFile"
+                        }
+                    ],
+                    "xref_write": [
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "<init>"
+                        }
+                    ]
+                },
+                {
+                    "access_flags": "0x0",
+                    "name": "ImportProgress",
+                    "xref_read": [
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "onCreateDialog"
+                        }
+                    ],
+                    "xref_write": [
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "onCreateDialog"
+                        }
+                    ]
+                },
+                {
+                    "access_flags": "0x0",
+                    "name": "SaveProgress",
+                    "xref_read": [
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "onCreateDialog"
+                        }
+                    ],
+                    "xref_write": [
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "onCreateDialog"
+                        }
+                    ]
+                },
+                {
+                    "access_flags": "0x0",
+                    "name": "ad",
+                    "xref_read": [],
+                    "xref_write": [
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "onCreate"
+                        }
+                    ]
+                },
+                {
+                    "access_flags": "0x0",
+                    "name": "add",
+                    "xref_read": [
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "onCreate"
+                        }
+                    ],
+                    "xref_write": [
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "onCreate"
+                        }
+                    ]
+                },
+                {
+                    "access_flags": "0x0",
+                    "name": "archive",
+                    "xref_read": [
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "UnZip"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "run"
+                        }
+                    ],
+                    "xref_write": [
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "UnZip"
+                        }
+                    ]
+                },
+                {
+                    "access_flags": "0x0",
+                    "name": "bg",
+                    "xref_read": [
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "onCreate"
+                        }
+                    ],
+                    "xref_write": [
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "onCreate"
+                        }
+                    ]
+                },
+                {
+                    "access_flags": "0x0",
+                    "name": "color",
+                    "xref_read": [
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "onKeyUp"
+                        }
+                    ],
+                    "xref_write": []
+                },
+                {
+                    "access_flags": "0x0",
+                    "name": "folder",
+                    "xref_read": [
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "onCreate"
+                        }
+                    ],
+                    "xref_write": [
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "onCreate"
+                        }
+                    ]
+                },
+                {
+                    "access_flags": "private",
+                    "name": "iconContextMenu",
+                    "xref_read": [
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "onCreate"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "onCreateDialog"
+                        }
+                    ],
+                    "xref_write": [
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "<init>"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "onCreate"
+                        }
+                    ]
+                },
+                {
+                    "access_flags": "0x0",
+                    "name": "imageUri",
+                    "xref_read": [],
+                    "xref_write": []
+                },
+                {
+                    "access_flags": "0x0",
+                    "name": "imageUrl",
+                    "xref_read": [
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "onKeyUp"
+                        }
+                    ],
+                    "xref_write": [
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "<init>"
+                        }
+                    ]
+                },
+                {
+                    "access_flags": "0x0",
+                    "name": "lastAction",
+                    "xref_read": [],
+                    "xref_write": []
+                },
+                {
+                    "access_flags": "0x0",
+                    "name": "like",
+                    "xref_read": [
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "onCreate"
+                        }
+                    ],
+                    "xref_write": [
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "onCreate"
+                        }
+                    ]
+                },
+                {
+                    "access_flags": "0x0",
+                    "name": "link",
+                    "xref_read": [],
+                    "xref_write": []
+                },
+                {
+                    "access_flags": "0x0",
+                    "name": "menu",
+                    "xref_read": [
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "onCreate"
+                        }
+                    ],
+                    "xref_write": [
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "onCreate"
+                        }
+                    ]
+                },
+                {
+                    "access_flags": "0x0",
+                    "name": "name",
+                    "xref_read": [
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "onKeyUp"
+                        }
+                    ],
+                    "xref_write": []
+                },
+                {
+                    "access_flags": "0x0",
+                    "name": "outputDir",
+                    "xref_read": [
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "UnZip"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "run"
+                        }
+                    ],
+                    "xref_write": [
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "UnZip"
+                        }
+                    ]
+                },
+                {
+                    "access_flags": "0x0",
+                    "name": "search",
+                    "xref_read": [
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "onCreate"
+                        }
+                    ],
+                    "xref_write": [
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "onCreate"
+                        }
+                    ]
+                },
+                {
+                    "access_flags": "0x0",
+                    "name": "type",
+                    "xref_read": [],
+                    "xref_write": []
+                }
+            ],
+            "group": 4,
+            "id": 2614,
+            "methods": [
+                {
+                    "access_flags": "static constructor",
+                    "info": {
+                        "registers": [
+                            0,
+                            0
+                        ],
+                        "return": "void"
+                    },
+                    "name": "<clinit>",
+                    "source": null,
+                    "xref_from": [],
+                    "xref_to": [
+                        {
+                            "class": "Ljava/util/ArrayList;",
+                            "method": "<init>"
+                        },
+                        {
+                            "class": "Ljava/util/ArrayList;",
+                            "method": "<init>"
+                        }
+                    ]
+                },
+                {
+                    "access_flags": "public constructor",
+                    "info": {
+                        "registers": [
+                            0,
+                            2
+                        ],
+                        "return": "void"
+                    },
+                    "name": "<init>",
+                    "source": null,
+                    "xref_from": [],
+                    "xref_to": [
+                        {
+                            "class": "Landroid/app/Activity;",
+                            "method": "<init>"
+                        }
+                    ]
+                },
+                {
+                    "access_flags": "private",
+                    "info": {
+                        "params": [
+                            [
+                                4,
+                                "android.content.Context"
+                            ],
+                            [
+                                5,
+                                "java.lang.String"
+                            ],
+                            [
+                                6,
+                                "java.lang.String"
+                            ]
+                        ],
+                        "registers": [
+                            0,
+                            3
+                        ],
+                        "return": "android.graphics.drawable.Drawable"
+                    },
+                    "name": "ImageOperations",
+                    "source": null,
+                    "xref_from": [],
+                    "xref_to": [
+                        {
+                            "class": "Landroid/graphics/drawable/Drawable;",
+                            "method": "createFromStream"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "fetch"
+                        },
+                        {
+                            "class": "Ljava/io/IOException;",
+                            "method": "printStackTrace"
+                        },
+                        {
+                            "class": "Ljava/net/MalformedURLException;",
+                            "method": "printStackTrace"
+                        }
+                    ]
+                },
+                {
+                    "access_flags": "private",
+                    "info": {
+                        "params": [
+                            [
+                                4,
+                                "java.io.InputStream"
+                            ],
+                            [
+                                5,
+                                "java.io.OutputStream"
+                            ]
+                        ],
+                        "registers": [
+                            0,
+                            3
+                        ],
+                        "return": "void"
+                    },
+                    "name": "copyFile",
+                    "source": null,
+                    "xref_from": [],
+                    "xref_to": [
+                        {
+                            "class": "Ljava/io/OutputStream;",
+                            "method": "write"
+                        },
+                        {
+                            "class": "Ljava/io/InputStream;",
+                            "method": "read"
+                        }
+                    ]
+                },
+                {
+                    "access_flags": "private",
+                    "info": {
+                        "params": [
+                            [
+                                4,
+                                "java.io.File"
+                            ]
+                        ],
+                        "registers": [
+                            0,
+                            3
+                        ],
+                        "return": "void"
+                    },
+                    "name": "createDir",
+                    "source": null,
+                    "xref_from": [
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "unzipEntry"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "unzipEntry"
+                        }
+                    ],
+                    "xref_to": [
+                        {
+                            "class": "Ljava/lang/StringBuilder;",
+                            "method": "<init>"
+                        },
+                        {
+                            "class": "Ljava/lang/StringBuilder;",
+                            "method": "toString"
+                        },
+                        {
+                            "class": "Ljava/lang/StringBuilder;",
+                            "method": "append"
+                        },
+                        {
+                            "class": "Ljava/lang/RuntimeException;",
+                            "method": "<init>"
+                        },
+                        {
+                            "class": "Ljava/io/File;",
+                            "method": "mkdirs"
+                        }
+                    ]
+                },
+                {
+                    "access_flags": "private",
+                    "info": {
+                        "params": [
+                            [
+                                12,
+                                "java.io.File"
+                            ]
+                        ],
+                        "registers": [
+                            0,
+                            11
+                        ],
+                        "return": "android.graphics.Bitmap"
+                    },
+                    "name": "decodeFile",
+                    "source": null,
+                    "xref_from": [
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "onActivityResult"
+                        }
+                    ],
+                    "xref_to": [
+                        {
+                            "class": "Landroid/graphics/BitmapFactory;",
+                            "method": "<init>"
+                        },
+                        {
+                            "class": "Landroid/graphics/BitmapFactory;",
+                            "method": "<init>"
+                        },
+                        {
+                            "class": "Ljava/lang/Math;",
+                            "method": "pow"
+                        },
+                        {
+                            "class": "Ljava/lang/Math;",
+                            "method": "log"
+                        },
+                        {
+                            "class": "Landroid/graphics/BitmapFactory;",
+                            "method": "decodeStream"
+                        },
+                        {
+                            "class": "Ljava/io/FileInputStream;",
+                            "method": "<init>"
+                        },
+                        {
+                            "class": "Ljava/io/FileInputStream;",
+                            "method": "close"
+                        },
+                        {
+                            "class": "Ljava/io/FileInputStream;",
+                            "method": "close"
+                        },
+                        {
+                            "class": "Ljava/lang/Math;",
+                            "method": "max"
+                        },
+                        {
+                            "class": "Ljava/lang/Math;",
+                            "method": "round"
+                        },
+                        {
+                            "class": "Landroid/graphics/BitmapFactory;",
+                            "method": "decodeStream"
+                        },
+                        {
+                            "class": "Ljava/io/FileInputStream;",
+                            "method": "<init>"
+                        },
+                        {
+                            "class": "Ljava/io/File;",
+                            "method": "getAbsolutePath"
+                        },
+                        {
+                            "class": "Ljava/lang/Math;",
+                            "method": "log"
+                        },
+                        {
+                            "class": "Landroid/util/Log;",
+                            "method": "d"
+                        }
+                    ]
+                },
+                {
+                    "access_flags": "public static",
+                    "info": {
+                        "params": [
+                            [
+                                1,
+                                "android.content.Context"
+                            ],
+                            [
+                                2,
+                                "android.view.View"
+                            ],
+                            [
+                                3,
+                                "int"
+                            ]
+                        ],
+                        "registers": [
+                            0,
+                            0
+                        ],
+                        "return": "void"
+                    },
+                    "name": "openMenu",
+                    "source": null,
+                    "xref_from": [],
+                    "xref_to": [
+                        {
+                            "class": "Landroid/app/Activity;",
+                            "method": "registerForContextMenu"
+                        },
+                        {
+                            "class": "Landroid/app/Activity;",
+                            "method": "openContextMenu"
+                        }
+                    ]
+                },
+                {
+                    "access_flags": "private",
+                    "info": {
+                        "params": [
+                            [
+                                6,
+                                "java.util.zip.ZipFile"
+                            ],
+                            [
+                                7,
+                                "java.util.zip.ZipEntry"
+                            ],
+                            [
+                                8,
+                                "java.lang.String"
+                            ]
+                        ],
+                        "registers": [
+                            0,
+                            5
+                        ],
+                        "return": "void"
+                    },
+                    "name": "unzipEntry",
+                    "source": null,
+                    "xref_from": [
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "run"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "UnZip"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "unzipArchive"
+                        }
+                    ],
+                    "xref_to": [
+                        {
+                            "class": "Ljava/util/zip/ZipEntry;",
+                            "method": "isDirectory"
+                        },
+                        {
+                            "class": "Ljava/io/BufferedOutputStream;",
+                            "method": "close"
+                        },
+                        {
+                            "class": "Ljava/util/zip/ZipEntry;",
+                            "method": "getName"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "createDir"
+                        },
+                        {
+                            "class": "Ljava/io/BufferedInputStream;",
+                            "method": "close"
+                        },
+                        {
+                            "class": "Ljava/io/File;",
+                            "method": "getParentFile"
+                        },
+                        {
+                            "class": "Ljava/io/BufferedInputStream;",
+                            "method": "<init>"
+                        },
+                        {
+                            "class": "Ljava/util/zip/ZipEntry;",
+                            "method": "getName"
+                        },
+                        {
+                            "class": "Lorg/apache/commons/io/IOUtils;",
+                            "method": "copy"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "createDir"
+                        },
+                        {
+                            "class": "Ljava/io/File;",
+                            "method": "<init>"
+                        },
+                        {
+                            "class": "Ljava/io/BufferedOutputStream;",
+                            "method": "close"
+                        },
+                        {
+                            "class": "Ljava/io/FileOutputStream;",
+                            "method": "<init>"
+                        },
+                        {
+                            "class": "Ljava/io/File;",
+                            "method": "getParentFile"
+                        },
+                        {
+                            "class": "Ljava/io/BufferedOutputStream;",
+                            "method": "<init>"
+                        },
+                        {
+                            "class": "Ljava/io/BufferedInputStream;",
+                            "method": "close"
+                        },
+                        {
+                            "class": "Ljava/io/File;",
+                            "method": "exists"
+                        },
+                        {
+                            "class": "Ljava/util/zip/ZipFile;",
+                            "method": "getInputStream"
+                        },
+                        {
+                            "class": "Ljava/io/File;",
+                            "method": "<init>"
+                        }
+                    ]
+                },
+                {
+                    "access_flags": "public static",
+                    "info": {
+                        "registers": [
+                            0,
+                            2
+                        ],
+                        "return": "void"
+                    },
+                    "name": "update",
+                    "source": null,
+                    "xref_from": [
+                        {
+                            "class": "Lru/andrey/notepad/PictureActivity;",
+                            "method": "onStop"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/AddActivity;",
+                            "method": "onStop"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/CameraTextActivity;",
+                            "method": "onStop"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/GalleryTextActivity;",
+                            "method": "onStop"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/VideoActivity;",
+                            "method": "onStop"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/ObjectArrayAdapter;",
+                            "method": "onClick"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/RecordActivity;",
+                            "method": "onStop"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/BuyActivity;",
+                            "method": "onStop"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/ObjectArrayAdapter;",
+                            "method": "onClick"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/CameraActivity;",
+                            "method": "onStop"
+                        }
+                    ],
+                    "xref_to": [
+                        {
+                            "class": "Landroid/widget/ListView;",
+                            "method": "setAdapter"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/DataBaseHelper;",
+                            "method": "getNotes"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/ObjectArrayAdapter;",
+                            "method": "<init>"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/ObjectArrayAdapter;",
+                            "method": "<init>"
+                        },
+                        {
+                            "class": "Ljava/util/Collections;",
+                            "method": "reverse"
+                        }
+                    ]
+                },
+                {
+                    "access_flags": "public",
+                    "info": {
+                        "params": [
+                            [
+                                5,
+                                "java.io.File"
+                            ],
+                            [
+                                6,
+                                "java.lang.String"
+                            ]
+                        ],
+                        "registers": [
+                            0,
+                            4
+                        ],
+                        "return": "void"
+                    },
+                    "name": "UnZip",
+                    "source": null,
+                    "xref_from": [
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "doInBackground"
+                        }
+                    ],
+                    "xref_to": [
+                        {
+                            "class": "Ljava/util/Enumeration;",
+                            "method": "nextElement"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "unzipEntry"
+                        },
+                        {
+                            "class": "Ljava/util/zip/ZipFile;",
+                            "method": "<init>"
+                        },
+                        {
+                            "class": "Ljava/util/Enumeration;",
+                            "method": "hasMoreElements"
+                        },
+                        {
+                            "class": "Ljava/util/zip/ZipFile;",
+                            "method": "entries"
+                        }
+                    ]
+                },
+                {
+                    "access_flags": "public",
+                    "info": {
+                        "params": [
+                            [
+                                6,
+                                "java.lang.String"
+                            ]
+                        ],
+                        "registers": [
+                            0,
+                            5
+                        ],
+                        "return": "void"
+                    },
+                    "name": "appendSQLLog",
+                    "source": null,
+                    "xref_from": [
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "doInBackground"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "doInBackground"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "doInBackground"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "doInBackground"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "doInBackground"
+                        }
+                    ],
+                    "xref_to": [
+                        {
+                            "class": "Ljava/io/File;",
+                            "method": "exists"
+                        },
+                        {
+                            "class": "Ljava/lang/StringBuilder;",
+                            "method": "append"
+                        },
+                        {
+                            "class": "Ljava/io/FileWriter;",
+                            "method": "<init>"
+                        },
+                        {
+                            "class": "Ljava/io/File;",
+                            "method": "<init>"
+                        },
+                        {
+                            "class": "Ljava/lang/StringBuilder;",
+                            "method": "<init>"
+                        },
+                        {
+                            "class": "Ljava/lang/StringBuilder;",
+                            "method": "<init>"
+                        },
+                        {
+                            "class": "Ljava/lang/StringBuilder;",
+                            "method": "toString"
+                        },
+                        {
+                            "class": "Ljava/io/BufferedWriter;",
+                            "method": "close"
+                        },
+                        {
+                            "class": "Ljava/lang/StringBuilder;",
+                            "method": "toString"
+                        },
+                        {
+                            "class": "Ljava/io/BufferedWriter;",
+                            "method": "<init>"
+                        },
+                        {
+                            "class": "Ljava/lang/StringBuilder;",
+                            "method": "append"
+                        },
+                        {
+                            "class": "Ljava/io/File;",
+                            "method": "createNewFile"
+                        },
+                        {
+                            "class": "Ljava/lang/String;",
+                            "method": "valueOf"
+                        },
+                        {
+                            "class": "Landroid/os/Environment;",
+                            "method": "getExternalStorageDirectory"
+                        },
+                        {
+                            "class": "Ljava/io/IOException;",
+                            "method": "printStackTrace"
+                        },
+                        {
+                            "class": "Ljava/io/BufferedWriter;",
+                            "method": "newLine"
+                        },
+                        {
+                            "class": "Ljava/io/BufferedWriter;",
+                            "method": "append"
+                        },
+                        {
+                            "class": "Ljava/io/IOException;",
+                            "method": "printStackTrace"
+                        },
+                        {
+                            "class": "Ljava/lang/StringBuilder;",
+                            "method": "append"
+                        }
+                    ]
+                },
+                {
+                    "access_flags": "public",
+                    "info": {
+                        "params": [
+                            [
+                                4,
+                                "java.lang.String"
+                            ]
+                        ],
+                        "registers": [
+                            0,
+                            3
+                        ],
+                        "return": "void"
+                    },
+                    "name": "checkAndCreateDirectory",
+                    "source": null,
+                    "xref_from": [
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "doInBackground"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "onCreate"
+                        }
+                    ],
+                    "xref_to": [
+                        {
+                            "class": "Ljava/io/File;",
+                            "method": "<init>"
+                        },
+                        {
+                            "class": "Ljava/lang/StringBuilder;",
+                            "method": "append"
+                        },
+                        {
+                            "class": "Ljava/lang/StringBuilder;",
+                            "method": "<init>"
+                        },
+                        {
+                            "class": "Ljava/lang/StringBuilder;",
+                            "method": "append"
+                        },
+                        {
+                            "class": "Ljava/io/File;",
+                            "method": "exists"
+                        },
+                        {
+                            "class": "Ljava/io/File;",
+                            "method": "mkdirs"
+                        },
+                        {
+                            "class": "Ljava/lang/StringBuilder;",
+                            "method": "toString"
+                        },
+                        {
+                            "class": "Landroid/os/Environment;",
+                            "method": "getExternalStorageDirectory"
+                        }
+                    ]
+                },
+                {
+                    "access_flags": "public",
+                    "info": {
+                        "params": [
+                            [
+                                12,
+                                "java.lang.String"
+                            ],
+                            [
+                                13,
+                                "java.lang.String"
+                            ]
+                        ],
+                        "registers": [
+                            0,
+                            11
+                        ],
+                        "return": "void"
+                    },
+                    "name": "copyFile",
+                    "source": null,
+                    "xref_from": [],
+                    "xref_to": [
+                        {
+                            "class": "Ljava/lang/StringBuilder;",
+                            "method": "<init>"
+                        },
+                        {
+                            "class": "Ljava/lang/StringBuilder;",
+                            "method": "toString"
+                        },
+                        {
+                            "class": "Ljava/nio/channels/FileChannel;",
+                            "method": "size"
+                        },
+                        {
+                            "class": "Ljava/lang/StringBuilder;",
+                            "method": "append"
+                        },
+                        {
+                            "class": "Ljava/io/FileInputStream;",
+                            "method": "<init>"
+                        },
+                        {
+                            "class": "Ljava/nio/channels/FileChannel;",
+                            "method": "close"
+                        },
+                        {
+                            "class": "Ljava/io/FileOutputStream;",
+                            "method": "<init>"
+                        },
+                        {
+                            "class": "Ljava/lang/StringBuilder;",
+                            "method": "append"
+                        },
+                        {
+                            "class": "Ljava/io/File;",
+                            "method": "exists"
+                        },
+                        {
+                            "class": "Ljava/io/FileOutputStream;",
+                            "method": "getChannel"
+                        },
+                        {
+                            "class": "Ljava/io/File;",
+                            "method": "<init>"
+                        },
+                        {
+                            "class": "Ljava/lang/StringBuilder;",
+                            "method": "toString"
+                        },
+                        {
+                            "class": "Ljava/nio/channels/FileChannel;",
+                            "method": "transferFrom"
+                        },
+                        {
+                            "class": "Ljava/nio/channels/FileChannel;",
+                            "method": "close"
+                        },
+                        {
+                            "class": "Ljava/lang/StringBuilder;",
+                            "method": "<init>"
+                        },
+                        {
+                            "class": "Ljava/io/File;",
+                            "method": "<init>"
+                        },
+                        {
+                            "class": "Ljava/io/File;",
+                            "method": "canWrite"
+                        },
+                        {
+                            "class": "Ljava/lang/StringBuilder;",
+                            "method": "append"
+                        },
+                        {
+                            "class": "Ljava/lang/StringBuilder;",
+                            "method": "append"
+                        },
+                        {
+                            "class": "Ljava/io/FileInputStream;",
+                            "method": "getChannel"
+                        },
+                        {
+                            "class": "Landroid/os/Environment;",
+                            "method": "getExternalStorageDirectory"
+                        }
+                    ]
+                },
+                {
+                    "access_flags": "public",
+                    "info": {
+                        "params": [
+                            [
+                                3,
+                                "java.lang.String"
+                            ]
+                        ],
+                        "registers": [
+                            0,
+                            2
+                        ],
+                        "return": "java.lang.Object"
+                    },
+                    "name": "fetch",
+                    "source": null,
+                    "xref_from": [
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "ImageOperations"
+                        }
+                    ],
+                    "xref_to": [
+                        {
+                            "class": "Ljava/net/URL;",
+                            "method": "<init>"
+                        },
+                        {
+                            "class": "Ljava/net/URL;",
+                            "method": "getContent"
+                        }
+                    ]
+                },
+                {
+                    "access_flags": "protected",
+                    "info": {
+                        "params": [
+                            [
+                                4,
+                                "java.lang.String"
+                            ]
+                        ],
+                        "registers": [
+                            0,
+                            3
+                        ],
+                        "return": "void"
+                    },
+                    "name": "find",
+                    "source": null,
+                    "xref_from": [
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "onTextChanged"
+                        }
+                    ],
+                    "xref_to": [
+                        {
+                            "class": "Lru/andrey/notepad/ObjectModel;",
+                            "method": "getName"
+                        },
+                        {
+                            "class": "Landroid/widget/ListView;",
+                            "method": "setAdapter"
+                        },
+                        {
+                            "class": "Ljava/lang/String;",
+                            "method": "toLowerCase"
+                        },
+                        {
+                            "class": "Landroid/widget/ListView;",
+                            "method": "setOnItemClickListener"
+                        },
+                        {
+                            "class": "Ljava/util/ArrayList;",
+                            "method": "get"
+                        },
+                        {
+                            "class": "Ljava/util/ArrayList;",
+                            "method": "size"
+                        },
+                        {
+                            "class": "Ljava/lang/String;",
+                            "method": "contains"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/ObjectArrayAdapter;",
+                            "method": "<init>"
+                        },
+                        {
+                            "class": "Ljava/util/ArrayList;",
+                            "method": "clear"
+                        },
+                        {
+                            "class": "Ljava/util/ArrayList;",
+                            "method": "get"
+                        },
+                        {
+                            "class": "Ljava/lang/String;",
+                            "method": "toLowerCase"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "<init>"
+                        },
+                        {
+                            "class": "Ljava/util/ArrayList;",
+                            "method": "add"
+                        }
+                    ]
+                },
+                {
+                    "access_flags": "public",
+                    "info": {
+                        "params": [
+                            [
+                                14,
+                                "int"
+                            ],
+                            [
+                                15,
+                                "int"
+                            ],
+                            [
+                                16,
+                                "android.content.Intent"
+                            ]
+                        ],
+                        "registers": [
+                            0,
+                            13
+                        ],
+                        "return": "void"
+                    },
+                    "name": "onActivityResult",
+                    "source": null,
+                    "xref_from": [],
+                    "xref_to": [
+                        {
+                            "class": "Landroid/database/Cursor;",
+                            "method": "moveToFirst"
+                        },
+                        {
+                            "class": "Landroid/content/ContentResolver;",
+                            "method": "query"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "decodeFile"
+                        },
+                        {
+                            "class": "Landroid/graphics/BitmapFactory;",
+                            "method": "decodeFile"
+                        },
+                        {
+                            "class": "Landroid/graphics/BitmapFactory;",
+                            "method": "<init>"
+                        },
+                        {
+                            "class": "Landroid/content/Intent;",
+                            "method": "putExtra"
+                        },
+                        {
+                            "class": "Landroid/database/Cursor;",
+                            "method": "close"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "startActivity"
+                        },
+                        {
+                            "class": "Landroid/content/Intent;",
+                            "method": "putExtra"
+                        },
+                        {
+                            "class": "Ljava/io/File;",
+                            "method": "<init>"
+                        },
+                        {
+                            "class": "Landroid/database/Cursor;",
+                            "method": "getString"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "startActivityForResult"
+                        },
+                        {
+                            "class": "Landroid/graphics/BitmapFactory;",
+                            "method": "<init>"
+                        },
+                        {
+                            "class": "Landroid/content/Intent;",
+                            "method": "<init>"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "getContentResolver"
+                        },
+                        {
+                            "class": "Landroid/graphics/BitmapFactory;",
+                            "method": "<init>"
+                        },
+                        {
+                            "class": "Landroid/graphics/BitmapFactory;",
+                            "method": "decodeFile"
+                        },
+                        {
+                            "class": "Landroid/content/Intent;",
+                            "method": "<init>"
+                        },
+                        {
+                            "class": "Landroid/app/Activity;",
+                            "method": "onActivityResult"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "startActivity"
+                        },
+                        {
+                            "class": "Ljava/io/File;",
+                            "method": "getAbsolutePath"
+                        },
+                        {
+                            "class": "Landroid/content/Intent;",
+                            "method": "putExtra"
+                        },
+                        {
+                            "class": "Ljava/io/File;",
+                            "method": "getAbsolutePath"
+                        },
+                        {
+                            "class": "Landroid/content/Intent;",
+                            "method": "getData"
+                        },
+                        {
+                            "class": "Landroid/content/Intent;",
+                            "method": "<init>"
+                        },
+                        {
+                            "class": "Landroid/database/Cursor;",
+                            "method": "getColumnIndex"
+                        }
+                    ]
+                },
+                {
+                    "access_flags": "public",
+                    "info": {
+                        "params": [
+                            [
+                                8,
+                                "android.os.Bundle"
+                            ]
+                        ],
+                        "registers": [
+                            0,
+                            7
+                        ],
+                        "return": "void"
+                    },
+                    "name": "onCreate",
+                    "source": null,
+                    "xref_from": [],
+                    "xref_to": [
+                        {
+                            "class": "Landroid/graphics/Color;",
+                            "method": "parseColor"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "findViewById"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "setContentView"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "getString"
+                        },
+                        {
+                            "class": "Landroid/widget/RelativeLayout;",
+                            "method": "setBackgroundColor"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "findViewById"
+                        },
+                        {
+                            "class": "Landroid/widget/Button;",
+                            "method": "setOnClickListener"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/IconContextMenu;",
+                            "method": "addItem"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "<init>"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "<init>"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "getResources"
+                        },
+                        {
+                            "class": "Lcom/google/android/gms/ads/AdView;",
+                            "method": "loadAd"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "getResources"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "execute"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/IconContextMenu;",
+                            "method": "addItem"
+                        },
+                        {
+                            "class": "Landroid/widget/ListView;",
+                            "method": "setAdapter"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/ObjectArrayAdapter;",
+                            "method": "<init>"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "getResources"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "findViewById"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/IconContextMenu;",
+                            "method": "addItem"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "checkAndCreateDirectory"
+                        },
+                        {
+                            "class": "Landroid/content/Intent;",
+                            "method": "<init>"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "getResources"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "getResources"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "<init>"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/IconContextMenu;",
+                            "method": "addItem"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "<init>"
+                        },
+                        {
+                            "class": "Landroid/widget/ListView;",
+                            "method": "setOnItemClickListener"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "<init>"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "getResources"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "execute"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "getString"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "getResources"
+                        },
+                        {
+                            "class": "Landroid/widget/Button;",
+                            "method": "setOnClickListener"
+                        },
+                        {
+                            "class": "Landroid/widget/Button;",
+                            "method": "setOnClickListener"
+                        },
+                        {
+                            "class": "Landroid/content/SharedPreferences;",
+                            "method": "getInt"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/IconContextMenu;",
+                            "method": "<init>"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "getString"
+                        },
+                        {
+                            "class": "Lcom/google/android/gms/ads/AdRequest;",
+                            "method": "<init>"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "findViewById"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "<init>"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "<init>"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "<init>"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "findViewById"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/IconContextMenu;",
+                            "method": "addItem"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "findViewById"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "getApplicationContext"
+                        },
+                        {
+                            "class": "Landroid/widget/Toast;",
+                            "method": "show"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "getString"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "findViewById"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "getString"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/IconContextMenu;",
+                            "method": "addItem"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/DataBaseHelper;",
+                            "method": "getNotes"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "findViewById"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "getString"
+                        },
+                        {
+                            "class": "Landroid/widget/EditText;",
+                            "method": "addTextChangedListener"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "startService"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "getResources"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "getString"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/IconContextMenu;",
+                            "method": "addItem"
+                        },
+                        {
+                            "class": "Landroid/app/Activity;",
+                            "method": "onCreate"
+                        },
+                        {
+                            "class": "Lcom/google/android/gms/ads/AdRequest;",
+                            "method": "build"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "getString"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/IconContextMenu;",
+                            "method": "setOnClickListener"
+                        },
+                        {
+                            "class": "Landroid/widget/Button;",
+                            "method": "setOnClickListener"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/IconContextMenu;",
+                            "method": "addItem"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "<init>"
+                        },
+                        {
+                            "class": "Landroid/preference/PreferenceManager;",
+                            "method": "getDefaultSharedPreferences"
+                        },
+                        {
+                            "class": "Landroid/widget/Toast;",
+                            "method": "makeText"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "findViewById"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/DataBaseHelper;",
+                            "method": "getHelper"
+                        }
+                    ]
+                },
+                {
+                    "access_flags": "protected",
+                    "info": {
+                        "params": [
+                            [
+                                9,
+                                "int"
+                            ]
+                        ],
+                        "registers": [
+                            0,
+                            8
+                        ],
+                        "return": "android.app.Dialog"
+                    },
+                    "name": "onCreateDialog",
+                    "source": null,
+                    "xref_from": [],
+                    "xref_to": [
+                        {
+                            "class": "Landroid/app/AlertDialog;",
+                            "method": "setCancelable"
+                        },
+                        {
+                            "class": "Landroid/app/AlertDialog;",
+                            "method": "setNegativeButton"
+                        },
+                        {
+                            "class": "Landroid/app/AlertDialog;",
+                            "method": "setCancelable"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "<init>"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "<init>"
+                        },
+                        {
+                            "class": "Landroid/app/ProgressDialog;",
+                            "method": "setCancelable"
+                        },
+                        {
+                            "class": "Landroid/app/AlertDialog;",
+                            "method": "setCancelable"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "getString"
+                        },
+                        {
+                            "class": "Landroid/app/ProgressDialog;",
+                            "method": "setMessage"
+                        },
+                        {
+                            "class": "Landroid/app/ProgressDialog;",
+                            "method": "setProgressStyle"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "getString"
+                        },
+                        {
+                            "class": "Landroid/app/AlertDialog;",
+                            "method": "create"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "getString"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "getString"
+                        },
+                        {
+                            "class": "Landroid/app/AlertDialog;",
+                            "method": "<init>"
+                        },
+                        {
+                            "class": "Landroid/app/ProgressDialog;",
+                            "method": "setMessage"
+                        },
+                        {
+                            "class": "Landroid/app/ProgressDialog;",
+                            "method": "<init>"
+                        },
+                        {
+                            "class": "Landroid/app/AlertDialog;",
+                            "method": "setCancelable"
+                        },
+                        {
+                            "class": "Landroid/app/AlertDialog;",
+                            "method": "setCancelable"
+                        },
+                        {
+                            "class": "Landroid/app/AlertDialog;",
+                            "method": "setNegativeButton"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "<init>"
+                        },
+                        {
+                            "class": "Landroid/app/ProgressDialog;",
+                            "method": "setCancelable"
+                        },
+                        {
+                            "class": "Landroid/app/AlertDialog;",
+                            "method": "setMessage"
+                        },
+                        {
+                            "class": "Landroid/app/AlertDialog;",
+                            "method": "setMessage"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "getString"
+                        },
+                        {
+                            "class": "Landroid/app/AlertDialog;",
+                            "method": "setTitle"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "<init>"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "getString"
+                        },
+                        {
+                            "class": "Landroid/app/AlertDialog;",
+                            "method": "<init>"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "<init>"
+                        },
+                        {
+                            "class": "Landroid/app/AlertDialog;",
+                            "method": "setNegativeButton"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "getString"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "getString"
+                        },
+                        {
+                            "class": "Landroid/app/ProgressDialog;",
+                            "method": "setTitle"
+                        },
+                        {
+                            "class": "Landroid/app/AlertDialog;",
+                            "method": "setMessage"
+                        },
+                        {
+                            "class": "Landroid/app/ProgressDialog;",
+                            "method": "setProgressStyle"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "getString"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "<init>"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "getString"
+                        },
+                        {
+                            "class": "Landroid/app/AlertDialog;",
+                            "method": "create"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "getString"
+                        },
+                        {
+                            "class": "Landroid/app/AlertDialog;",
+                            "method": "setTitle"
+                        },
+                        {
+                            "class": "Landroid/app/AlertDialog;",
+                            "method": "setPositiveButton"
+                        },
+                        {
+                            "class": "Landroid/app/AlertDialog;",
+                            "method": "setMessage"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "getString"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "getString"
+                        },
+                        {
+                            "class": "Landroid/app/AlertDialog;",
+                            "method": "setTitle"
+                        },
+                        {
+                            "class": "Landroid/app/AlertDialog;",
+                            "method": "create"
+                        },
+                        {
+                            "class": "Landroid/app/AlertDialog;",
+                            "method": "<init>"
+                        },
+                        {
+                            "class": "Landroid/app/ProgressDialog;",
+                            "method": "setTitle"
+                        },
+                        {
+                            "class": "Landroid/app/AlertDialog;",
+                            "method": "setNegativeButton"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "getString"
+                        },
+                        {
+                            "class": "Landroid/app/AlertDialog;",
+                            "method": "setMessage"
+                        },
+                        {
+                            "class": "Landroid/app/Activity;",
+                            "method": "onCreateDialog"
+                        },
+                        {
+                            "class": "Landroid/app/AlertDialog;",
+                            "method": "setNeutralButton"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "<init>"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "getString"
+                        },
+                        {
+                            "class": "Landroid/app/AlertDialog;",
+                            "method": "<init>"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "getString"
+                        },
+                        {
+                            "class": "Landroid/app/AlertDialog;",
+                            "method": "setNegativeButton"
+                        },
+                        {
+                            "class": "Landroid/app/AlertDialog;",
+                            "method": "create"
+                        },
+                        {
+                            "class": "Landroid/app/AlertDialog;",
+                            "method": "setTitle"
+                        },
+                        {
+                            "class": "Landroid/app/AlertDialog;",
+                            "method": "create"
+                        },
+                        {
+                            "class": "Landroid/app/AlertDialog;",
+                            "method": "setTitle"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "getString"
+                        },
+                        {
+                            "class": "Landroid/app/AlertDialog;",
+                            "method": "<init>"
+                        },
+                        {
+                            "class": "Landroid/app/ProgressDialog;",
+                            "method": "<init>"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/IconContextMenu;",
+                            "method": "createMenu"
+                        }
+                    ]
+                },
+                {
+                    "access_flags": "public",
+                    "info": {
+                        "params": [
+                            [
+                                4,
+                                "android.view.Menu"
+                            ]
+                        ],
+                        "registers": [
+                            0,
+                            3
+                        ],
+                        "return": "boolean"
+                    },
+                    "name": "onCreateOptionsMenu",
+                    "source": null,
+                    "xref_from": [],
+                    "xref_to": [
+                        {
+                            "class": "Landroid/view/Menu;",
+                            "method": "add"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "getString"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "getString"
+                        },
+                        {
+                            "class": "Landroid/view/Menu;",
+                            "method": "add"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "getString"
+                        },
+                        {
+                            "class": "Landroid/view/Menu;",
+                            "method": "add"
+                        },
+                        {
+                            "class": "Landroid/view/Menu;",
+                            "method": "add"
+                        },
+                        {
+                            "class": "Landroid/app/Activity;",
+                            "method": "onCreateOptionsMenu"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "getString"
+                        },
+                        {
+                            "class": "Landroid/view/Menu;",
+                            "method": "add"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "getString"
+                        }
+                    ]
+                },
+                {
+                    "access_flags": "public",
+                    "info": {
+                        "params": [
+                            [
+                                10,
+                                "int"
+                            ],
+                            [
+                                11,
+                                "android.view.KeyEvent"
+                            ]
+                        ],
+                        "registers": [
+                            0,
+                            9
+                        ],
+                        "return": "boolean"
+                    },
+                    "name": "onKeyUp",
+                    "source": null,
+                    "xref_from": [],
+                    "xref_to": [
+                        {
+                            "class": "Landroid/widget/LinearLayout;",
+                            "method": "setVisibility"
+                        },
+                        {
+                            "class": "Landroid/widget/TextView;",
+                            "method": "setOnClickListener"
+                        },
+                        {
+                            "class": "Landroid/app/Dialog;",
+                            "method": "findViewById"
+                        },
+                        {
+                            "class": "Ljava/lang/StringBuilder;",
+                            "method": "append"
+                        },
+                        {
+                            "class": "Landroid/app/Dialog;",
+                            "method": "setTitle"
+                        },
+                        {
+                            "class": "Landroid/app/Dialog;",
+                            "method": "findViewById"
+                        },
+                        {
+                            "class": "Landroid/widget/TextView;",
+                            "method": "setText"
+                        },
+                        {
+                            "class": "Landroid/graphics/Color;",
+                            "method": "parseColor"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "getString"
+                        },
+                        {
+                            "class": "Landroid/app/Dialog;",
+                            "method": "findViewById"
+                        },
+                        {
+                            "class": "Landroid/app/Dialog;",
+                            "method": "<init>"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "<init>"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "<init>"
+                        },
+                        {
+                            "class": "Landroid/widget/LinearLayout;",
+                            "method": "setVisibility"
+                        },
+                        {
+                            "class": "Landroid/app/Dialog;",
+                            "method": "setCancelable"
+                        },
+                        {
+                            "class": "Landroid/app/Dialog;",
+                            "method": "show"
+                        },
+                        {
+                            "class": "Landroid/app/Dialog;",
+                            "method": "findViewById"
+                        },
+                        {
+                            "class": "Landroid/app/Dialog;",
+                            "method": "setContentView"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "<init>"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "<init>"
+                        },
+                        {
+                            "class": "Lcom/caching/loader/ImageLoader;",
+                            "method": "DisplayImage"
+                        },
+                        {
+                            "class": "Landroid/widget/TextView;",
+                            "method": "setTextColor"
+                        },
+                        {
+                            "class": "Ljava/lang/StringBuilder;",
+                            "method": "<init>"
+                        },
+                        {
+                            "class": "Landroid/widget/ImageView;",
+                            "method": "setOnClickListener"
+                        },
+                        {
+                            "class": "Landroid/widget/Button;",
+                            "method": "setOnClickListener"
+                        },
+                        {
+                            "class": "Landroid/app/Dialog;",
+                            "method": "findViewById"
+                        },
+                        {
+                            "class": "Lcom/caching/loader/ImageLoader;",
+                            "method": "<init>"
+                        },
+                        {
+                            "class": "Ljava/lang/StringBuilder;",
+                            "method": "toString"
+                        },
+                        {
+                            "class": "Landroid/widget/Button;",
+                            "method": "setOnClickListener"
+                        }
+                    ]
+                },
+                {
+                    "access_flags": "public",
+                    "info": {
+                        "params": [
+                            [
+                                9,
+                                "android.view.MenuItem"
+                            ]
+                        ],
+                        "registers": [
+                            0,
+                            8
+                        ],
+                        "return": "boolean"
+                    },
+                    "name": "onOptionsItemSelected",
+                    "source": null,
+                    "xref_from": [],
+                    "xref_to": [
+                        {
+                            "class": "Landroid/content/SharedPreferences;",
+                            "method": "getInt"
+                        },
+                        {
+                            "class": "Ljava/lang/Object;",
+                            "method": "equals"
+                        },
+                        {
+                            "class": "Landroid/content/Intent;",
+                            "method": "<init>"
+                        },
+                        {
+                            "class": "Landroid/content/Intent;",
+                            "method": "putExtra"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/AmbilWarnaDialog;",
+                            "method": "<init>"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "getString"
+                        },
+                        {
+                            "class": "Ljava/lang/Object;",
+                            "method": "equals"
+                        },
+                        {
+                            "class": "Landroid/content/Intent;",
+                            "method": "<init>"
+                        },
+                        {
+                            "class": "Landroid/view/MenuItem;",
+                            "method": "getTitle"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "getString"
+                        },
+                        {
+                            "class": "Landroid/content/Intent;",
+                            "method": "addFlags"
+                        },
+                        {
+                            "class": "Ljava/lang/Object;",
+                            "method": "equals"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "startActivity"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "<init>"
+                        },
+                        {
+                            "class": "Ljava/lang/Object;",
+                            "method": "equals"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "<init>"
+                        },
+                        {
+                            "class": "Landroid/view/MenuItem;",
+                            "method": "getTitle"
+                        },
+                        {
+                            "class": "Landroid/content/Intent;",
+                            "method": "<init>"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "<init>"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/AmbilWarnaDialog;",
+                            "method": "show"
+                        },
+                        {
+                            "class": "Landroid/view/MenuItem;",
+                            "method": "getTitle"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "getString"
+                        },
+                        {
+                            "class": "Ljava/lang/Object;",
+                            "method": "equals"
+                        },
+                        {
+                            "class": "Landroid/preference/PreferenceManager;",
+                            "method": "getDefaultSharedPreferences"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "startActivity"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "getString"
+                        },
+                        {
+                            "class": "Landroid/view/MenuItem;",
+                            "method": "getTitle"
+                        },
+                        {
+                            "class": "Landroid/graphics/Color;",
+                            "method": "parseColor"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "execute"
+                        },
+                        {
+                            "class": "Landroid/view/MenuItem;",
+                            "method": "getTitle"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "execute"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "startActivity"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "getString"
+                        },
+                        {
+                            "class": "Landroid/view/MenuItem;",
+                            "method": "getTitle"
+                        },
+                        {
+                            "class": "Ljava/lang/Object;",
+                            "method": "equals"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "getString"
+                        },
+                        {
+                            "class": "Landroid/content/Intent;",
+                            "method": "<init>"
+                        }
+                    ]
+                },
+                {
+                    "access_flags": "public",
+                    "info": {
+                        "registers": [
+                            0,
+                            2
+                        ],
+                        "return": "void"
+                    },
+                    "name": "onResume",
+                    "source": null,
+                    "xref_from": [],
+                    "xref_to": [
+                        {
+                            "class": "Lru/andrey/notepad/ObjectArrayAdapter;",
+                            "method": "<init>"
+                        },
+                        {
+                            "class": "Landroid/widget/ListView;",
+                            "method": "setAdapter"
+                        },
+                        {
+                            "class": "Ljava/util/Collections;",
+                            "method": "reverse"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/ObjectArrayAdapter;",
+                            "method": "<init>"
+                        },
+                        {
+                            "class": "Landroid/app/Activity;",
+                            "method": "onResume"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/DataBaseHelper;",
+                            "method": "getNotes"
+                        }
+                    ]
+                },
+                {
+                    "access_flags": "public",
+                    "info": {
+                        "registers": [
+                            0,
+                            4
+                        ],
+                        "return": "void"
+                    },
+                    "name": "run",
+                    "source": null,
+                    "xref_from": [],
+                    "xref_to": [
+                        {
+                            "class": "Ljava/util/Enumeration;",
+                            "method": "nextElement"
+                        },
+                        {
+                            "class": "Ljava/util/zip/ZipFile;",
+                            "method": "<init>"
+                        },
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "unzipEntry"
+                        },
+                        {
+                            "class": "Ljava/util/Enumeration;",
+                            "method": "hasMoreElements"
+                        },
+                        {
+                            "class": "Ljava/util/zip/ZipFile;",
+                            "method": "entries"
+                        }
+                    ]
+                },
+                {
+                    "access_flags": "public",
+                    "info": {
+                        "params": [
+                            [
+                                5,
+                                "java.io.File"
+                            ],
+                            [
+                                6,
+                                "java.lang.String"
+                            ]
+                        ],
+                        "registers": [
+                            0,
+                            4
+                        ],
+                        "return": "void"
+                    },
+                    "name": "unzipArchive",
+                    "source": null,
+                    "xref_from": [],
+                    "xref_to": [
+                        {
+                            "class": "Lru/andrey/notepad/MainActivity;",
+                            "method": "unzipEntry"
+                        },
+                        {
+                            "class": "Ljava/util/Enumeration;",
+                            "method": "hasMoreElements"
+                        },
+                        {
+                            "class": "Ljava/util/zip/ZipFile;",
+                            "method": "entries"
+                        },
+                        {
+                            "class": "Ljava/util/zip/ZipFile;",
+                            "method": "<init>"
+                        },
+                        {
+                            "class": "Ljava/util/Enumeration;",
+                            "method": "nextElement"
+                        }
+                    ]
+                }
+            ],
+            "name": "Lru/andrey/notepad/MainActivity;",
+            "source": null,
+            "xref_from": [
+                {
+                    "class": "Lru/andrey/notepad/ObjectArrayAdapter;",
+                    "method": "onClick"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "onClick"
+                },
+                {
+                    "class": "Lru/andrey/notepad/BuyActivity;",
+                    "method": "onOptionsItemSelected"
+                },
+                {
+                    "class": "Lru/andrey/notepad/BuyActivity;",
+                    "method": "onStop"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "onItemClick"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "onItemClick"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "onItemClick"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "onItemClick"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "onItemClick"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "onItemClick"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "onItemClick"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "onItemClick"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "onClick"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "onClick"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "onClick"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "onClick"
+                },
+                {
+                    "class": "Lru/andrey/notepad/ObjectArrayAdapter;",
+                    "method": "onClick"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "onClick"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "onClick"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "onClick"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "onClick"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "onClick"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "onClick"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "onClick"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "onClick"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "onClick"
+                },
+                {
+                    "class": "Lru/andrey/notepad/CameraTextActivity;",
+                    "method": "onStop"
+                },
+                {
+                    "class": "Lru/andrey/notepad/CameraTextActivity;",
+                    "method": "onOptionsItemSelected"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "onClick"
+                },
+                {
+                    "class": "Lru/andrey/notepad/CameraActivity;",
+                    "method": "onOptionsItemSelected"
+                },
+                {
+                    "class": "Lru/andrey/notepad/CameraActivity;",
+                    "method": "onStop"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "onClick"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "onClick"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "onClick"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "onClick"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "onClick"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "onClick"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "onClick"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "onClick"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "onClick"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "onClick"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "onClick"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "onItemClick"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "onItemClick"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "onItemClick"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "onItemClick"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "onItemClick"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "onItemClick"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "onItemClick"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "onItemClick"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "doInBackground"
+                },
+                {
+                    "class": "Lru/andrey/notepad/RecordActivity;",
+                    "method": "onOptionsItemSelected"
+                },
+                {
+                    "class": "Lru/andrey/notepad/RecordActivity;",
+                    "method": "onStop"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "doInBackground"
+                },
+                {
+                    "class": "Lru/andrey/notepad/AddActivity;",
+                    "method": "onStop"
+                },
+                {
+                    "class": "Lru/andrey/notepad/AddActivity;",
+                    "method": "onOptionsItemSelected"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "onItemClick"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "onItemClick"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "onItemClick"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "onItemClick"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "onItemClick"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "onItemClick"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "onItemClick"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "onItemClick"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "onClick"
+                },
+                {
+                    "class": "Lru/andrey/notepad/AlarmController;",
+                    "method": "notifyBackup"
+                },
+                {
+                    "class": "Lru/andrey/notepad/PictureActivity;",
+                    "method": "onStop"
+                },
+                {
+                    "class": "Lru/andrey/notepad/PictureActivity;",
+                    "method": "onOptionsItemSelected"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "onClick"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "onPostExecute"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "onPreExecute"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "onPostExecute"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "doInBackground"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "onClick"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "onClick"
+                },
+                {
+                    "class": "Lru/andrey/notepad/GalleryTextActivity;",
+                    "method": "onOptionsItemSelected"
+                },
+                {
+                    "class": "Lru/andrey/notepad/GalleryTextActivity;",
+                    "method": "onStop"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "doInBackground"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "doInBackground"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "doInBackground"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "doInBackground"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "doInBackground"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "onPreExecute"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "doInBackground"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "doInBackground"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "onClick"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "onTextChanged"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "onClick"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "onClick"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "onClick"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "onClick"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "onClick"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "onClick"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "onClick"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "onClick"
+                },
+                {
+                    "class": "Lru/andrey/notepad/VideoActivity;",
+                    "method": "onOptionsItemSelected"
+                },
+                {
+                    "class": "Lru/andrey/notepad/VideoActivity;",
+                    "method": "onStop"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "onClick"
+                },
+                {
+                    "class": "Lru/andrey/notepad/SmallWidgetProvider;",
+                    "method": "onUpdate"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "onClick"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "onClick"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "onClick"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "onClick"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "onClick"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "onClick"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "onClick"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "onClick"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "onClick"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "onClick"
+                }
+            ],
+            "xref_to": [
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "<init>"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "onCreateDialog"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "onOptionsItemSelected"
+                },
+                {
+                    "class": "Lcom/caching/loader/ImageLoader;",
+                    "method": "<init>"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "onKeyUp"
+                },
+                {
+                    "class": "Lcom/caching/loader/ImageLoader;",
+                    "method": "DisplayImage"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "<init>"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "onCreateDialog"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "onKeyUp"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "<init>"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "<init>"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "onCreate"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "<init>"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "onCreateDialog"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "onActivityResult"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "onCreate"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "<init>"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "onActivityResult"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "onOptionsItemSelected"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "<init>"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "onCreateDialog"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "<init>"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "onOptionsItemSelected"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "<init>"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "find"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "onOptionsItemSelected"
+                },
+                {
+                    "class": "Lru/andrey/notepad/AmbilWarnaDialog;",
+                    "method": "<init>"
+                },
+                {
+                    "class": "Lru/andrey/notepad/AmbilWarnaDialog;",
+                    "method": "show"
+                },
+                {
+                    "class": "Lru/andrey/notepad/ObjectArrayAdapter;",
+                    "method": "<init>"
+                },
+                {
+                    "class": "Lru/andrey/notepad/ObjectArrayAdapter;",
+                    "method": "<init>"
+                },
+                {
+                    "class": "Lru/andrey/notepad/ObjectArrayAdapter;",
+                    "method": "<init>"
+                },
+                {
+                    "class": "Lru/andrey/notepad/ObjectArrayAdapter;",
+                    "method": "<init>"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "find"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "update"
+                },
+                {
+                    "class": "Lru/andrey/notepad/ObjectArrayAdapter;",
+                    "method": "<init>"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "onResume"
+                },
+                {
+                    "class": "Lru/andrey/notepad/ObjectArrayAdapter;",
+                    "method": "<init>"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "onCreate"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "update"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "onResume"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "onKeyUp"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "<init>"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "onOptionsItemSelected"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "onCreateDialog"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "<init>"
+                },
+                {
+                    "class": "Lru/andrey/notepad/ObjectModel;",
+                    "method": "getName"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "onKeyUp"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "<init>"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "<init>"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "onCreateDialog"
+                },
+                {
+                    "class": "Lru/andrey/notepad/DataBaseHelper;",
+                    "method": "getNotes"
+                },
+                {
+                    "class": "Lru/andrey/notepad/DataBaseHelper;",
+                    "method": "getNotes"
+                },
+                {
+                    "class": "Lru/andrey/notepad/DataBaseHelper;",
+                    "method": "getNotes"
+                },
+                {
+                    "class": "Lru/andrey/notepad/DataBaseHelper;",
+                    "method": "getHelper"
+                },
+                {
+                    "class": "Lorg/apache/commons/io/IOUtils;",
+                    "method": "copy"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "onCreate"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "<init>"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "execute"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "onOptionsItemSelected"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "<init>"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "execute"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "onCreate"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "<init>"
+                },
+                {
+                    "class": "Lcom/google/android/gms/ads/AdRequest;",
+                    "method": "build"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "onCreate"
+                },
+                {
+                    "class": "Lcom/google/android/gms/ads/AdRequest;",
+                    "method": "<init>"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "onKeyUp"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "<init>"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "onActivityResult"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "onOptionsItemSelected"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "<init>"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "execute"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "execute"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "onCreate"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "<init>"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "onCreate"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "<init>"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "onCreateDialog"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "<init>"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "onCreate"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "<init>"
+                },
+                {
+                    "class": "Lcom/google/android/gms/ads/AdView;",
+                    "method": "loadAd"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "onCreate"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "onCreate"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "<init>"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "<init>"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "onCreate"
+                },
+                {
+                    "class": "Lru/andrey/notepad/IconContextMenu;",
+                    "method": "addItem"
+                },
+                {
+                    "class": "Lru/andrey/notepad/IconContextMenu;",
+                    "method": "<init>"
+                },
+                {
+                    "class": "Lru/andrey/notepad/IconContextMenu;",
+                    "method": "createMenu"
+                },
+                {
+                    "class": "Lru/andrey/notepad/IconContextMenu;",
+                    "method": "addItem"
+                },
+                {
+                    "class": "Lru/andrey/notepad/IconContextMenu;",
+                    "method": "addItem"
+                },
+                {
+                    "class": "Lru/andrey/notepad/IconContextMenu;",
+                    "method": "setOnClickListener"
+                },
+                {
+                    "class": "Lru/andrey/notepad/IconContextMenu;",
+                    "method": "addItem"
+                },
+                {
+                    "class": "Lru/andrey/notepad/IconContextMenu;",
+                    "method": "addItem"
+                },
+                {
+                    "class": "Lru/andrey/notepad/IconContextMenu;",
+                    "method": "addItem"
+                },
+                {
+                    "class": "Lru/andrey/notepad/MainActivity;",
+                    "method": "onCreate"
+                },
+                {
+                    "class": "Lru/andrey/notepad/IconContextMenu;",
+                    "method": "addItem"
+                },
+                {
+                    "class": "Lru/andrey/notepad/IconContextMenu;",
+                    "method": "addItem"
+                }
+            ]
+        }
+    ]
+}

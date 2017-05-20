@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout android:id="@id/rate_and_reviews_coordinator_layout" android:fitsSystemWindows="true" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="vertical" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="fill_parent"
+      xmlns:android="http://schemas.android.com/apk/res/android">
+        <android.support.design.widget.AppBarLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <android.support.v7.widget.Toolbar android:id="@id/toolbar" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="?actionBarSize" app:popupTheme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" app:layout_scrollFlags="enterAlways|scroll" app:layout_collapseMode="pin"
+              xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" />
+        </android.support.design.widget.AppBarLayout>
+        <ProgressBar android:id="@id/progress_bar" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="8.0dip" android:indeterminate="true" style="@style/Widget.AppCompat.ProgressBar.Horizontal" />
+        <RelativeLayout android:paddingTop="10.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <include layout="@layout/partial_view_incl_no_network" />
+            <include layout="@layout/partial_view_error" />
+            <RelativeLayout android:id="@id/rating_layout" android:background="@drawable/layer_2" android:layout_width="113.0dip" android:layout_height="113.0dip" android:layout_margin="10.0dip">
+                <LinearLayout android:orientation="horizontal" android:id="@id/users_icon_layout" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="16.0dip" android:layout_centerHorizontal="true">
+                    <ImageView android:layout_gravity="center_vertical" android:id="@id/users_icon" android:layout_width="7.299988dip" android:layout_height="8.699982dip" android:src="@drawable/ic_user_icon" />
+                    <TextView android:textSize="10.599976sp" android:textColor="@color/white" android:gravity="start|center" android:id="@id/users_voted" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="8.0dip" android:layout_marginRight="8.0dip" android:layout_marginStart="8.0dip" android:layout_marginEnd="8.0dip" />
+                </LinearLayout>
+                <TextView android:textSize="42.0sp" android:textColor="@color/white" android:gravity="center" android:id="@id/rating_value" android:layout_width="fill_parent" android:layout_height="wrap_content" android:maxLines="1" android:includeFontPadding="false" android:layout_below="@id/users_icon_layout" android:lineSpacingMultiplier="0.9" />
+                <RatingBar android:id="@id/rating_bar" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="6.0dip" android:numStars="5" android:stepSize="0.5" android:layout_below="@id/rating_value" android:layout_centerInParent="true" style="@style/RatingBarSmall" />
+            </RelativeLayout>
+            <LinearLayout android:orientation="vertical" android:id="@id/counts_layout" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginRight="11.699982dip" android:layout_toRightOf="@id/rating_layout" android:layout_marginEnd="11.699982dip" android:layout_toEndOf="@id/rating_layout">
+                <RelativeLayout android:orientation="horizontal" android:id="@id/five_rate_star_layout" android:layout_width="fill_parent" android:layout_height="24.0dip">
+                    <TextView android:id="@id/five_rate_star_label" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/five_numeric" style="@style/FragmentRateAndReviewsLabel" />
+                    <TextView android:id="@id/five_rate_star_count" android:layout_width="24.0dip" android:layout_height="wrap_content" style="@style/FragmentRateAndReviewsCount" />
+                    <ProgressBar android:id="@id/five_rate_star_progress" android:layout_width="fill_parent" android:layout_height="10.0dip" android:layout_toLeftOf="@id/five_rate_star_count" android:layout_toRightOf="@id/five_rate_star_label" android:layout_toStartOf="@id/five_rate_star_count" android:layout_toEndOf="@id/five_rate_star_label" style="@style/FragmentRateAndReviewsProgressBar" />
+                </RelativeLayout>
+                <RelativeLayout android:orientation="horizontal" android:id="@id/four_rate_star_layout" android:layout_width="fill_parent" android:layout_height="24.0dip">
+                    <TextView android:id="@id/four_rate_star_label" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/four_numeric" style="@style/FragmentRateAndReviewsLabel" />
+                    <TextView android:id="@id/four_rate_star_count" android:layout_width="24.0dip" android:layout_height="wrap_content" style="@style/FragmentRateAndReviewsCount" />
+                    <ProgressBar android:id="@id/four_rate_star_progress" android:layout_width="fill_parent" android:layout_height="10.0dip" android:layout_toLeftOf="@id/four_rate_star_count" android:layout_toRightOf="@id/four_rate_star_label" android:layout_toStartOf="@id/four_rate_star_count" android:layout_toEndOf="@id/four_rate_star_label" style="@style/FragmentRateAndReviewsProgressBar" />
+                </RelativeLayout>
+                <RelativeLayout android:orientation="horizontal" android:id="@id/three_rate_star_layout" android:layout_width="fill_parent" android:layout_height="24.0dip">
+                    <TextView android:id="@id/three_rate_star_label" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/three_numeric" style="@style/FragmentRateAndReviewsLabel" />
+                    <TextView android:id="@id/three_rate_star_count" android:layout_width="24.0dip" android:layout_height="wrap_content" style="@style/FragmentRateAndReviewsCount" />
+                    <ProgressBar android:id="@id/three_rate_star_progress" android:layout_width="fill_parent" android:layout_height="10.0dip" android:layout_toLeftOf="@id/three_rate_star_count" android:layout_toRightOf="@id/three_rate_star_label" android:layout_toStartOf="@id/three_rate_star_count" android:layout_toEndOf="@id/three_rate_star_label" style="@style/FragmentRateAndReviewsProgressBar" />
+                </RelativeLayout>
+                <RelativeLayout android:orientation="horizontal" android:id="@id/two_rate_star_layout" android:layout_width="fill_parent" android:layout_height="24.0dip">
+                    <TextView android:id="@id/two_rate_star_label" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/two_numeric" style="@style/FragmentRateAndReviewsLabel" />
+                    <TextView android:id="@id/two_rate_star_count" android:layout_width="24.0dip" android:layout_height="wrap_content" style="@style/FragmentRateAndReviewsCount" />
+                    <ProgressBar android:id="@id/two_rate_star_progress" android:layout_width="fill_parent" android:layout_height="10.0dip" android:layout_toLeftOf="@id/two_rate_star_count" android:layout_toRightOf="@id/two_rate_star_label" android:layout_toStartOf="@id/two_rate_star_count" android:layout_toEndOf="@id/two_rate_star_label" style="@style/FragmentRateAndReviewsProgressBar" />
+                </RelativeLayout>
+                <RelativeLayout android:orientation="horizontal" android:id="@id/one_rate_star_layout" android:layout_width="fill_parent" android:layout_height="24.0dip">
+                    <TextView android:id="@id/one_rate_star_label" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/one_numeric" style="@style/FragmentRateAndReviewsLabel" />
+                    <TextView android:id="@id/one_rate_star_count" android:layout_width="24.0dip" android:layout_height="wrap_content" style="@style/FragmentRateAndReviewsCount" />
+                    <ProgressBar android:id="@id/one_rate_star_progress" android:layout_width="fill_parent" android:layout_height="10.0dip" android:layout_toLeftOf="@id/one_rate_star_count" android:layout_toRightOf="@id/one_rate_star_label" android:layout_toStartOf="@id/one_rate_star_count" android:layout_toEndOf="@id/one_rate_star_label" style="@style/FragmentRateAndReviewsProgressBar" />
+                </RelativeLayout>
+            </LinearLayout>
+            <include android:id="@id/horizontal_bar_1" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_marginTop="4.0dip" android:layout_below="@id/rating_layout" layout="@layout/separator_horizontal" />
+            <LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@id/ordering_buttons_layout" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="44.0dip" android:layout_marginBottom="10.0dip" android:layout_below="@id/horizontal_bar_1">
+                <Button android:textSize="@dimen/text_size_medium" android:textColor="@color/dark_gray" android:id="@id/change_ordering" android:background="@drawable/rounded_corners_dark_gray" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginRight="10.0dip" android:text="Highest ranking" android:drawableRight="@drawable/ic_up_arrow" android:drawablePadding="10.0dip" android:drawableEnd="@drawable/ic_up_arrow" android:layout_marginEnd="10.0dip" android:drawableTint="@color/dark_gray" />
+                <Button android:textSize="@dimen/text_size_medium" android:textColor="@color/dark_gray" android:id="@id/just_reviews" android:background="@drawable/rounded_corners_dark_gray" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginLeft="10.0dip" android:text="@string/just_reviews" android:layout_marginStart="10.0dip" />
+            </LinearLayout>
+            <android.support.v7.widget.RecyclerView android:id="@id/recycler_view" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@id/ordering_buttons_layout" />
+        </RelativeLayout>
+    </LinearLayout>
+    <android.support.design.widget.FloatingActionButton android:layout_gravity="end|bottom|center" android:id="@id/fab" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="@dimen/fab_margin" android:src="@drawable/forma_1" />
+</android.support.design.widget.CoordinatorLayout>

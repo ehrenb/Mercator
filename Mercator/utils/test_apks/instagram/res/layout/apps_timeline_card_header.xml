@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="horizontal" android:id="@id/social_header" android:layout_width="fill_parent" android:layout_height="63.299988dip" android:animateLayoutChanges="true"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/card_image" android:background="@drawable/grey_circular_placeholder_store" android:layout_width="40.0dip" android:layout_height="40.0dip" android:layout_marginLeft="10.699982dip" android:layout_marginTop="14.0dip" />
+    <ImageView android:id="@id/card_user_avatar" android:background="@drawable/grey_circular_placeholder" android:layout_width="27.0dip" android:layout_height="27.0dip" android:layout_marginLeft="27.699982dip" android:layout_marginTop="14.0dip" />
+    <RelativeLayout android:gravity="center_vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <TextView android:ellipsize="end" android:id="@id/card_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="72.0dip" android:layout_marginRight="48.0dip" android:lines="1" style="@style/Widget.Aptoide.Card.Title" />
+        <TextView android:textSize="11.0sp" android:ellipsize="end" android:id="@id/card_subtitle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="72.0dip" android:layout_marginRight="48.0dip" android:lines="1" android:layout_below="@id/card_title" style="@style/Widget.Aptoide.Card.Title" />
+        <TextView android:ellipsize="end" android:id="@id/card_date" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="72.0dip" android:layout_marginRight="48.0dip" android:lines="1" android:layout_below="@id/card_subtitle" style="@style/Widget.Aptoide.Card.Subtitle" />
+    </RelativeLayout>
+    <ImageView android:layout_width="70.0dip" android:layout_height="70.0dip" android:layout_marginTop="-2.0dip" android:layout_marginRight="-3.0dip" android:src="@drawable/social_icon" />
+    <View android:id="@id/card_custom_view_line_separator" android:background="@color/timeline_separator" android:layout_width="fill_parent" android:layout_height="0.70000005dip" android:layout_marginLeft="12.0dip" android:layout_marginRight="15.0dip" android:layout_alignParentBottom="true" />
+</RelativeLayout>

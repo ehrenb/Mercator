@@ -1,0 +1,6 @@
+Mercator/__init__.py
+Mercator.egg-info/PKG-INFO
+Mercator.egg-info/SOURCES.txt
+Mercator.egg-info/dependency_links.txt
+Mercator.egg-info/requires.txt
+Mercator.egg-info/top_level.txt

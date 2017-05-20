@@ -1,0 +1,4 @@
+Label nodes based on component type
+Label MainActivity
+
+Load only certain class at once, specify n degrees of seperation to load with it

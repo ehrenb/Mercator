@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="utf-8"?>
+<searchable android:label="@string/srch_hint" android:hint="@string/srch_hint" android:searchSuggestAuthority="cm.aptoide.pt.v8engine.provider.SuggestionProvider" android:searchSuggestSelection=" ?" android:searchSuggestIntentAction="android.intent.action.SEARCH" android:searchSuggestThreshold="3" android:includeInGlobalSearch="true" android:queryAfterZeroResults="false"
+  xmlns:android="http://schemas.android.com/apk/res/android" />

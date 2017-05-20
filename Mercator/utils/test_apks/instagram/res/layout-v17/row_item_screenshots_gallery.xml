@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:gravity="center" android:id="@id/media_layout" android:clickable="true" android:layout_width="wrap_content" android:layout_height="fill_parent" style="@style/focusableBackground"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:layout_gravity="center" android:id="@id/screenshot_image_item" android:layout_width="wrap_content" android:layout_height="240.0dip" android:layout_marginRight="4.0dip" android:adjustViewBounds="true" android:maxHeight="240.0dip" android:layout_marginEnd="4.0dip" />
+    <ImageView android:layout_gravity="center" android:id="@id/play_button" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/btn_movie_play_normal" />
+</FrameLayout>

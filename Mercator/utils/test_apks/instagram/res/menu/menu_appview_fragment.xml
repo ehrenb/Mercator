@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:icon="@drawable/ic_search" android:id="@id/action_search" android:orderInCategory="1" android:title="@string/search" app:showAsAction="always|collapseActionView" app:actionLayout="@layout/searchview_layout" app:actionViewClass="android.support.v7.widget.SearchView" />
+    <item android:icon="@drawable/ic_action_share" android:id="@id/menu_share" android:orderInCategory="2" android:title="@string/share" app:showAsAction="ifRoom" />
+    <item android:id="@id/menu_schedule" android:visible="false" android:title="@string/schDwnBtn" app:showAsAction="never" />
+    <item android:id="@id/menu_uninstall" android:visible="false" android:title="@string/uninstall" app:showAsAction="never" />
+    <item android:id="@id/menu_remote_install" android:title="@string/remote_install_menu_title" app:showAsAction="never" />
+</menu>

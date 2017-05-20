@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+{% block head %}
+  {{ super() }}
+{% endblock %}
+{% block content %}
+  <h1> All Analyses </h1>
+  <p>
+<table class="table">
+  <thead>
+    <tr>
+      <th>md5</th>
+    </tr>
+    <tbody>
+    {% for md5 in md5s %}
+        <td><a href="{{ url_for('view_results', md5=md5) }}">{{ md5 }}</a></td>
+    {% endfor %}
+    </tbody>
+  </thead>
+  </p>
+
+{% endblock %}

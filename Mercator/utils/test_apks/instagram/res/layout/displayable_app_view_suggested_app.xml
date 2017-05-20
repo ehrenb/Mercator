@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="horizontal" android:id="@id/app_view_suggested" android:background="@drawable/displayable_app_view_suggested_app_border" android:clickable="true" android:layout_width="213.69998dip" android:layout_height="100.0dip" android:layout_marginRight="5.0dip" style="@style/AppViewWidget"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:layout_gravity="center_vertical" android:id="@id/icon" android:layout_width="81.29999dip" android:layout_height="81.29999dip" />
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="15.0dip">
+        <TextView android:textSize="15.5sp" android:textColor="@color/black" android:ellipsize="end" android:id="@id/app_name" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="9.0dip" android:maxLines="1" />
+        <TextView android:textSize="9.0sp" android:textStyle="bold" android:textColor="#ffbebebe" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/sponsored" android:textAllCaps="true" />
+        <TextView android:textSize="9.0sp" android:textColor="#ff969696" android:ellipsize="end" android:id="@id/description" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:maxLines="3" android:shadowColor="@color/yellow" />
+    </LinearLayout>
+</LinearLayout>

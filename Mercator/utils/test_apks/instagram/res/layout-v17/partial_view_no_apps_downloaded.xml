@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_gravity="center_horizontal" android:id="@id/no_apps_downloaded" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <ImageView android:layout_gravity="center_horizontal" android:id="@id/error_image" android:layout_width="219.29999dip" android:layout_height="234.0dip" android:layout_marginTop="10.0dip" android:src="@drawable/error3" />
+        <RelativeLayout android:gravity="center_horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="22.699982dip" android:layout_marginStart="44.0dip" android:layout_marginEnd="44.0dip">
+            <TextView android:textSize="17.399994sp" android:textStyle="bold" android:textColor="?customColor" android:gravity="center_horizontal" android:id="@id/error_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/fragment_download_no_connection" android:layout_centerHorizontal="true" android:fontFamily="sans-serif" style="?android:textAppearanceMedium" />
+            <TextView android:textSize="17.399994sp" android:gravity="center_horizontal" android:id="@id/error_text2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:text="@string/fragment_download_no_connection_subtitle" android:layout_below="@id/error_text" android:fontFamily="sans-serif" style="?android:textAppearanceMedium" />
+        </RelativeLayout>
+    </LinearLayout>
+</ScrollView>

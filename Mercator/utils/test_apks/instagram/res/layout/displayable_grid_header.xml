@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:id="@id/more_layout" android:paddingRight="12.0dip" android:clickable="false" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="50.0dip" style="@style/focusableRowBackground"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:ellipsize="end" android:gravity="center_vertical" android:id="@id/title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxLines="1" android:singleLine="true" android:layout_toLeftOf="@id/more" android:layout_alignParentLeft="true" android:layout_centerVertical="true" style="?android:attr/textAppearanceMedium" />
+    <Button android:textSize="12.0sp" android:gravity="center" android:id="@id/more" android:layout_width="wrap_content" android:layout_height="37.0dip" android:text="@string/button_header_more" android:layout_alignParentRight="true" android:layout_centerVertical="true" android:textAllCaps="true" style="?attr/customButton" />
+</RelativeLayout>

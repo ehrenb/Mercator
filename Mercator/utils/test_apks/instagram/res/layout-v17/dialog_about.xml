@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:gravity="bottom" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textAppearance="?android:textAppearanceMedium" android:layout_gravity="center_horizontal" android:id="@id/aptoide_version" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_below="@id/title" android:layout_centerHorizontal="true" />
+    <ScrollView android:id="@id/scrollview" android:padding="5.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_above="@id/site_layout" android:layout_below="@id/aptoide_version">
+        <LinearLayout android:orientation="vertical" android:id="@id/scroll_child" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="3.0dip" android:layout_marginRight="3.0dip" android:layout_marginStart="3.0dip" android:layout_marginEnd="3.0dip">
+            <TextView android:textAppearance="?android:textAppearanceSmall" android:id="@id/credits" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/credits" />
+        </LinearLayout>
+    </ScrollView>
+    <LinearLayout android:layout_gravity="center_horizontal" android:orientation="horizontal" android:id="@id/site_layout" android:padding="2.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_above="@id/contact_layout" android:layout_centerHorizontal="true">
+        <TextView android:textAppearance="?android:textAppearanceSmall" android:id="@id/site" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/about_site" />
+        <TextView android:textAppearance="?android:textAppearanceSmall" android:autoLink="web" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="3.0dip" android:text="@string/aptoide_url" android:layout_marginStart="3.0dip" />
+    </LinearLayout>
+    <LinearLayout android:layout_gravity="center_horizontal" android:orientation="horizontal" android:id="@id/contact_layout" android:padding="2.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true">
+        <TextView android:textAppearance="?android:textAppearanceSmall" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/about_mail" />
+        <TextView android:textAppearance="?android:textAppearanceSmall" android:autoLink="email" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="3.0dip" android:text="@string/aptoide_email" android:layout_marginStart="3.0dip" />
+    </LinearLayout>
+</RelativeLayout>

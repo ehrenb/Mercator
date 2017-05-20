@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+{% block head %}
+  {{ super() }}
+{% endblock %}
+{% block content %}
+  <h1> Results </h1>
+  <p>Browse results</p>
+  <p>
+  <a class="btn btn-lg btn-primary" href="{{ url_for('show_full_analysis', md5=md5) }}" role="button">Show Full &raquo;</a>
+  <br>
+  <table class="table">
+  <thead class="thead-inverse">
+
+        {% for key,value in app_metadata.items() %}
+        <tr> 
+            {% if key != "classes" %}
+                <th>{{ key }}</th>
+                <td>{{ value }}</td>
+            {% endif %}
+        </tr>
+        {% endfor %}
+    </thead>
+    </table>
+
+  <table class="table">
+  <thead class="thead-inverse">
+        <tr>
+        <th>components</th>
+        </tr>
+        {% for class in app_metadata["classes"] %}
+            {% if class["component_type"] is not none %}
+                <tr>
+                    <td>{{ class["name"] }}</td>
+                </tr>
+            {% endif %}
+        {% endfor %}
+
+  </thead>
+  </table>
+  </p>
+{% endblock %}
+
+
+

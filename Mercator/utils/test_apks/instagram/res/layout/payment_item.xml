@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="72.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <TextView android:ellipsize="end" android:id="@id/item_payment_name" android:layout_width="fill_parent" android:layout_height="wrap_content" android:lines="1" style="@style/TextAppearance.Aptoide.Title.Inverse" />
+        <TextView android:ellipsize="end" android:id="@id/item_payment_description" android:layout_width="fill_parent" android:layout_height="wrap_content" android:lines="1" style="@style/TextAppearance.Aptoide.Caption" />
+    </LinearLayout>
+    <Button android:id="@id/item_payment_button_use" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/item_payment_button_use" android:layout_centerVertical="true" style="@style/Widget.AppCompat.Button.Colored" />
+    <Button android:id="@id/item_payment_button_register" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/item_payment_button_register" android:layout_centerVertical="true" style="@style/Widget.Aptoide.Button" />
+    <TextView android:id="@id/item_payment_approving_text" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/item_payment_approving_text" android:layout_centerVertical="true" style="@style/TextAppearance.AppCompat.Caption" />
+</RelativeLayout>

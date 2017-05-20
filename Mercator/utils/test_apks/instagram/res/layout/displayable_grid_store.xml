@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/store_main_layout_row" android:layout_width="fill_parent" android:layout_height="110.0dip" style="?attr/backgroundCard"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/store_avatar_row" android:layout_width="64.0dip" android:layout_height="64.0dip" android:src="@drawable/ic_avatar_apps" android:scaleType="fitCenter" android:contentDescription="@null" />
+    <TextView android:textSize="12.0sp" android:textColor="@color/followed_stores_store_name_color" android:ellipsize="end" android:gravity="center_horizontal" android:id="@id/store_name_row" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8.0dip" android:maxLines="1" android:drawablePadding="5.0dip" android:drawableStart="@drawable/icon_store" />
+</LinearLayout>

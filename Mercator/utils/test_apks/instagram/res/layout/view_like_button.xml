@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <cm.aptoide.pt.v8engine.customviews.DotsView android:layout_gravity="center" android:id="@id/vDotsView" android:layout_width="60.0dip" android:layout_height="60.0dip" />
+    <cm.aptoide.pt.v8engine.customviews.CircleView android:layout_gravity="center" android:id="@id/vCircle" android:layout_width="40.0dip" android:layout_height="40.0dip" />
+    <ImageView android:layout_gravity="center" android:id="@id/vHeart" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/heart_off" />
+</merge>

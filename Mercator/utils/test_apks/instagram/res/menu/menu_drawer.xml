@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:icon="?icMyAccountDrawable" android:id="@id/navigation_item_my_account" android:orderInCategory="1" android:title="@string/my_account" />
+    <item android:icon="?icRollbackDrawable" android:id="@id/navigation_item_rollback" android:orderInCategory="2" android:title="@string/rollback" />
+    <item android:icon="?icScheduledDrawable" android:id="@id/navigation_item_setting_scheduled_downloads" android:orderInCategory="3" android:title="@string/setting_schdwntitle" />
+    <item android:icon="?icExcludedUpdatesDrawable" android:id="@id/navigation_item_excluded_updates" android:orderInCategory="4" android:title="@string/excluded_updates" />
+    <item android:icon="?icSettingsDrawable" android:id="@id/navigation_item_settings" android:orderInCategory="5" android:title="@string/settings" />
+    <item android:icon="@drawable/ic_action_backup_custom" android:id="@id/navigation_item_backup_apps" android:orderInCategory="6" android:title="@string/backup_apps" />
+    <group android:orderInCategory="7">
+        <item android:title="@string/drawer_social_media_title">
+            <menu>
+                <item android:icon="@drawable/ic_action_facebook" android:id="@id/navigation_item_facebook" android:title="@string/facebook" />
+                <item android:icon="@drawable/ic_action_twitter" android:id="@id/navigation_item_twitter" android:title="@string/twitter" />
+            </menu>
+        </item>
+    </group>
+    <item android:icon="?icSendFeedbackDrawable" android:id="@id/send_feedback" android:orderInCategory="8" android:title="@string/feedback_send_button" />
+</menu>

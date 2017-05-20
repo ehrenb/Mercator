@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:clickable="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:foreground="?selectableItemBackground"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:orientation="vertical" android:paddingTop="8.0dip" android:paddingBottom="5.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent" style="?attr/backgroundCard">
+        <ImageView android:id="@id/icon" android:layout_width="96.0dip" android:layout_height="96.0dip" android:adjustViewBounds="true" android:layout_centerHorizontal="true" android:contentDescription="@null" />
+        <LinearLayout android:orientation="vertical" android:paddingLeft="3.0dip" android:paddingTop="3.0dip" android:paddingRight="3.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@id/icon" android:paddingStart="3.0dip" android:paddingEnd="3.0dip">
+            <TextView android:textSize="14.0sp" android:textColor="?android:textColorSecondary" android:ellipsize="end" android:id="@id/name" android:paddingLeft="3.0dip" android:paddingRight="3.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:lines="2" android:paddingStart="3.0dip" android:paddingEnd="3.0dip" />
+            <TextView android:textSize="12.0sp" android:textColor="?android:textColorSecondary" android:id="@id/sponsored" android:paddingLeft="3.0dip" android:paddingRight="3.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/sponsored" android:maxLines="1" android:paddingStart="3.0dip" android:paddingEnd="3.0dip" />
+        </LinearLayout>
+    </RelativeLayout>
+</FrameLayout>

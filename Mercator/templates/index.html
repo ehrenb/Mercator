@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+{% block head %}
+  {{ super() }}
+{% endblock %}
+{% block content %}
+  <h1> Start </h1>
+  <p>Browse and select a new APK to upload</p>
+  <p>
+    <a class="btn btn-lg btn-primary" href="{{ url_for('upload') }}" role="button">Upload &raquo;</a>
+  </p>
+{% endblock %}
+
+
+

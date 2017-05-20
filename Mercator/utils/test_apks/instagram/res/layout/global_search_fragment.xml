@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <include layout="@layout/partial_view_incl_no_network" />
+    <include layout="@layout/partial_view_error" />
+    <include layout="@layout/partial_view_progress_bar" />
+    <include layout="@layout/incl_no_search_results_layout" />
+    <RelativeLayout android:id="@id/search_results_layout" android:paddingTop="15.0dip" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="?actionBarSize">
+        <LinearLayout android:gravity="center_horizontal" android:orientation="horizontal" android:id="@id/buttons_layout" android:background="@drawable/search_buttons_background" android:layout_width="262.0dip" android:layout_height="29.0dip" android:layout_centerHorizontal="true">
+            <Button android:textSize="12.0sp" android:textColor="@color/white" android:id="@id/subscribed" android:background="@drawable/search_button_background" android:visibility="gone" android:layout_width="128.0dip" android:layout_height="fill_parent" android:text="@string/followed_stores" />
+            <Button android:textSize="12.0sp" android:textColor="@color/app_view_gray" android:id="@id/everywhere" android:background="@null" android:visibility="gone" android:layout_width="128.0dip" android:layout_height="fill_parent" android:text="@string/all_stores" />
+        </LinearLayout>
+        <include android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="10.0dip" android:layout_below="@id/buttons_layout" layout="@layout/view_pager" />
+    </RelativeLayout>
+    <android.support.design.widget.AppBarLayout android:id="@id/app_bar_layout" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <android.support.v7.widget.Toolbar android:theme="?toolbarTheme" android:id="@id/toolbar" android:layout_width="fill_parent" android:layout_height="wrap_content" app:layout_scrollFlags="enterAlways|scroll" />
+    </android.support.design.widget.AppBarLayout>
+</FrameLayout>

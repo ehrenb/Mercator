@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout android:id="@id/app_view_description_coordinator_layout" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/partial_view_incl_no_network" />
+    <include layout="@layout/partial_view_error" />
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="?android:actionBarSize">
+        <include android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true" layout="@layout/partial_view_progress_bar" />
+    </RelativeLayout>
+    <TextView android:textSize="@dimen/text_size_large" android:gravity="center" android:id="@id/empty_data" android:padding="@dimen/label_padding" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="?android:actionBarSize" />
+    <ScrollView android:scrollbarAlwaysDrawVerticalTrack="true" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="?android:actionBarSize">
+        <TextView android:textSize="@dimen/text_size_medium_large" android:typeface="serif" android:id="@id/data_container" android:paddingLeft="@dimen/appview_description_left" android:paddingTop="@dimen/appview_description_left" android:paddingRight="@dimen/appview_description_right" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="wrap_content" android:lineSpacingExtra="8.0sp" />
+    </ScrollView>
+    <android.support.design.widget.AppBarLayout android:id="@id/app_bar_layout" android:layout_width="fill_parent" android:layout_height="?android:actionBarSize">
+        <include android:id="@id/toolbar" layout="@layout/toolbar_readmore" />
+    </android.support.design.widget.AppBarLayout>
+</android.support.design.widget.CoordinatorLayout>

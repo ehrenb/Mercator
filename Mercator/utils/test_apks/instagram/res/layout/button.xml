@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Button android:textColor="@color/white" android:id="@id/button" android:layout_width="fill_parent" android:layout_height="48.0dip" android:text="@string/more_editors_choice"
+  xmlns:android="http://schemas.android.com/apk/res/android" />

@@ -1,0 +1,18 @@
+Lines have width "NaN"
+--fixed by hard-coding the width to 1, because the example js was assigning the width based on a node attribute that i didnt have (d.value)
+
+
+https://stackoverflow.com/questions/36113278/d3-js-nodes-appear-stacked-in-the-top-left-corner-of-the-graph
+
+Node links have wrong source/target  format
+
+
+working :
+
+        {
+            "source": "Lru/andrey/notepad/MainActivity;",
+            "target": "Lru/andrey/notepad/ObjectArrayAdapter;"
+        }
+
+solutions: make "name" in initial json be "id", rerun with stock d3 js stuff and see if it works, i think its best to keep one naming convention throughout
+
