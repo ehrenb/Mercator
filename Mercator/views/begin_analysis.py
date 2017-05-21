@@ -43,8 +43,9 @@ def begin_analysis(md5):
 
     md5_analysis_dir = os.path.join(analysis_dir, md5)
     graph_out_path = os.path.join(md5_analysis_dir,md5+'_graph.json')
+    component_subgraph_out_path = os.path.join(md5_analysis_dir, md5+'_component_graph.json')
     apk_metadata_out_path = os.path.join(md5_analysis_dir, md5+'_metadata.json')
-    a = Analysis(target_file, md5, apk_metadata_out_path, graph_out_path)
+    a = Analysis(target_file, md5, apk_metadata_out_path, graph_out_path, component_subgraph_out_path=component_subgraph_out_path)
     a.start()
     return render_template('begin_analysis.html', md5=md5)
     # while True:
