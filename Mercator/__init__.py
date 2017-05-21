@@ -19,6 +19,7 @@ app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = upload_dir
 
 dirs_to_make = [analysis_dir, upload_dir]
+graph_types = ['graph', 'component_graph']
 
 for directory in dirs_to_make:
     if not os.path.isdir(directory):

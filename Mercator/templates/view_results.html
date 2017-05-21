@@ -6,7 +6,8 @@
   <h1> Results </h1>
   <p>Browse results</p>
   <p>
-  <a class="btn btn-lg btn-primary" href="{{ url_for('show_full_analysis', md5=md5) }}" role="button">Show Full &raquo;</a>
+  <a class="btn btn-lg btn-primary" href="{{ url_for('show_full_analysis', md5=md5, type='graph') }}" role="button">Show Full &raquo;</a>
+  <a class="btn btn-lg btn-primary" href="{{ url_for('show_full_analysis', md5=md5, type='component_graph') }}" role="button">Show Components &raquo;</a>
   <br>
   <table class="table">
   <thead class="thead-inverse">

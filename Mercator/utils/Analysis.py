@@ -8,16 +8,17 @@ from androguard.misc import AnalyzeAPK
 from networkx.readwrite import json_graph
 
 from Mercator.utils.ClassAnalysis import ClassAnalysis, fix_name
-from Mercator.utils.graph import create_graph, write_graph
+from Mercator.utils.graph import create_graph, write_graph, get_class_subgraph
 
 class Analysis(threading.Thread):
-    def __init__(self, target_file, md5, apk_metadata_out_path,graph_out_path):
+    def __init__(self, target_file, md5, apk_metadata_out_path,graph_out_path,component_subgraph_out_path=None):
         self.progress = 0
         self.graph_result = []
         self.target_file = target_file
         self.md5 = md5
         self.graph_out_path = graph_out_path
         self.apk_metadata_out_path = apk_metadata_out_path
+        self.component_subgraph_out_path= component_subgraph_out_path
         super().__init__()
 
     def write_app_metadata(self, result_classes ,a):
@@ -61,11 +62,22 @@ class Analysis(threading.Thread):
             if done % ceil(total_num/100) == 0:
                 self.progress+=1
 
-        #dump two copies
+        #write graphs
         #d3 json
+        #FULL
         graph = create_graph(classes=result_classes)
         write_graph(graph, self.graph_out_path)
-        #app metadata for building subgraph from d3 json later
+
+        if self.component_subgraph_out_path:
+            component_names = []
+            for node in graph:
+                node_tmp = graph.node[node]
+                if node_tmp['component_type']:
+                    component_names.append(node_tmp['name'])
+            subgraph = get_class_subgraph(graph, class_names=component_names)
+            write_graph(subgraph, self.component_subgraph_out_path)
+
+        #app metadata for misc.
         self.write_app_metadata(result_classes, a)
 
 
