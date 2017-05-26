@@ -1,7 +1,7 @@
 """read in output of mercator and build a networkx graph"""
 import json
 import logging
-
+from pprint import pprint
 import networkx as nx
 from networkx.readwrite import json_graph
 
@@ -146,6 +146,24 @@ def __map_lookup(n_to_class_name_map, class_name):
         #references to things outside of the code, like native Android OS stuff, and Java
         return None
 
+def get_ego_graph(G, class_name, radius):
+    """https://networkx.github.io/documentation/networkx-1.10/reference/generated/networkx.generators.ego.ego_graph.html"""
+    n_to_class_name_map = build_n_to_class_name_map(G)
+    n = __map_lookup(n_to_class_name_map, class_name)
+    ego_G = nx.ego_graph(G, n, radius=radius)
+
+    new_G = nx.MultiDiGraph()
+    for idx, n in enumerate(ego_G.nodes()):
+        pprint(n)
+        new_G.add_node(idx, **G.node[n])
+    new_G = add_edges(new_G)
+
+    #new_G.add_nodes_from(ego_G.nodes(data=True))
+
+    #new_G.add_edges_from( (u,v,w) for (u,v,w) in G.edges(data=True) if u in new_G if v in new_G )
+
+    return new_G
+
 
 def get_class_subgraph(G, class_names=[]):
     """Build a subgraph that has the nodes from class_names
@@ -176,15 +194,17 @@ def get_class_subgraph(G, class_names=[]):
 
 if __name__ == '__main__':
     data = None
-    with open('/home/branden/Mercator/analysis/56a0093a3a6b55a47e3b1ee6051467e2.json','r') as f:
+    with open('/home/branden/mercator/analysis/56a0093a3a6b55a47e3b1ee6051467e2/56a0093a3a6b55a47e3b1ee6051467e2_graph.json.tmp','r') as f:
         data = json.load(f)
     G = json_graph.node_link_graph(data)
 
-    component_names = []
-    for node in G:
-        node_tmp = G.node[node]
-        if node_tmp['component_type']:
-            component_names.append(node_tmp['name'])
-    subgraph = get_class_subgraph(G, 
-                                 class_names=component_names)
-    write_graph(subgraph, '/home/branden/Mercator/analysis/56a0093a3a6b55a47e3b1ee6051467e2.json.subgraph')
+    ego_G = get_ego_graph(G, 'Lru/andrey/notepad/MainActivity;', 2)
+    write_graph(ego_G, '/home/branden/mercator/analysis/56a0093a3a6b55a47e3b1ee6051467e2/56a0093a3a6b55a47e3b1ee6051467e2_graph.json')
+    # component_names = []
+    # for node in G:
+    #     node_tmp = G.node[node]
+    #     if node_tmp['component_type']:
+    #         component_names.append(node_tmp['name'])
+    # subgraph = get_class_subgraph(G, 
+    #                              class_names=component_names)
+    # write_graph(subgraph, '/home/branden/Mercator/analysis/56a0093a3a6b55a47e3b1ee6051467e2.json.subgraph')
