@@ -154,7 +154,6 @@ def get_ego_graph(G, class_name, radius):
 
     new_G = nx.MultiDiGraph()
     for idx, n in enumerate(ego_G.nodes()):
-        pprint(n)
         new_G.add_node(idx, **G.node[n])
     new_G = add_edges(new_G)
 

@@ -26,9 +26,9 @@ for directory in dirs_to_make:
         os.mkdir(directory)
 
 from Mercator.views import begin_analysis,\
-                           get_d3_json,\
                            get_metadata_json,\
                            show_all_analyses,\
+                           show_component_analysis,\
                            show_full_analysis,\
                            index,\
                            upload,\

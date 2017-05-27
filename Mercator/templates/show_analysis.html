@@ -13,13 +13,17 @@
 
 <script>
     var svg = d3.select('#d3_selectable_force_directed_graph');
+    var graph = JSON.parse({{ d3_json|tojson|safe }});
+    console.log(graph);
+    createV4SelectableForceDirectedGraph(svg, graph);
 
-    d3.json("{{ url_for('get_d3_json', md5=md5, type=graph_type)  }}", function(error, graph) {
-        if (!error) {
-            //console.log('graph', graph);
-            createV4SelectableForceDirectedGraph(svg, graph);
-        } else {
-            console.error(error);
-        }
-    });
+    // console.log(d3Json);
+    // d3.json(d3Json, function(error, graph) {
+    //     if (!error) {
+    //         //console.log('graph', graph);
+    //         createV4SelectableForceDirectedGraph(svg, graph);
+    //     } else {
+    //         console.error(error);
+    //     }
+    // });
 </script>
