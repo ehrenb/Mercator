@@ -31,7 +31,7 @@
         {% for class in app_metadata["classes"] %}
             {% if class["component_type"] is not none %}
                 <tr>
-                    <td>{{ class["name"] }}</td>
+                    <td><a href="{{ url_for('show_individual_analysis', class_name=class['name'], radius=2, md5=md5) }}">{{ class["name"] }} </a></td>
                 </tr>
             {% endif %}
         {% endfor %}

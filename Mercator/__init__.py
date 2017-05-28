@@ -30,6 +30,7 @@ from Mercator.views import begin_analysis,\
                            show_all_analyses,\
                            show_component_analysis,\
                            show_full_analysis,\
+                           show_individual_analysis,\
                            index,\
                            upload,\
                            view_results

@@ -8,8 +8,8 @@ from networkx.readwrite import json_graph
 from Mercator import app, analysis_dir
 from Mercator.utils import graph
 
-@app.route('/show_component_analysis/<string:md5>', methods=['GET'])
-def show_component_analysis(md5):
+@app.route('/show_individual_analysis/<string:md5>', methods=['GET'])
+def show_individual_analysis(md5):
     """?radius=n,?class=name"""
     radius = int(request.args.get('radius'))
     class_name = request.args.get('class_name')
@@ -22,6 +22,7 @@ def show_component_analysis(md5):
     
 
     individual_graph = graph.get_ego_graph(full_nx_graph, class_name, radius)
-
+    data = json_graph.node_link_data(individual_graph)
+    d3_json = json.dumps(data)
     return render_template('show_analysis.html',d3_json=d3_json)
     #return render_template('show_analysis.html',md5=md5,graph_type=graph_type)
