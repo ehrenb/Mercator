@@ -41,7 +41,10 @@ class ClassAnalysis(object):
     def run_analysis(self):
         """"Run full analysis on a given class
         """
-        class_result = {'name': fix_name(self.c.name),
+        if 'MyService' in self.c.name:
+            print('%%%%%%%%%%%%%%%%%%%%%%%name before:')
+            print(self.c.name)
+        class_result = {'name': self.c.name,
                         'access_flags': self.c.get_access_flags_string(),
                         'source': None,
                         'xref_from': [], 

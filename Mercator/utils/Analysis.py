@@ -1,5 +1,6 @@
 import json
 from math import ceil
+import sys
 import threading
 import queue
 
@@ -65,6 +66,13 @@ class Analysis(threading.Thread):
         #write graphs
         #d3 json
         #FULL
+        # count = 0
+        # for r in result_classes:
+        #     if r['name'] == 'Lcom/connect/CameraView;':
+        #         count+=1
+        # print('Lcom/connect/CameraView; Dupe couNT 2 ====== {count}'.format(count=count))
+        # sys.exit()
+
         graph = create_graph(classes=result_classes)
         write_graph(graph, self.graph_out_path)
 
