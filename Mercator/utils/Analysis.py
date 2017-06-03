@@ -8,7 +8,7 @@ from androguard.session import Session
 from androguard.misc import AnalyzeAPK
 from networkx.readwrite import json_graph
 
-from Mercator.utils.ClassAnalysis import ClassAnalysis, fix_name
+from Mercator.utils.ClassAnalysis import ClassAnalysis
 from Mercator.utils.graph import create_graph, write_graph, get_class_subgraph
 
 class Analysis(threading.Thread):

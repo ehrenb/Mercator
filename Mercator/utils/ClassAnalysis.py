@@ -41,9 +41,9 @@ class ClassAnalysis(object):
     def run_analysis(self):
         """"Run full analysis on a given class
         """
-        if 'MyService' in self.c.name:
-            print('%%%%%%%%%%%%%%%%%%%%%%%name before:')
-            print(self.c.name)
+        # if 'MyService' in self.c.name:
+        #     print('%%%%%%%%%%%%%%%%%%%%%%%name before:')
+        #     print(self.c.name)
         class_result = {'name': self.c.name,
                         'access_flags': self.c.get_access_flags_string(),
                         'source': None,
@@ -89,8 +89,8 @@ class ClassAnalysis(object):
                     continue
                 for ref_kind, ref_method, ref_offset in xrefs_from[ref_class]:
                     #logger.info(ref_method.get_class_name())
-                    ref = {'class': fix_name(ref_method.get_class_name()),
-                           'method': fix_name(ref_method.get_name())}
+                    ref = {'class': ref_method.get_class_name(),#fix_name(ref_method.get_class_name()),
+                           'method': ref_method.get_name()}#fix_name(ref_method.get_name())}
                     # class_result['xref_from'].append(ref_method.get_class_name())
                     class_result['xref_from'].append(ref)
 
@@ -106,14 +106,14 @@ class ClassAnalysis(object):
                     continue
                 for ref_kind, ref_method, ref_offset in xrefs_to[ref_class]:
                     #logger.info(ref_method.get_class_name())
-                    ref = {'class': fix_name(ref_method.get_class_name()),
-                           'method': fix_name(ref_method.get_name())}
+                    ref = {'class': ref_method.get_class_name(),#fix_name(ref_method.get_class_name()),
+                           'method': ref_method.get_name()}#fix_name(ref_method.get_name())}
                     # class_result['xref_from'].append(ref_method.get_class_name())
                     class_result['xref_to'].append(ref)
 
         #Fields (static variables?)
         for field in self.c.get_fields(): #EncodedFields objects
-            class_field = {'name': fix_name(field.get_name()),
+            class_field = {'name': field.get_name(),#fix_name(field.get_name()),
                            'access_flags': field.get_access_flags_string(),
                            'xref_read': [],
                            'xref_write': []}
@@ -128,8 +128,8 @@ class ClassAnalysis(object):
                     else:
                         ref_class_name = ref_class.get_vm_class().get_name()
 
-                    ref = {'class': fix_name(ref_class_name),
-                           'method': fix_name(ref_method.get_name())}
+                    ref = {'class': ref_class_name,#fix_name(ref_class_name),
+                           'method': ref_method.get_name()}#fix_name(ref_method.get_name())}
                     class_field['xref_read'].append(ref)
 
                 xrefs_write = f_a.get_xref_write()
@@ -140,8 +140,8 @@ class ClassAnalysis(object):
                     else:
                         ref_class_name = ref_class.get_vm_class().get_name()
 
-                    ref = {'class': fix_name(ref_class_name),
-                           'method': fix_name(ref_method.get_name())}
+                    ref = {'class': ref_class_name,#fix_name(ref_class_name),
+                           'method': ref_method.get_name()}#fix_name(ref_method.get_name())}
                     class_field['xref_write'].append(ref)#ref_class_name+''ref_method.get_class_name())
 
             class_result['fields'].append(class_field)
@@ -155,16 +155,16 @@ class ClassAnalysis(object):
                     new_v = []
                     for idx,param in enumerate(v):
                         param_type = param[1]
-                        param_type = fix_name(param_type)
+                        param_type = param_type#fix_name(param_type)
                         new_v.append((v[idx][0],param_type))
                     v = new_v
                 if k == 'return':
                     return_type = v
-                    return_type = fix_name(return_type)
+                    return_type = return_type#fix_name(return_type)
                     v = return_type
                 info.append({k:v})
 
-            class_method = {'name': fix_name(method.get_name()),
+            class_method = {'name': method.get_name(),#fix_name(method.get_name()),
                             'access_flags': method.get_access_flags_string(),
                             'xref_from': [],
                             'xref_to': [],
@@ -186,8 +186,8 @@ class ClassAnalysis(object):
                     else:
                         ref_class_name = ref_class.get_vm_class().get_name()
 
-                    ref = {'class': fix_name(ref_class_name),
-                           'method': fix_name(ref_method.get_name())}
+                    ref = {'class': ref_class_name,#fix_name(ref_class_name),
+                           'method': ref_method.get_name()}#fix_name(ref_method.get_name())}
                     class_method['xref_from'].append(ref)
 
                 xrefs_to = m_a.get_xref_to()
@@ -198,8 +198,8 @@ class ClassAnalysis(object):
                     else:
                         ref_class_name = ref_class.get_vm_class().get_name()
 
-                    ref = {'class': fix_name(ref_class_name),
-                           'method': fix_name(ref_method.get_name())}
+                    ref = {'class': ref_class_name,#fix_name(ref_class_name),
+                           'method': ref_method.get_name()}#fix_name(ref_method.get_name())}
                     class_method['xref_to'].append(ref)
 
             class_result['methods'].append(class_method)
