@@ -13,4 +13,4 @@ Analysis directories contain the following JSON files:
 
 * beforenwtorkx - _graph.json, but not in networkx format (for debugging)
 
-* metadata.json - high level descriptiondata about the apks
+* metadata.json - high level descriptiondata about the apks 
