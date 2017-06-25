@@ -5,3 +5,11 @@ See notepad.apk
     Mercator - the component_graph has many links between MainActivity and AddActivity, with the function link being "update".  When manual decompiling and examining with jd-gui, there is only one reference to MainActivity from AddActivity using update()
     -- good: that the link only is rendered once in D3, meaning I think that d3 won't re-render duplicated links
     -- bad: data duplication in json files means unnecessary storage
+
+
+using G.edges(data=True) to compare attributes to dedupe linkss
+
+todo:
+    manual comparison to verify deduping is correct
+    speed: back to multithreading?
+    metrics: record timing and sizes for debuggin purposes

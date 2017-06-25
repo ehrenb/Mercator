@@ -72,6 +72,9 @@ class Analysis(threading.Thread):
         #         count+=1
         # print('Lcom/connect/CameraView; Dupe couNT 2 ====== {count}'.format(count=count))
         # sys.exit()
+        with open(self.graph_out_path+'.beforenetworkx', 'w') as f:
+            json.dump(result_classes, f, indent=4, separators=(',',': '),sort_keys=True)
+
 
         graph = create_graph(classes=result_classes)
         write_graph(graph, self.graph_out_path)

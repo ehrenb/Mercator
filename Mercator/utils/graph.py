@@ -66,9 +66,13 @@ def add_edges(G):
             method_xref_from_name = xref_from_name['method']#unused
             class_xref_from_name = xref_from_name['class']
             class_xref_from_n = __map_lookup(n_to_class_name_map, class_xref_from_name)
-            
+            #dont record edges leading back to self
             if not class_xref_from_n == n:
-                if duplicate_edge(G, class_xref_from_n, n, xref_from_name):
+                # if duplicate_edge(G, class_xref_from_n, n, xref_from_name):
+                #     print('duplicate class xref from')
+                #     continue
+                #dedupe edges based on the data inside..still unsure why dupes are being added
+                if xref_from_name in [d[2] for d in G.edges(n,data=True)]:
                     continue
                 G.add_edge(class_xref_from_n, n, attr_dict=xref_from_name) if class_xref_from_n else None
             #print('add_edge {class_xref_from_name} -> {n}'.format(class_xref_from_name=class_xref_from_name, n=n))
@@ -81,7 +85,10 @@ def add_edges(G):
             class_xref_to_n = __map_lookup(n_to_class_name_map, class_xref_to_name)
             
             if not class_xref_to_n == n:
-                if duplicate_edge(G, n, class_xref_to_n, xref_to_name):
+                # if duplicate_edge(G, n, class_xref_to_n, xref_to_name):
+                #     print('duplicate class xref to')
+                #     continue
+                if xref_to_name in [d[2] for d in G.edges(n,data=True)]:
                     continue
                 G.add_edge(n, class_xref_to_n, attr_dict=xref_to_name) if class_xref_to_n else None
 #            G.add_edge(n, class_xref_to_name, attr_dict=xref_to_name) #if class_xref_to_n else None
@@ -95,7 +102,10 @@ def add_edges(G):
                 class_xref_from_n = __map_lookup(n_to_class_name_map, class_xref_from_name)
                 
                 if not class_xref_from_n == n:
-                    if duplicate_edge(G, class_xref_from_n, n, xref_from_name):
+                    # if duplicate_edge(G, class_xref_from_n, n, xref_from_name):
+                    #     print('duplicate method xref from')
+                    #     continue
+                    if xref_from_name in [d[2] for d in G.edges(n,data=True)]:
                         continue
                     G.add_edge(class_xref_from_n, n, attr_dict=xref_from_name) if class_xref_from_n else None
 #                G.add_edge(class_xref_from_name, n, attr_dict=xref_from_name) #if class_xref_from_n else None
@@ -108,7 +118,10 @@ def add_edges(G):
                 class_xref_to_n = __map_lookup(n_to_class_name_map, class_xref_to_name)
                 
                 if not class_xref_to_n == n:
-                    if duplicate_edge(G, n, class_xref_to_n, xref_to_name):
+                    # if duplicate_edge(G, n, class_xref_to_n, xref_to_name):
+                    #     print('duplicate method xref to')
+                    #     continue
+                    if xref_to_name in [d[2] for d in G.edges(n,data=True)]:
                         continue
                     G.add_edge(n, class_xref_to_n, attr_dict=xref_to_name) if class_xref_to_n else None
                 #G.add_edge(n, class_xref_to_name, attr_dict=xref_to_name) #if class_xref_to_n else None
@@ -120,7 +133,10 @@ def add_edges(G):
                 class_xref_from_n = __map_lookup(n_to_class_name_map, class_xref_read_name)
                 
                 if not class_xref_from_n == n:
-                    if duplicate_edge(G, class_xref_from_n, n, xref_read_name):
+                    # if duplicate_edge(G, class_xref_from_n, n, xref_read_name):
+                    #     print('duplicate field xref from')
+                    #     continue
+                    if xref_read_name in [d[2] for d in G.edges(n,data=True)]:
                         continue
                     G.add_edge(class_xref_from_n, n, attr_dict=xref_read_name) if class_xref_from_n else None
                 #G.add_edge(class_xref_read_name, n, attr_dict=xref_read_name) #if class_xref_from_n else None
@@ -134,7 +150,10 @@ def add_edges(G):
                 # print(class_xref_write_n)
                 
                 if not class_xref_write_n == n:
-                    if duplicate_edge(G, class_xref_write_n, n, xref_write_name):
+                    # if duplicate_edge(G, class_xref_write_n, n, xref_write_name):
+                    #     print('duplicate field xref to')
+                    #     continue
+                    if xref_write_name in [d[2] for d in G.edges(n,data=True)]:
                         continue
                     G.add_edge(class_xref_write_n, n, attr_dict=xref_write_name) if class_xref_write_n else None
                 #G.add_edge(class_xref_write_name, n, attr_dict=xref_write_name) #if class_xref_write_n else None

@@ -31,11 +31,15 @@ def fix_name(name):
     return name
 
 class ClassAnalysis(object):
-    def __init__(self, c, a):
+    def __init__(self, c, a, duplicate_edges=True):
         """c: class
-           a: Androguard APK object"""
+           a: Androguard APK object
+           duplicate_edges: Whether or not to record duplicate connections between classes
+                            i.e. AddActivity and MainActivity can reach other via an update() fucntion 10 times
+                            If duplicate_edges=True, then all 10 will be recorded"""
         self.c = c
         self.a = a
+        self.duplicate_edges = duplicate_edges
 
 
     def run_analysis(self):
@@ -92,6 +96,8 @@ class ClassAnalysis(object):
                     ref = {'class': ref_method.get_class_name(),#fix_name(ref_method.get_class_name()),
                            'method': ref_method.get_name()}#fix_name(ref_method.get_name())}
                     # class_result['xref_from'].append(ref_method.get_class_name())
+                    if not self.duplicate_edges and ref in class_result['xref_from']:
+                        continue
                     class_result['xref_from'].append(ref)
 
             xrefs_to = c_a.get_xref_to()
@@ -109,6 +115,8 @@ class ClassAnalysis(object):
                     ref = {'class': ref_method.get_class_name(),#fix_name(ref_method.get_class_name()),
                            'method': ref_method.get_name()}#fix_name(ref_method.get_name())}
                     # class_result['xref_from'].append(ref_method.get_class_name())
+                    if not self.duplicate_edges and ref in class_result['xref_to']:
+                        continue
                     class_result['xref_to'].append(ref)
 
         #Fields (static variables?)
@@ -130,6 +138,8 @@ class ClassAnalysis(object):
 
                     ref = {'class': ref_class_name,#fix_name(ref_class_name),
                            'method': ref_method.get_name()}#fix_name(ref_method.get_name())}
+                    if not self.duplicate_edges and  ref in class_field['xref_read']:
+                        continue
                     class_field['xref_read'].append(ref)
 
                 xrefs_write = f_a.get_xref_write()
@@ -142,6 +152,8 @@ class ClassAnalysis(object):
 
                     ref = {'class': ref_class_name,#fix_name(ref_class_name),
                            'method': ref_method.get_name()}#fix_name(ref_method.get_name())}
+                    if not self.duplicate_edges and  ref in class_field['xref_write']:
+                        continue
                     class_field['xref_write'].append(ref)#ref_class_name+''ref_method.get_class_name())
 
             class_result['fields'].append(class_field)
@@ -188,6 +200,8 @@ class ClassAnalysis(object):
 
                     ref = {'class': ref_class_name,#fix_name(ref_class_name),
                            'method': ref_method.get_name()}#fix_name(ref_method.get_name())}
+                    if not self.duplicate_edges and  ref in class_method['xref_from']:
+                        continue
                     class_method['xref_from'].append(ref)
 
                 xrefs_to = m_a.get_xref_to()
@@ -200,6 +214,8 @@ class ClassAnalysis(object):
 
                     ref = {'class': ref_class_name,#fix_name(ref_class_name),
                            'method': ref_method.get_name()}#fix_name(ref_method.get_name())}
+                    if not self.duplicate_edges and  ref in class_method['xref_to']:
+                        continue
                     class_method['xref_to'].append(ref)
 
             class_result['methods'].append(class_method)
