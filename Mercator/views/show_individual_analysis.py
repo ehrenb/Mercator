@@ -24,5 +24,13 @@ def show_individual_analysis(md5):
     individual_graph = graph.get_ego_graph(full_nx_graph, class_name, radius)
     data = json_graph.node_link_data(individual_graph)
     d3_json = json.dumps(data)
+
+    #debugging
+    safe_class_name = class_name.replace(';','')
+    safe_class_name = safe_class_name.replace('/','-')
+    with open(os.path.join(md5_analysis_dir,'_{class_name}_{radius}_ego.json'.format(class_name=safe_class_name, radius=radius)), 'w+') as f:
+        json.dump(data, f, indent=4, sort_keys=True)
+
+        
     return render_template('show_analysis.html',d3_json=d3_json)
     #return render_template('show_analysis.html',md5=md5,graph_type=graph_type)
