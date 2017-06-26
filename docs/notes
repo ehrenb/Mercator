@@ -13,3 +13,4 @@ todo:
     manual comparison to verify deduping is correct
     speed: back to multithreading?
     metrics: record timing and sizes for debuggin purposes
+    on node selected: populate table with info in a panel 
