@@ -114,6 +114,9 @@ function createV4SelectableForceDirectedGraph(svg, graph) {
     simulation.force("link")
         .links(graph.links);
 
+
+
+
     function ticked() {
         // update node and line positions at every step of 
         // the force simulation
@@ -124,6 +127,21 @@ function createV4SelectableForceDirectedGraph(svg, graph) {
 
         node.attr("cx", function(d) { return d.x; })
             .attr("cy", function(d) { return d.y; });
+
+        node.classed("selected", false);
+        
+        var table = document.getElementById("nodes-table");
+
+        while (table.rows.length > 0){
+                   table.deleteRow(0);
+                }
+        var row = table.insertRow(0);
+
+        
+        var nameCell = row.insertCell(0);
+        nameCell.innerHTML =  node.datum().name ;
+        console.log("ticked");
+
     }
 
     var brushMode = false;
@@ -142,14 +160,18 @@ function createV4SelectableForceDirectedGraph(svg, graph) {
         node.each(function(d) { 
             d.previouslySelected = shiftKey && d.selected; 
         });
+
     }
 
     rect.on('click', () => {
         node.each(function(d) {
             d.selected = false;
             d.previouslySelected = false;
+
+
+
         });
-        node.classed("selected", false);
+
     });
 
     function brushed() {
@@ -163,6 +185,9 @@ function createV4SelectableForceDirectedGraph(svg, graph) {
             (extent[0][0] <= d.x && d.x < extent[1][0]
              && extent[0][1] <= d.y && d.y < extent[1][1]);
         });
+
+
+
     }
 
     function brushended() {
