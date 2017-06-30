@@ -99,7 +99,7 @@ function createV4SelectableForceDirectedGraph(svg, graph) {
                     //var dist = 20 / d.value;
                     //console.log('dist:', dist);
 
-                    return dist; 
+                    //return dist; 
                 })
               )
         .force("charge", d3v4.forceManyBody())
@@ -116,7 +116,6 @@ function createV4SelectableForceDirectedGraph(svg, graph) {
 
 
 
-
     function ticked() {
         // update node and line positions at every step of 
         // the force simulation
@@ -128,20 +127,9 @@ function createV4SelectableForceDirectedGraph(svg, graph) {
         node.attr("cx", function(d) { return d.x; })
             .attr("cy", function(d) { return d.y; });
 
+
         node.classed("selected", false);
         
-        var table = document.getElementById("nodes-table");
-
-        while (table.rows.length > 0){
-                   table.deleteRow(0);
-                }
-        var row = table.insertRow(0);
-
-        
-        var nameCell = row.insertCell(0);
-        nameCell.innerHTML =  node.datum().name ;
-        console.log("ticked");
-
     }
 
     var brushMode = false;
@@ -169,7 +157,7 @@ function createV4SelectableForceDirectedGraph(svg, graph) {
             d.previouslySelected = false;
 
 
-
+        
         });
 
     });
@@ -181,6 +169,16 @@ function createV4SelectableForceDirectedGraph(svg, graph) {
         var extent = d3v4.event.selection;
 
         node.classed("selected", function(d) {
+        var table = document.getElementById("nodes-table");
+
+        while (table.rows.length > 0){
+                   table.deleteRow(0);
+                }
+        var row = table.insertRow(0);
+        var nameCell = row.insertCell(0);
+        nameCell.innerHTML =  d.name ;
+
+        console.log(d.name);
             return d.selected = d.previouslySelected ^
             (extent[0][0] <= d.x && d.x < extent[1][0]
              && extent[0][1] <= d.y && d.y < extent[1][1]);

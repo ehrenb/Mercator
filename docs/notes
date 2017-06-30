@@ -14,3 +14,6 @@ todo:
     speed: back to multithreading?
     metrics: record timing and sizes for debuggin purposes
     on node selected: populate table with info in a panel 
+
+There is another d3v3 js d3_selectable_force_directed_graph here: (updated June 2017)
+    http://bl.ocks.org/pkerpedjiev/0389e39fad95e1cf29ce

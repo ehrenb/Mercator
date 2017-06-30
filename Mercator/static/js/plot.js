@@ -1,42 +1,10 @@
-<!DOCTYPE html>
-
-{% extends "layout.html" %}
-{% block head %}
-  {{ super() }}
-{% endblock %}
-{% block content %}
-
-<meta charset="utf-8">
-<style>
-.node {
-  stroke: #fff;
-  stroke-width: 1.5px;
-}
-.node .selected {
-  stroke: black;
-}
-.link {
-  stroke: #999;
-}
-.brush .extent {
-  fill-opacity: .1;
-  stroke: #fff;
-  shape-rendering: crispEdges;
-}
-</style>
-<body>
-    <div align='center' id="d3_selectable_force_directed_graph"></div>
-<script src="http://d3js.org/d3.v3.min.js"></script>
-<script src="{{ url_for('static',filename='js/plot.js') }}"></script>
-
-<script>
 function selectableForceDirectedGraph() {
     var width = 960,
 
     height = 500,
     shiftKey, ctrlKey;
 
-    var node=  null;
+    var nodeGraph = null;
     var xScale = d3.scale.linear()
     .domain([0,width]).range([0,width]);
     var yScale = d3.scale.linear()
@@ -198,7 +166,7 @@ function selectableForceDirectedGraph() {
     }
 
     //d3.json("graph.json", function(error, graph) {
-        graph =  JSON.parse({{ d3_json|tojson|safe }});
+        nodeGraph =  JSON.parse({{ d3_json|tojson|safe }});
 
         graph.links.forEach(function(d) {
             d.source = graph.nodes[d.source];
@@ -245,13 +213,10 @@ function selectableForceDirectedGraph() {
 
             force.resume();
         }
-        //var color = d3.scaleOrdinal(d3.schemeCategory20);
-
         node = node.data(graph.nodes).enter().append("circle")
         .attr("r", 4)
         .attr("cx", function(d) { return d.x; })
         .attr("cy", function(d) { return d.y; })
-        //.attr("fill", function(d) { return color(d.group); })
         .on("dblclick", function(d) { d3.event.stopPropagation(); })
         .on("click", function(d) {
             if (d3.event.defaultPrevented) return;
@@ -286,15 +251,6 @@ function selectableForceDirectedGraph() {
 
               force.on("tick", tick);
 
-
-    // add titles for mouseover blurbs
-    node.append("title")
-        .text(function(d) { 
-            if ('name' in d)
-                return d.name;
-            else
-                return d.id; 
-        });
     //});
 
 
@@ -338,20 +294,3 @@ function selectableForceDirectedGraph() {
         svg_graph.call(zoomer);
     }
 }
-</script>
-
-
-<script>selectableForceDirectedGraph();</script>
-
-<br>
-<div class="table-responsive">
-    <table class="table" id="nodes-table">
-    <tbody>
-      <tr>
-        <td>Default</td>
-      </tr> 
-      
-
-    </table>
-</div>
-{% endblock %}
