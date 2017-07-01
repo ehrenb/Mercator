@@ -16,15 +16,15 @@ def get_color_component(c):
     non-components get '1' -- default blue
     """
     if c['component_type'] == ComponentType.ACTIVITY:
-        return 4#blue
+        return "blue"#blue 4
     if c['component_type'] == ComponentType.RECEIVER:
-        return 8#light blue
+        return "yellow"# yellow 8
     if c['component_type'] == ComponentType.PROVIDER:
-        return 5#green
+        return "green"#green 5 
     if c['component_type'] == ComponentType.SERVICE:
-        return 7#orange
+        return "orange"#orange 7
     else:
-        return 1
+        return "black" #1 #blue
 
 def create_graph(classes=[], json_path=None):
     
@@ -37,7 +37,7 @@ def create_graph(classes=[], json_path=None):
 
     G=nx.MultiDiGraph()
     for idx, c in enumerate(classes):
-        G.add_node(idx, attr_dict=c, group=get_color_component(c))
+        G.add_node(idx, attr_dict=c, color=get_color_component(c))
 
     tmp_G = nx.MultiDiGraph(G)
     return add_edges(tmp_G)

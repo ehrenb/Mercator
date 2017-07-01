@@ -251,7 +251,7 @@ function selectableForceDirectedGraph() {
         .attr("r", 4)
         .attr("cx", function(d) { return d.x; })
         .attr("cy", function(d) { return d.y; })
-        //.attr("fill", function(d) { return color(d.group); })
+        .attr("fill", function(d) { return d.color; })
         .on("dblclick", function(d) { d3.event.stopPropagation(); })
         .on("click", function(d) {
             if (d3.event.defaultPrevented) return;
