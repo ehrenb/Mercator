@@ -251,7 +251,7 @@ function selectableForceDirectedGraph() {
         .attr("r", 4)
         .attr("cx", function(d) { return d.x; })
         .attr("cy", function(d) { return d.y; })
-        .attr("fill", function(d) { return d.color; })
+        .attr("fill", function(d) { return d.color; })//fill from color field in jsons
         .on("dblclick", function(d) { d3.event.stopPropagation(); })
         .on("click", function(d) {
             if (d3.event.defaultPrevented) return;
@@ -263,6 +263,16 @@ function selectableForceDirectedGraph() {
 
             // always select this node
             d3.select(this).classed("selected", d.selected = !d.previouslySelected);
+
+            var table = document.getElementById("nodes-table");
+
+            while (table.rows.length > 0){
+                       table.deleteRow(0);
+                    }
+            var row = table.insertRow(0);
+            var nameCell = row.insertCell(0);
+            nameCell.innerHTML =  d.name ;
+
         })
 
         .on("mouseup", function(d) {
