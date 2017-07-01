@@ -27,7 +27,7 @@ def get_color_component(c):
         return "black" #1 #blue
 
 def create_graph(classes=[], json_path=None):
-    
+    """Given a list of class names, """
     if json_path:
         classes = []
         with open(json_path,'r') as f:
@@ -209,7 +209,7 @@ def get_ego_graph(G, class_name, radius):
 
 def get_class_subgraph(G, class_names=[]):
     """Build a subgraph that has the nodes from class_names
-        re add edges based on new subgraph
+        and re-add edges based on new subgraph
     """
     ns = []
     n_to_class_name_map = build_n_to_class_name_map(G)

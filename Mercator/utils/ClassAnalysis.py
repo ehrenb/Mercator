@@ -1,6 +1,7 @@
 """do Androguard things
 
-Builds class_result dictionary, which contains class and method information and cross-references of code
+Builds class_result dictionary, which contains class and method information and 
+cross-references of code
 
 """
 
@@ -16,6 +17,9 @@ logger = logging.getLogger('mercator')
 def convert_to_dot_notation(class_name):
     """take a class name from ClassAnalysis and format it for comparison against typical dot package notation
         eg.  Lcm/aptoide/pt/v8engine/OpenGLES20Activity; --> cm.aptoide.pt.v8engine.OpenGLES20Activity
+        Note: I think this is necesssary because the get_activities/services/providers/receivers function
+            return the 'dot notation' format of a component, whereas the decompile class names are like Lcm/atpoide/..etc.
+
     """
     converted = class_name
     if converted[0] == 'L':
@@ -25,10 +29,12 @@ def convert_to_dot_notation(class_name):
         converted = converted[:-1]
     return converted
 
-def fix_name(name):
-    if '$' in name:
-        return name.split('$')[0]+';'
-    return name
+
+#UNUSED
+# def fix_name(name):
+#     if '$' in name:
+#         return name.split('$')[0]+';'
+#     return name
 
 class ClassAnalysis(object):
     def __init__(self, c, a, duplicate_edges=True):
@@ -43,20 +49,17 @@ class ClassAnalysis(object):
 
 
     def run_analysis(self):
-        """"Run full analysis on a given class
+        """"Run full analysis on class self.c
         """
-        # if 'MyService' in self.c.name:
-        #     print('%%%%%%%%%%%%%%%%%%%%%%%name before:')
-        #     print(self.c.name)
-        class_result = {'name': self.c.name,
-                        'access_flags': self.c.get_access_flags_string(),
-                        'source': None,
-                        'xref_from': [], 
-                        'xref_to': [],
-                        'fields': [],
-                        'methods': [],
-                        'component_type': None}
-                        #component_type is set to an enum IF the class is a core app component(activity,service,provider,receiver)
+
+        class_result = {'name': self.c.name,#the classes name
+                        'access_flags': self.c.get_access_flags_string(), #the access flags for the class (public, final, etc.)
+                        'source': None, #the source of the class (excluding for now)
+                        'xref_from': [], #the classes that this class references
+                        'xref_to': [], #the classes that reference this class
+                        'fields': [], #the static fields of the class
+                        'methods': [], #methods of the class, also containing xrefs from/to
+                        'component_type': None}#None if native class, otherwise, provider/receiver/activity/service
         
         converted = convert_to_dot_notation(class_result['name'])
         if converted in self.a.get_activities():
@@ -89,8 +92,11 @@ class ClassAnalysis(object):
                 else:
                     ref_class_name = ref_class.get_vm_class().get_name()
                     
+                #ignore class references to self
                 if ref_class_name == self.c.get_name():
                     continue
+
+                #record the class and method for this xref_from
                 for ref_kind, ref_method, ref_offset in xrefs_from[ref_class]:
                     #logger.info(ref_method.get_class_name())
                     ref = {'class': ref_method.get_class_name(),#fix_name(ref_method.get_class_name()),
@@ -119,10 +125,12 @@ class ClassAnalysis(object):
                         continue
                     class_result['xref_to'].append(ref)
 
-        #Fields (static variables?)
+        #Fields (statics)
         for field in self.c.get_fields(): #EncodedFields objects
             class_field = {'name': field.get_name(),#fix_name(field.get_name()),
                            'access_flags': field.get_access_flags_string(),
+                           "class_name": field.get_class_name(),
+                           "init_value": field.get_init_value().get_value() if field.get_init_value() else None,
                            'xref_read': [],
                            'xref_write': []}
             

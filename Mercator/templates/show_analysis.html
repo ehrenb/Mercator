@@ -29,6 +29,17 @@
 <script src="http://d3js.org/d3.v3.min.js"></script>
 <script src="{{ url_for('static',filename='js/plot.js') }}"></script>
 
+
+{% if class_name is defined %}
+    Class: {{ class_name }}
+{% endif %}
+
+{% if radius is defined %}
+    <br>
+    Radius: {{ radius }}
+{% endif %}
+
+
 <script>
 function selectableForceDirectedGraph() {
     var width = 960,
