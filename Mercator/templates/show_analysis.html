@@ -3,6 +3,9 @@
 {% extends "layout.html" %}
 {% block head %}
   {{ super() }}
+
+  <link rel="stylesheet" href="{{ url_for('static',filename='css/prism.min.css') }}">
+<link rel="stylesheet" href="{{ url_for('static',filename='css/codeflask.css') }}">
 {% endblock %}
 {% block content %}
 
@@ -23,6 +26,11 @@
   stroke: #fff;
   shape-rendering: crispEdges;
 }
+#my-code-wrapper {
+  width:960px;
+  height:500px;
+  position:relative; /* Position must be: relative, absolute or fixed */
+}
 </style>
 <body>
     <div align='center' id="d3_selectable_force_directed_graph"></div>
@@ -41,6 +49,17 @@
 
 
 <script>
+
+var flask = null;
+window.onload = function() {
+    flask = new CodeFlask;
+    flask.run('#my-code-wrapper', { language: 'js', lineNumbers: false });
+    flask.onUpdate(function(code) {
+        console.log("User's input code: " + code);
+    });
+}
+
+
 function selectableForceDirectedGraph() {
     var width = 960,
 
@@ -283,6 +302,8 @@ function selectableForceDirectedGraph() {
             var row = table.insertRow(0);
             var nameCell = row.insertCell(0);
             nameCell.innerHTML =  d.name ;
+            setCode(d.name);
+
 
         })
 
@@ -318,6 +339,24 @@ function selectableForceDirectedGraph() {
         });
     //});
 
+
+    function setCode(class_name) {
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+                 var src = JSON.parse(this.responseText);
+                 //console.log(src);
+                 src = src.src;
+                 //console.log(src);
+                //  document.getElementById("my-code-wrapper").innerHTML = src;
+                // }
+                flask.update(src);
+        }
+      };
+      console.log(class_name);
+      xhttp.open("GET", "/get_class_source/{{ md5 }}?class_name="+encodeURIComponent(class_name), true);
+      xhttp.send();
+    }
 
     function keydown() {
         shiftKey = d3.event.shiftKey || d3.event.metaKey;
@@ -374,5 +413,15 @@ function selectableForceDirectedGraph() {
       
 
     </table>
+
+
+<div id="my-code-wrapper"></div>
+<script>
+
+</script>
+
+<script src="{{ url_for('static', filename='js/prism.min.js') }}" async></script>
+<script src="{{ url_for('static', filename='js/codeflask.js') }}" async></script>
+
 </div>
 {% endblock %}

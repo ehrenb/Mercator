@@ -70,11 +70,15 @@ class ClassAnalysis(object):
             class_result['component_type'] = ComponentType.SERVICE
         elif converted in self.a.get_providers():
             class_result['component_type'] = ComponentType.PROVIDER
-        # try:
-        #     if self.c.source():
-        #         class_result['source'] = self.c.get_source()
-        # except TypeError as e:
-        #     logger.info('Warning: could get source for class {class_name}\nException:\n\t{e}'.format(class_name=self.c.name,e=e))
+
+        src = self.c.get_source()
+        try:
+            #if self.c.source():
+            if src:
+                #class_result['source'] = self.c.get_source()
+                class_result['source'] = src
+        except TypeError as e:
+            logger.info('Warning: could get source for class {class_name}\nException:\n\t{e}'.format(class_name=self.c.name,e=e))
         
 
         #logger.info(c.get_superclassname()) superclass name

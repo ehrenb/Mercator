@@ -32,5 +32,5 @@ def show_individual_analysis(md5):
         json.dump(data, f, indent=4, sort_keys=True)
 
         
-    return render_template('show_analysis.html',d3_json=d3_json, radius=radius, class_name=class_name)
+    return render_template('show_analysis.html',d3_json=d3_json, md5=md5,radius=radius, class_name=class_name)
     #return render_template('show_analysis.html',md5=md5,graph_type=graph_type)

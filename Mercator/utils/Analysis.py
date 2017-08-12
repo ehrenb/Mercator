@@ -112,5 +112,9 @@ class Analysis(threading.Thread):
 
         #app metadata for misc/debugging
         self.write_app_metadata(result_classes, a)
+        #debugging
+        # with open(self.graph_out_path+'.runmetrics', 'w') as f:
+        #     json.dump()
+
         self.progress = 100#test
 
