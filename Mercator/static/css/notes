@@ -8,3 +8,5 @@ TODO:
 - Add side scrolling
 - In Dendroid, MyService is still cut off some at the bottom of the editor and not highlighted
 
+
+<link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}">

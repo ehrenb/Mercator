@@ -194,7 +194,7 @@ CodeFlask.prototype.handleInput = function(textarea, highlightCode, highlightPre
 
 CodeFlask.prototype.handleScroll = function(textarea, highlightPre) {
     textarea.addEventListener('scroll', function(){
-
+        console.log('scroll..');
         roundedScroll = Math.floor(this.scrollTop);
 
         // Fixes issue of desync text on mouse wheel, fuck Firefox.

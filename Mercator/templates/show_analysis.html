@@ -4,8 +4,9 @@
 {% block head %}
   {{ super() }}
 
-  <link rel="stylesheet" href="{{ url_for('static',filename='css/prism.min.css') }}">
+<link rel="stylesheet" href="{{ url_for('static',filename='css/prism.min.css') }}">
 <link rel="stylesheet" href="{{ url_for('static',filename='css/codeflask.css') }}">
+
 {% endblock %}
 {% block content %}
 
@@ -26,17 +27,21 @@
   stroke: #fff;
   shape-rendering: crispEdges;
 }
-#my-code-wrapper {
+.code-editor {
   width:960px;
   height:500px;
-  position:relative; /* Position must be: relative, absolute or fixed */
-}
+  border:1px solid #ccc;
+  background:#f5f5f5;
+  position:relative;
+  }
 </style>
 <body>
-    <div align='center' id="d3_selectable_force_directed_graph"></div>
+<div align='center' id="d3_selectable_force_directed_graph"></div>
 <script src="{{ url_for('static',filename='js/d3.v3.min.js') }}"></script>
 <script src="{{ url_for('static',filename='js/plot.js') }}"></script>
 
+<script src="{{ url_for('static', filename='js/prism.min.js') }}" async></script>
+<script src="{{ url_for('static', filename='js/codeflask.js') }}" async></script>
 
 {% if class_name is defined %}
     Class: {{ class_name }}
@@ -48,19 +53,21 @@
 {% endif %}
 
 
+<div class="code-editor" id="editor" data-language="javascript"></div>
+
 <script>
-
-var flask = null;
-window.onload = function() {
-    flask = new CodeFlask;
-    flask.run('#my-code-wrapper', { language: 'js', lineNumbers: false });
-    flask.onUpdate(function(code) {
-        console.log("User's input code: " + code);
-    });
-}
-
-
 function selectableForceDirectedGraph() {
+
+    var flask = null;
+    window.onload = function() {
+        flask = new CodeFlask;
+        flask.run('#editor', { language: 'javascript', lineNumbers: false });
+        //flask.update("test");
+        // flask.onUpdate(function(code) {
+        //     console.log("User's input code: " + code);
+        // });
+    };
+
     var width = 960,
 
     height = 500,
@@ -344,16 +351,16 @@ function selectableForceDirectedGraph() {
       var xhttp = new XMLHttpRequest();
       xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-                 var src = JSON.parse(this.responseText);
+                 var src_obj = JSON.parse(this.responseText);
                  //console.log(src);
-                 src = src.src;
-                 //console.log(src);
-                //  document.getElementById("my-code-wrapper").innerHTML = src;
+                  var src = src_obj.src;
+                  //console.log(src);
+                  //document.getElementById("code-editor").innerHTML = src;
                 // }
-                flask.update(src);
+                  flask.update(src);
         }
       };
-      console.log(class_name);
+      //console.log(class_name);
       xhttp.open("GET", "/get_class_source/{{ md5 }}?class_name="+encodeURIComponent(class_name), true);
       xhttp.send();
     }
@@ -413,15 +420,7 @@ function selectableForceDirectedGraph() {
       
 
     </table>
-
-
-<div id="my-code-wrapper"></div>
-<script>
-
-</script>
-
-<script src="{{ url_for('static', filename='js/prism.min.js') }}" async></script>
-<script src="{{ url_for('static', filename='js/codeflask.js') }}" async></script>
-
 </div>
+
+
 {% endblock %}
