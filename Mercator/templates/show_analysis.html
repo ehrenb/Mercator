@@ -58,7 +58,11 @@
 <script>
 function selectableForceDirectedGraph() {
 
+
+
+
     var flask = null;
+    var socket = null;
     window.onload = function() {
         flask = new CodeFlask;
         flask.run('#editor', { language: 'javascript', lineNumbers: false });
@@ -66,6 +70,33 @@ function selectableForceDirectedGraph() {
         // flask.onUpdate(function(code) {
         //     console.log("User's input code: " + code);
         // });
+        $(document).ready(function() {
+
+                // Use a "/status" namespace.
+                // An application can open a connection on multiple namespaces, and
+                // Socket.IO will multiplex all those connections on a single
+                // physical channel. If you don't care about multiple channels, you
+                // can set the namespace to an empty string.
+                namespace = '/code';
+                // Connect to the Socket.IO server.
+                // The connection URL has the following format:
+                //     http[s]://<domain>:<port>[/<namespace>]
+                 socket = io.connect(location.protocol + '//' + document.domain + ':' + location.port + namespace);
+                // Event handler for new connections.
+                // The callback function is invoked when a connection with the
+                // server is established.
+                socket.on('connect', function() {
+                    // socket.emit('my_event', {data: 'I\'m connected!'});
+                    console.log('Im connected!');
+                });
+
+
+                socket.on('code_response', function(msg) {
+                    console.log(msg.data);
+                    flask.update(msg.data);
+                });
+
+        });
     };
 
     var width = 960,
@@ -309,7 +340,8 @@ function selectableForceDirectedGraph() {
             var row = table.insertRow(0);
             var nameCell = row.insertCell(0);
             nameCell.innerHTML =  d.name ;
-            setCode(d.name);
+            //setCode(d.name);
+            socket.emit('code_request', {class_name: d.name, md5: "{{ md5 }}" });
 
 
         })
@@ -347,23 +379,52 @@ function selectableForceDirectedGraph() {
     //});
 
 
-    function setCode(class_name) {
-      var xhttp = new XMLHttpRequest();
-      xhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-                 var src_obj = JSON.parse(this.responseText);
-                 //console.log(src);
-                  var src = src_obj.src;
-                  //console.log(src);
-                  //document.getElementById("code-editor").innerHTML = src;
-                // }
-                  flask.update(src);
-        }
-      };
-      //console.log(class_name);
-      xhttp.open("GET", "/get_class_source/{{ md5 }}?class_name="+encodeURIComponent(class_name), true);
-      xhttp.send();
-    }
+    // function setCode(class_name) {
+    //   var xhttp = new XMLHttpRequest();
+    //   xhttp.onreadystatechange = function() {
+    //     if (this.readyState == 4 && this.status == 200) {
+    //              var src_obj = JSON.parse(this.responseText);
+    //               var src = src_obj.src;
+    //               flask.update(src);
+    //     }
+    //   };
+    //   xhttp.open("GET", "/get_class_source/{{ md5 }}?class_name="+encodeURIComponent(class_name), true);
+    //   xhttp.send();
+
+
+
+    // }
+
+    // function setCode(class_name) {
+    //     $(document).ready(function() {
+
+    //             // Use a "/status" namespace.
+    //             // An application can open a connection on multiple namespaces, and
+    //             // Socket.IO will multiplex all those connections on a single
+    //             // physical channel. If you don't care about multiple channels, you
+    //             // can set the namespace to an empty string.
+    //             namespace = '/code';
+    //             // Connect to the Socket.IO server.
+    //             // The connection URL has the following format:
+    //             //     http[s]://<domain>:<port>[/<namespace>]
+    //             var socket = io.connect(location.protocol + '//' + document.domain + ':' + location.port + namespace);
+    //             // Event handler for new connections.
+    //             // The callback function is invoked when a connection with the
+    //             // server is established.
+    //             socket.on('connect', function() {
+    //                 // socket.emit('my_event', {data: 'I\'m connected!'});
+    //             });
+
+
+    //             socket.on('code_response', function(data) {
+    //                 console.log(data.data);
+    //                 flask.update(data.data);
+
+    //             });
+    //             socket.emit('code_request', {class_name: class_name, md5: "{{ md5 }}" });
+
+    //     });
+    // }
 
     function keydown() {
         shiftKey = d3.event.shiftKey || d3.event.metaKey;
