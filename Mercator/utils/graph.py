@@ -2,6 +2,9 @@
 import json
 import logging
 from pprint import pprint
+import time
+
+
 import networkx as nx
 from networkx.readwrite import json_graph
 
@@ -32,14 +35,26 @@ def create_graph(classes=[], json_path=None):
         classes = []
         with open(json_path,'r') as f:
             classes = json.load(f)
-        logger.info('loaded {json_path}'.format(json_path=json_path))
+        print('loaded {json_path}'.format(json_path=json_path))
 
-
+    print('adding nodes')
+    start = time.time()
     G=nx.MultiDiGraph()
     for idx, c in enumerate(classes):
         G.add_node(idx, attr_dict=c, color=get_color_component(c))
+    end = time.time()
+    elapsed = end-start
+    print('done adding nodes took {}'.format(end-start))
 
+
+    print('before tmp_G')
+    start = time.time()
     tmp_G = nx.MultiDiGraph(G)
+    print('after tmp_G')
+    end = time.time()
+    elapsed = end-start
+    print('done adding nodes tmp_G took {}'.format(end-start))
+
     return add_edges(tmp_G)
 
 def duplicate_edge(G, u,v,data):
@@ -52,16 +67,27 @@ def duplicate_edge(G, u,v,data):
     return False
 
 
-
+known_edges = []
 
 def add_edges(G):
     """add edges based on some defined rules about inter-class relations"""
     n_to_class_name_map = build_n_to_class_name_map(G)
+    add_edges_start = time.time()
+    print('adding edges to tmp_G')
 
+    total_class_xref_from = 0
+    total_class_xref_to = 0
+    total_method_xref_from = 0
+    total_method_xref_to = 0
+    total_field_xref_read = 0
+    total_field_xref_write = 0
     #xref from edges
     for n in G:
         #print('## '+n)
         #class xref from (? -> n)
+        #print('edges class xref_from')
+        start = time.time()
+        edges = [d[2] for d in G.edges(n,data=True)]
         for xref_from_name in G.node[n]['xref_from']:
             method_xref_from_name = xref_from_name['method']#unused
             class_xref_from_name = xref_from_name['class']
@@ -72,13 +98,22 @@ def add_edges(G):
                 #     print('duplicate class xref from')
                 #     continue
                 #dedupe edges based on the data inside..still unsure why dupes are being added
-                if xref_from_name in [d[2] for d in G.edges(n,data=True)]:
+                dedupe_start_time = time.time()
+                if xref_from_name in edges:
                     continue
+                dedupe_end_time = time.time()
+                #print('dedupe time took {}'.format(dedupe_end_time - dedupe_start_time))
+                total_class_xref_from+=1
                 G.add_edge(class_xref_from_n, n, attr_dict=xref_from_name) if class_xref_from_n else None
             #print('add_edge {class_xref_from_name} -> {n}'.format(class_xref_from_name=class_xref_from_name, n=n))
             #G.add_edge(class_xref_from_name, n, attr_dict=xref_from_name) #if class_xref_from_n else None
+        end = time.time()
+        elapsed = end-start
+        #print(' adding edges class xref_from took {}'.format(end-start))
 
         #class xref to(n -> ?)
+        #print('edges class xref_to')
+        start = time.time()
         for xref_to_name in G.node[n]['xref_to']:
             method_xref_to_name = xref_to_name['method']#unused
             class_xref_to_name = xref_to_name['class']
@@ -88,12 +123,20 @@ def add_edges(G):
                 # if duplicate_edge(G, n, class_xref_to_n, xref_to_name):
                 #     print('duplicate class xref to')
                 #     continue
-                if xref_to_name in [d[2] for d in G.edges(n,data=True)]:
+                dedupe_start_time = time.time()
+                if xref_to_name in edges:
                     continue
+                dedupe_end_time = time.time()
+                #print('dedupe time took {}'.format(dedupe_end_time - dedupe_start_time))
+                total_class_xref_to+=1
                 G.add_edge(n, class_xref_to_n, attr_dict=xref_to_name) if class_xref_to_n else None
 #            G.add_edge(n, class_xref_to_name, attr_dict=xref_to_name) #if class_xref_to_n else None
+        end = time.time()
+        elapsed = end-start
+        #print(' adding edges class xref_to took {}'.format(end-start))
 
-
+        #print('edges methods xref_from')
+        start = time.time()
         #method xref from (todo: check suspected overlap with above) (? -> n)
         for method in G.node[n]['methods']:
             for xref_from_name in method['xref_from']:
@@ -105,11 +148,21 @@ def add_edges(G):
                     # if duplicate_edge(G, class_xref_from_n, n, xref_from_name):
                     #     print('duplicate method xref from')
                     #     continue
-                    if xref_from_name in [d[2] for d in G.edges(n,data=True)]:
+                    dedupe_start_time = time.time()
+                    if xref_from_name in edges:
                         continue
+                    dedupe_end_time = time.time()
+                    #print('dedupe time took {}'.format(dedupe_end_time - dedupe_start_time))
+                    total_method_xref_from += 1
                     G.add_edge(class_xref_from_n, n, attr_dict=xref_from_name) if class_xref_from_n else None
 #                G.add_edge(class_xref_from_name, n, attr_dict=xref_from_name) #if class_xref_from_n else None
+        end = time.time()
+        elapsed = end-start
+        #print(' adding edges method xref_from took {}'.format(end-start))
 
+
+        #print('edges methods xref_to')
+        start = time.time()
         #method xref to(n -> ?)
         for xref_to_name in G.node[n]['methods']:
             for xref_to_name in method['xref_to']:
@@ -121,42 +174,72 @@ def add_edges(G):
                     # if duplicate_edge(G, n, class_xref_to_n, xref_to_name):
                     #     print('duplicate method xref to')
                     #     continue
-                    if xref_to_name in [d[2] for d in G.edges(n,data=True)]:
+                    dedupe_start_time = time.time()
+                    if xref_to_name in edges:
                         continue
+
+                    dedupe_end_time = time.time()
+                    #print('dedupe time took {}'.format(dedupe_end_time - dedupe_start_time))
+                    total_method_xref_to += 1
                     G.add_edge(n, class_xref_to_n, attr_dict=xref_to_name) if class_xref_to_n else None
                 #G.add_edge(n, class_xref_to_name, attr_dict=xref_to_name) #if class_xref_to_n else None
-        #field xref from (read) (? -> n)
-        for field in G.node[n]['fields']:
-            for xref_read_name in field['xref_read']:
-                field_xref_read_name = xref_read_name['method']
-                class_xref_read_name = xref_read_name['class']
-                class_xref_from_n = __map_lookup(n_to_class_name_map, class_xref_read_name)
-                
-                if not class_xref_from_n == n:
-                    # if duplicate_edge(G, class_xref_from_n, n, xref_read_name):
-                    #     print('duplicate field xref from')
-                    #     continue
-                    if xref_read_name in [d[2] for d in G.edges(n,data=True)]:
-                        continue
-                    G.add_edge(class_xref_from_n, n, attr_dict=xref_read_name) if class_xref_from_n else None
-                #G.add_edge(class_xref_read_name, n, attr_dict=xref_read_name) #if class_xref_from_n else None
+        end = time.time()
+        elapsed = end-start
+        #print(' adding edges method xref_to took {}'.format(end-start))
 
-        #field xref to (write) (n -> ?)
-        for field in G.node[n]['fields']:
-            for xref_write_name in field['xref_write']:
-                field_xref_write_name = xref_write_name['method']
-                class_xref_write_name = xref_write_name['class']
-                class_xref_write_n = __map_lookup(n_to_class_name_map, class_xref_write_name)
-                # print(class_xref_write_n)
+
+        # print('edges fields xref_read')
+        # start = time.time()
+        # #field xref from (read) (? -> n)
+        # for field in G.node[n]['fields']:
+        #     for xref_read_name in field['xref_read']:
+        #         field_xref_read_name = xref_read_name['method']
+        #         class_xref_read_name = xref_read_name['class']
+        #         class_xref_from_n = __map_lookup(n_to_class_name_map, class_xref_read_name)
                 
-                if not class_xref_write_n == n:
-                    # if duplicate_edge(G, class_xref_write_n, n, xref_write_name):
-                    #     print('duplicate field xref to')
-                    #     continue
-                    if xref_write_name in [d[2] for d in G.edges(n,data=True)]:
-                        continue
-                    G.add_edge(class_xref_write_n, n, attr_dict=xref_write_name) if class_xref_write_n else None
-                #G.add_edge(class_xref_write_name, n, attr_dict=xref_write_name) #if class_xref_write_n else None
+        #         if not class_xref_from_n == n:
+        #             # if duplicate_edge(G, class_xref_from_n, n, xref_read_name):
+        #             #     print('duplicate field xref from')
+        #             #     continue
+        #             dedupe_start_time = time.time()
+        #             if xref_read_name in edges:
+        #                 continue
+        #             dedupe_end_time = time.time()
+        #             print('dedupe time took {}'.format(dedupe_end_time - dedupe_start_time))
+        #             total_field_xref_read += 1
+        #             G.add_edge(class_xref_from_n, n, attr_dict=xref_read_name) if class_xref_from_n else None
+        #         #G.add_edge(class_xref_read_name, n, attr_dict=xref_read_name) #if class_xref_from_n else None
+        # end = time.time()
+        # elapsed = end-start
+        # print(' adding edges fields xref_read took {}'.format(end-start))
+
+
+        # print('edges fields xref_write')
+        # start = time.time()
+        # #field xref to (write) (n -> ?)
+        # for field in G.node[n]['fields']:
+        #     for xref_write_name in field['xref_write']:
+        #         field_xref_write_name = xref_write_name['method']
+        #         class_xref_write_name = xref_write_name['class']
+        #         class_xref_write_n = __map_lookup(n_to_class_name_map, class_xref_write_name)
+        #         # print(class_xref_write_n)
+                
+        #         if not class_xref_write_n == n:
+        #             # if duplicate_edge(G, class_xref_write_n, n, xref_write_name):
+        #             #     print('duplicate field xref to')
+        #             #     continue
+        #             dedupe_start_time = time.time()
+        #             if xref_write_name in edges:
+        #                 continue
+        #             dedupe_end_time = time.time()
+        #             print('dedupe time took {}'.format(dedupe_end_time - dedupe_start_time))
+        #             total_field_xref_write += 1
+        #             G.add_edge(class_xref_write_n, n, attr_dict=xref_write_name) if class_xref_write_n else None
+        #         #G.add_edge(class_xref_write_name, n, attr_dict=xref_write_name) #if class_xref_write_n else None
+        
+        # end = time.time()
+        # elapsed = end-start
+        # print(' adding edges fields xref_write took {}'.format(end-start))
 
     # for u,v,d in G.edges(data=True):
     #     print(u)
@@ -164,7 +247,15 @@ def add_edges(G):
     #     print(d)
     #     d['source'] = G.nodes()[d['source']]['id']
     #     d['target'] = G.nodes()[d['target']]['id']
-
+    add_edges_end = time.time()
+    print('done adding edges tmp_G took {}'.format(add_edges_end-add_edges_start))
+    
+    print('total_class_xref_from {}'.format(total_class_xref_from))
+    print('total_class_ref_to {}'.format(total_class_xref_to))
+    print('total_method_xref_from {}'.format(total_method_xref_from))
+    print('total_method_xref_to {}'.format(total_method_xref_to))
+    print('total_field_xref_read {}'.format(total_field_xref_read))
+    print('total_field_xref_write {}'.format(total_field_xref_write))
     return G
 
 def write_graph(G, out_file):

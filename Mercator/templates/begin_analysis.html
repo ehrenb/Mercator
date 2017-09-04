@@ -6,14 +6,14 @@
   <h1> Progress </h1>
   <p>
 
-<script>
+<!-- <script>
 var interval = setInterval(update_progress, 1000);
 function update_progress() {
      $.get('/analysis_progress').done(function(n, out_file){
          //n = n / 5;  // percent value
-         console.log(n);
+         //console.log(n);
          if (n == 100) {
-            console.log('here');
+            //console.log('here');
             clearInterval(interval);
             //callback(); // user defined
             document.getElementById("results").disabled = false;
@@ -25,12 +25,46 @@ function update_progress() {
          displayerror(); // user defined
      });
 }
+</script> -->
+
+
+<script type="text/javascript" charset="utf-8">
+    $(document).ready(function() {
+        // Use a "/status" namespace.
+        // An application can open a connection on multiple namespaces, and
+        // Socket.IO will multiplex all those connections on a single
+        // physical channel. If you don't care about multiple channels, you
+        // can set the namespace to an empty string.
+        namespace = '/status';
+        // Connect to the Socket.IO server.
+        // The connection URL has the following format:
+        //     http[s]://<domain>:<port>[/<namespace>]
+        var socket = io.connect(location.protocol + '//' + document.domain + ':' + location.port + namespace);
+        console.log('here');
+        // Event handler for new connections.
+        // The callback function is invoked when a connection with the
+        // server is established.
+        socket.on('connect', function() {
+            // socket.emit('my_event', {data: 'I\'m connected!'});
+            console.log('Im connected!');
+        });
+        socket.on('newstatus', function(msg) {
+            console.log(msg.percent);
+            if (msg.percent == 100) {
+              document.getElementById("results").disabled = false;
+         }
+            $('#log').html(msg.status)
+            $('.progress-bar').animate({'width': msg.percent +'%'}).attr('aria-valuenow', msg.percent);
+        });
+});
 </script>
 
+
 <div class="container">
-   <h2>Progress Bar With Label</h2>
    <div class="progress">
       <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width:0%"></div>
+      <div id="log"></div>
+
    </div>
 </div>
 

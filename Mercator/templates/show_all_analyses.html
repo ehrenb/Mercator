@@ -7,11 +7,11 @@
   <p>
 <table class="table">
   <thead>
-    <tr>
-      <th>md5</th>
-    </tr>
     <tbody>
     {% for md5 in md5s %}
+        {% if loop.index is divisibleby 4 %}
+            <tr>
+        {% endif %}
         <td><a href="{{ url_for('view_results', md5=md5) }}">{{ md5 }}</a></td>
     {% endfor %}
     </tbody>

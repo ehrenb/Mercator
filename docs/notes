@@ -10,10 +10,16 @@ See notepad.apk
 using G.edges(data=True) to compare attributes to dedupe linkss
 
 todo:
+    bytecode view next to code?
+    Flag nodes visually if their class contains reflective code, etc
+    Toggle on/off overlay for permissions
     manual comparison to verify deduping is correct
-    speed: back to multithreading?
-    metrics: record timing and sizes for debuggin purposes
     on node selected: populate table with info in a panel 
+
+after installing flask socket-io and eventlet? , cache loadng seemed way faster..? and also couldnt use --with-threads anymore
 
 There is another d3v3 js d3_selectable_force_directed_graph here: (updated June 2017)
     http://bl.ocks.org/pkerpedjiev/0389e39fad95e1cf29ce
+
+
+    <script src="{{ url_for('static', filename='js/prism-line-numbers.js') }}" async></script>

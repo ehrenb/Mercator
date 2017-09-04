@@ -10,6 +10,17 @@ from Mercator.utils.ClassAnalysis import ClassAnalysis
 #from Mercator import MONGO_HOST, MONGO_PORT
 
 
+def get_all_classes_from_dexs(d):
+    classes = []
+    if type(d) == list:
+        for __d in d:#all dex
+            __d_classes = __d.get_classes()
+            classes.extend(__d_classes)
+    else:
+        d_classes = d.get_classes()
+        classes = d_classes
+    return classes
+
 def analyze(apk_file, q):
     a, d, dx = AnalyzeAPK(apk_file, decompiler='dad', session=Session())
     result = []

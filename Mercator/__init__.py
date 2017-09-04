@@ -1,11 +1,19 @@
+
 import configparser
 import os
+import sys
+
 
 from flask import Flask, request, redirect, url_for
 from werkzeug.utils import secure_filename
+from flask_socketio import SocketIO, emit
 
 
 app = Flask(__name__)
+socketio = SocketIO(app, engineio_logger=True)
+
+
+
 
 ALLOWED_EXTENSIONS = set(['apk'])
 
@@ -27,9 +35,14 @@ for directory in dirs_to_make:
         os.mkdir(directory)
 
 
+cached_analyses = []#[{}]
+
+
+app.logger.info(socketio.async_mode)
+
 from Mercator.views import begin_analysis,\
                            get_metadata_json,\
-                           get_class_source, \
+                           purge_cached_analyses, \
                            show_all_analyses,\
                            show_component_analysis,\
                            show_full_analysis,\
@@ -38,3 +51,4 @@ from Mercator.views import begin_analysis,\
                            upload,\
                            view_results,\
                            show_test_code
+from Mercator.utils.get_class_source import respond_code_request, code_connect
