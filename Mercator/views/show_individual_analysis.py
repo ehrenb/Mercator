@@ -10,11 +10,13 @@ from Mercator.utils import graph
 
 @app.route('/show_individual_analysis/<string:md5>', methods=['GET'])
 def show_individual_analysis(md5):
-    """?radius=n,?class=name"""
+    """Display Ego graph of the class 'class_name' with a radius of 'radius'
+       i.e.: ?radius=n,?class=name
+    
+    """
     radius = int(request.args.get('radius'))
     class_name = request.args.get('class_name')
 
-    #debugging
     safe_class_name = class_name.replace(';','')
     safe_class_name = safe_class_name.replace('/','-')
 
@@ -48,4 +50,3 @@ def show_individual_analysis(md5):
 
         
     return render_template('show_analysis.html',d3_json=d3_json, md5=md5,radius=radius, class_name=class_name)
-    #return render_template('show_analysis.html',md5=md5,graph_type=graph_type)

@@ -36,24 +36,20 @@ def convert_to_dot_notation(class_name):
 #         return name.split('$')[0]+';'
 #     return name
 
-#class ClassAnalysis(object):
 class ClassAnalysis():
     def __init__(self, c, a, duplicate_edges=True):
         """c: class
            a: Androguard APK object
            duplicate_edges: Whether or not to record duplicate connections between classes
-                            i.e. AddActivity and MainActivity can reach other via an update() fucntion 10 times
+                            i.e. AddActivity and MainActivity can reach other via an update() function 10 times
                             If duplicate_edges=True, then all 10 will be recorded"""
         #c = c
         self.a = a
         self.c = c
         self.duplicate_edges = duplicate_edges
 
-
-    #def run_analysis(self):
     def run(self):
-        """"Run full analysis on class c
-        """
+        """"Run full analysis on class c"""
         class_result = {'name': self.c.name,#the classes name
                         'access_flags': self.c.get_access_flags_string(), #the access flags for the class (public, final, etself.c.)
                         'source': None, #the source of the class (excluding for now)

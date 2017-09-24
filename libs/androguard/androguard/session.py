@@ -16,7 +16,7 @@ def Save(session, filename):
     save_session(session, filename)
 
 def Load(filename):
-    return load_session(filename)
+    return load_session(filename, binary=True)
 
 class Session(object):
     def __init__(self, export_ipython=False):

@@ -182,7 +182,6 @@ def add_edges(G):
                     #print('dedupe time took {}'.format(dedupe_end_time - dedupe_start_time))
                     total_method_xref_to += 1
                     G.add_edge(n, class_xref_to_n, attr_dict=xref_to_name) if class_xref_to_n else None
-                #G.add_edge(n, class_xref_to_name, attr_dict=xref_to_name) #if class_xref_to_n else None
         end = time.time()
         elapsed = end-start
         #print(' adding edges method xref_to took {}'.format(end-start))

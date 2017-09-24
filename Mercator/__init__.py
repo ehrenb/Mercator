@@ -20,22 +20,21 @@ ALLOWED_EXTENSIONS = set(['apk'])
 config = configparser.ConfigParser()
 config.read('conf.ini')
 
-# MONGO_HOST = config['mongo']['host']
-# MONGO_PORT = int(config['mongo']['port'])
 analysis_dir = config['analysis']['root_dir']
 upload_dir = config['uploads']['root_dir']
 
 app.config['UPLOAD_FOLDER'] = upload_dir
 
 dirs_to_make = [analysis_dir, upload_dir]
-graph_types = ['graph', 'component_graph']
+
+graph_types = ['graph', 'component_graph'] #TODO, allow user to select which graphs they want to generate
 
 for directory in dirs_to_make:
     if not os.path.isdir(directory):
         os.mkdir(directory)
 
 
-cached_analyses = []#[{}]
+cached_analyses = []
 
 
 app.logger.info(socketio.async_mode)

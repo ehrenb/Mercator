@@ -10,6 +10,8 @@ See notepad.apk
 using G.edges(data=True) to compare attributes to dedupe linkss
 
 todo:
+    place editor with ACE editor
+    Vue.js ?
     bytecode view next to code?
     Flag nodes visually if their class contains reflective code, etc
     Toggle on/off overlay for permissions

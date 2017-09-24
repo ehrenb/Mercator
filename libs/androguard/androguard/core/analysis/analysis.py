@@ -769,7 +769,7 @@ class Analysis(object):
         threads = []
         # TODO maybe adjust this number by the 
         # number of cores or make it configureable?
-        for n in range(2):
+        for n in range(2):#2
             thread = threading.Thread(target=self._create_xref, args=(instances_class_name, last_vm, queue_classes))
             thread.daemon = True
             thread.start()

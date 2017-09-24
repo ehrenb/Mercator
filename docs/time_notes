@@ -3,3 +3,112 @@ unthreaded(main loop)
 
 threeaded
 3476.320413827896
+
+#benchmarks for ihealth w threads
+
+{
+    "analysis_total_time": 1619.3217160701752,
+    "apk_size": 19398933,
+    "create_graph_total_time": 428.3431098461151,
+    "main_activity": "com.ihealth.igluco.ui.SplashActivity",
+    "md5": "4a0cca92a5ae9e446273e0163329143a",
+    "num_classes": 10206,
+    "num_threads": 10,
+    "package": "jiuan.androidBg.start",
+    "write_graph_total_time": 16.988860368728638
+}
+
+
+{
+    "analysis_total_time": 2298.364780664444,
+    "apk_size": 19398933,
+    "create_graph_total_time": 986.2552826404572,
+    "main_activity": "com.ihealth.igluco.ui.SplashActivity",
+    "md5": "4a0cca92a5ae9e446273e0163329143a",
+    "num_classes": 10206,
+    "num_threads": 20,
+    "package": "jiuan.androidBg.start",
+    "write_graph_total_time": 18.996992588043213
+}
+
+{
+    "analysis_total_time": 1596.348599433899,
+    "apk_size": 19398933,
+    "create_graph_total_time": 611.4071950912476,
+    "main_activity": "com.ihealth.igluco.ui.SplashActivity",
+    "md5": "4a0cca92a5ae9e446273e0163329143a",
+    "num_classes": 10206,
+    "num_threads": 5,
+    "package": "jiuan.androidBg.start",
+    "write_graph_total_time": 22.237066745758057
+}
+
+
+#no threads
+{
+    "analysis_total_time": 1881.35595703125,
+    "apk_size": 19398933,
+    "create_graph_total_time": 637.8149149417877,
+    "main_activity": "com.ihealth.igluco.ui.SplashActivity",
+    "md5": "4a0cca92a5ae9e446273e0163329143a",
+    "num_classes": 10206,
+    "package": "jiuan.androidBg.start",
+    "write_graph_total_time": 23.93625259399414
+}
+
+
+-------
+
+
+#dendroid
+{
+    "analysis_total_time": 8.660735607147217,
+    "apk_size": 942846,
+    "create_graph_total_time": 0.4900341033935547,
+    "main_activity": "com.connect.Dendroid",
+    "md5": "db01f96d5e66d82f7eb61b85eb96ef6e",
+    "num_classes": 347,
+    "num_threads": 128,
+    "package": "com.parental.control.v4",
+    "write_graph_total_time": 0.43221592903137207
+}
+
+
+#dendroid without threads
+
+{
+    "analysis_total_time": 7.601027250289917,
+    "apk_size": 942846,
+    "create_graph_total_time": 0.5687377452850342,
+    "main_activity": "com.connect.Dendroid",
+    "md5": "db01f96d5e66d82f7eb61b85eb96ef6e",
+    "num_classes": 347,
+    "package": "com.parental.control.v4",
+    "write_graph_total_time": 0.4928710460662842
+}
+
+#dendroid with function threads
+{
+    "analysis_total_time": 8.967432975769043,
+    "apk_size": 942846,
+    "create_graph_total_time": 0.5697405338287354,
+    "main_activity": "com.connect.Dendroid",
+    "md5": "db01f96d5e66d82f7eb61b85eb96ef6e",
+    "num_classes": 347,
+    "package": "com.parental.control.v4",
+    "write_graph_total_time": 0.5429444313049316
+}
+
+
+
+#get source causes slowness**
+
+*add_edges to tmp_G is slow (thread the funcs)
+
+
+ihealth edge stats:
+total_class_ref_to 14554
+total_method_xref_from 2990
+total_method_xref_to 6300
+total_field_xref_read 0
+total_field_xref_write 0

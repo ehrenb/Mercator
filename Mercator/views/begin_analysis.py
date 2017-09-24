@@ -2,7 +2,6 @@
 
 import hashlib
 import os
-import queue
 import threading
 from threading import Lock
 
@@ -14,14 +13,13 @@ from flask_socketio import disconnect, emit
 
 a = None 
 
-@app.route('/analysis_progress', methods=['GET'])
-def analysis_progress():
-    if a:
-        app.logger.info(a.progress)
-        # if a.progress == 100:
-        #     app.logger.info('redirecting to show_analysis')
-        #     return render_template('show_analysis.html', d3_json=a.out_file)
-        return str(a.progress)
+
+# OLD CODE FOR AJAX Analysis status requests
+# @app.route('/analysis_progress', methods=['GET'])
+# def analysis_progress():
+#     if a:
+#         app.logger.info(a.progress)
+#         return str(a.progress)
 
 thread = None
 thread_lock = Lock()
@@ -31,14 +29,18 @@ def status_connect():
     app.logger.info('client connected')
     socketio.emit('my response', {'data': 'Connected'})
 
-
+status_sleep = 0.25
 def background_thread():
     global thread
+    #while the analysis thread is still running
     while a.isAlive():
+
+        #if paused event is set, analysis thread is waiting for us to gather the final update and reset the event so it can finish
         if a.paused.is_set():
             progress = a.progress
             status = a.status
             a.paused.clear()
+        #else analysis event is still running, just gather new progress
         else:
             progress = a.progress
             status = a.status
@@ -46,13 +48,14 @@ def background_thread():
                       {'percent': progress,
                        'status': status},
                       namespace='/status')
-        socketio.sleep(.25)
+        socketio.sleep(status_sleep)
     thread = None
 
 @app.route('/begin_analysis/<string:md5>', methods=['GET'])
 def begin_analysis(md5):
+    """Begin an analysis on the APK whose md5 == 'md5' if it is in the 'uploads' directory
+        Also start a background thread which emits the analysis status frequently to the 'status' websocket namespace"""
     global a
-    #socketio.emit('newstatus', {'data':'initializing...'}, namespace='/status')
 
     progress = 0
     target_file = ''

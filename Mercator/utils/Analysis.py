@@ -6,7 +6,6 @@ import os
 import sys
 import time
 import threading
-from queue import Queue
 
 from androguard.session import Session, Save
 from androguard.misc import AnalyzeAPK, save_session
@@ -21,7 +20,7 @@ from flask_socketio import emit
 
 
 class Analysis(threading.Thread):
-    """[Analyzes classes in an APK, and outputs the data as a networkx graph]
+    """[Analyzes all classes in an APK, and outputs the data as a networkx graph]
     
     [description]
     
@@ -165,9 +164,9 @@ class Analysis(threading.Thread):
         # with open(self.graph_out_path+'.runmetrics', 'w') as f:
         #     json.dump()
 
-        self.progress = 100#test
+        self.progress = 100
         self.status = 'Done'
-        self.paused.wait()
+        self.paused.wait()#wait for caller to collect last status and reset event before finishing
 
         app.logger.info('done')
 

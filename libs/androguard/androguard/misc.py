@@ -33,7 +33,7 @@ def save_session(l, filename):
         fd.write(dumps(l, -1))
 
 
-def load_session(filename):
+def load_session(filename, binary=False):
     """
       load your session !
 
@@ -45,7 +45,7 @@ def load_session(filename):
       :Example:
           a, vm, vmx = load_session("mysession.json")
   """
-    return loads(read(filename, binary=False))
+    return loads(read(filename, binary=binary))
 
 
 def AnalyzeAPK(filename, decompiler="dad", session=None):

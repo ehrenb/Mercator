@@ -1,3 +1,5 @@
 *.pyc
 analysis/
 uploads/
+*.egg*
+dist/
