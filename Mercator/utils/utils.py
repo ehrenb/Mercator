@@ -4,7 +4,6 @@ import queue
 
 from androguard.session import Session
 from androguard.misc import AnalyzeAPK
-from pymongo import MongoClient
 
 from Mercator.utils.ClassAnalysis import ClassAnalysis
 

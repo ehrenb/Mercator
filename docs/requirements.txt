@@ -1,4 +1,4 @@
--e git+https://ehrenb@bitbucket.org/ehrenb/mercator.git@403d16b814e5ba0d1793a3d43224e35957786e36#egg=androguard&subdirectory=libs/androguard
+#-e git+https://ehrenb@bitbucket.org/ehrenb/mercator.git@403d16b814e5ba0d1793a3d43224e35957786e36#egg=androguard&subdirectory=libs/androguard
 appdirs==1.4.3
 asn1crypto==0.22.0
 certifi==2017.7.27.1
@@ -11,7 +11,6 @@ docopt==0.6.2
 enum-compat==0.0.2
 eventlet==0.21.0
 Flask==0.12.1
-flask-codemirror==1.0
 Flask-SocketIO==2.9.2
 Flask-WTF==0.14.2
 future==0.16.0
@@ -23,7 +22,7 @@ itsdangerous==0.24
 jedi==0.10.2
 Jinja2==2.9.6
 MarkupSafe==1.0
--e git+https://ehrenb@bitbucket.org/ehrenb/mercator.git@403d16b814e5ba0d1793a3d43224e35957786e36#egg=Mercator
+#-e git+https://ehrenb@bitbucket.org/ehrenb/mercator.git@403d16b814e5ba0d1793a3d43224e35957786e36#egg=Mercator
 networkx==1.11
 packaging==16.8
 pexpect==4.2.1

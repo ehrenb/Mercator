@@ -1,8 +1,11 @@
 import sys
 if sys.version_info < (3,3):
     sys.exit('Sorry, Python < 3.3 is not supported')
-
+import os 
 from setuptools import setup
+from setuptools.command.install import install
+
+import subprocess
 
 
 setup(
@@ -10,12 +13,12 @@ setup(
     version='0.1',
     author='Branden Ehrenreich',
     packages=['Mercator'],
-    include_package_data=True,
-    install_requires=['docopt==0.6.2',
-                      'Flask==0.12.1',
+    install_requires=['flask',
                       'networkx',
-                      'pymongo']
-  )
+                      'eventlet',
+                      'flask-socketio',
+                      ],
+    setup_requires=['setuptools'],
 
-#export FLASK_APP=Mercator
-#export FLASK_DEBUG=true
+
+  )
