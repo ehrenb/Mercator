@@ -45,7 +45,7 @@ def show_individual_analysis(md5):
         data = json_graph.node_link_data(individual_graph)
         d3_json = json.dumps(data)
         app.logger.info('caching ego graph')
-        with open(os.path.join(md5_analysis_dir,cached_file), 'w+') as f:
+        with open(cached_file, 'w+') as f:
             json.dump(data, f, indent=4, sort_keys=True)
 
         

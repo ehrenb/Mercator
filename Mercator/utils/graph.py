@@ -88,7 +88,7 @@ def add_edges(G):
         #print('edges class xref_from')
         start = time.time()
         edges = [d[2] for d in G.edges(n,data=True)]
-        for xref_from_name in G.node[n]['xref_from']:
+        for xref_from_name in G.node[n]['attr_dict']['xref_from']:
             method_xref_from_name = xref_from_name['method']#unused
             class_xref_from_name = xref_from_name['class']
             class_xref_from_n = __map_lookup(n_to_class_name_map, class_xref_from_name)
@@ -114,7 +114,7 @@ def add_edges(G):
         #class xref to(n -> ?)
         #print('edges class xref_to')
         start = time.time()
-        for xref_to_name in G.node[n]['xref_to']:
+        for xref_to_name in G.node[n]['attr_dict']['xref_to']:
             method_xref_to_name = xref_to_name['method']#unused
             class_xref_to_name = xref_to_name['class']
             class_xref_to_n = __map_lookup(n_to_class_name_map, class_xref_to_name)
@@ -138,7 +138,7 @@ def add_edges(G):
         #print('edges methods xref_from')
         start = time.time()
         #method xref from (todo: check suspected overlap with above) (? -> n)
-        for method in G.node[n]['methods']:
+        for method in G.node[n]['attr_dict']['methods']:
             for xref_from_name in method['xref_from']:
                 method_xref_from_name = xref_from_name['method']
                 class_xref_from_name = xref_from_name['class']
@@ -164,7 +164,7 @@ def add_edges(G):
         #print('edges methods xref_to')
         start = time.time()
         #method xref to(n -> ?)
-        for xref_to_name in G.node[n]['methods']:
+        for xref_to_name in G.node[n]['attr_dict']['methods']:
             for xref_to_name in method['xref_to']:
                 method_xref_to_name = xref_to_name['method']
                 class_xref_to_name = xref_to_name['class']
@@ -190,7 +190,7 @@ def add_edges(G):
         # print('edges fields xref_read')
         # start = time.time()
         # #field xref from (read) (? -> n)
-        # for field in G.node[n]['fields']:
+        # for field in G.node[n]['attr_dict']['fields']:
         #     for xref_read_name in field['xref_read']:
         #         field_xref_read_name = xref_read_name['method']
         #         class_xref_read_name = xref_read_name['class']
@@ -216,7 +216,7 @@ def add_edges(G):
         # print('edges fields xref_write')
         # start = time.time()
         # #field xref to (write) (n -> ?)
-        # for field in G.node[n]['fields']:
+        # for field in G.node[n]['attr_dict']['fields']:
         #     for xref_write_name in field['xref_write']:
         #         field_xref_write_name = xref_write_name['method']
         #         class_xref_write_name = xref_write_name['class']
@@ -266,7 +266,8 @@ def write_graph(G, out_file):
 def build_n_to_class_name_map(G):
     m = {}
     for n in G:
-        m[n] = G.node[n]['name']
+        #pprint(G.node[n])
+        m[n] = G.node[n]['attr_dict']['name']
     return m
 
 

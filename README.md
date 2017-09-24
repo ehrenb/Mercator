@@ -37,6 +37,16 @@ Browse to http://127.0.0.1:5000
 ### Screenshots ###
 
 
+### Tips ###
+
+* The ego graph radius is adjustable by raising or reducing the radius GET paremeter (it defaults to 2)
+* Component nodes are given distinct colors, while native Java nodes are grey.  
+  * Activities (Blue)
+  * Providers (Green)
+  * Receivers (Yellow)
+  * Services (Orange)
+* Source code is populated below the graph, when a node is selected (clicked), a request is made for the associated source code and the editor is populated.
+
 ## Analysis Directory ## 
 
 Analysis directories contain the following JSON files:
