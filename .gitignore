@@ -1,0 +1,7 @@
+*.pyc
+analysis/
+uploads/
+*.egg*
+dist/
+*.apk
+
