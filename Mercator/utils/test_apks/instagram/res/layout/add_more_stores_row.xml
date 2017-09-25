@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:layout_gravity="bottom" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" style="?attr/backgroundCard"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <Button android:id="@id/add_more_stores" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="Add more stores" style="?attr/customButton" />
-</LinearLayout>

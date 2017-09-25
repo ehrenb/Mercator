@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <ImageView android:id="@id/imageView" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="0.0dip" android:layout_marginTop="6.0dip" android:layout_marginRight="14.0dip" android:layout_marginBottom="5.0dip" android:src="@drawable/img_tvicon" />
-    <TextView android:textAppearance="?android:textAppearanceMedium" android:textSize="14.099976sp" android:textColor="#ffff6600" android:id="@id/deviceNameText" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="20.0dip" android:text="BRAVIA 2015" />
-</LinearLayout>

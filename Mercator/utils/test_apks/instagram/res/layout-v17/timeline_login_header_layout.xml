@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/timeline_login_layout" android:background="?backgroundMain" android:layout_width="fill_parent" android:layout_height="60.0dip"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <TextView android:gravity="center" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/timeline_login_message" android:layout_toLeftOf="@id/login_button" android:layout_centerVertical="true" android:layout_toStartOf="@id/login_button" style="?attr/defaultTextStyle" />
-    <Button android:textSize="@dimen/text_size_medium" android:gravity="center" android:id="@id/login_button" android:layout_width="90.0dip" android:layout_height="40.0dip" android:layout_marginRight="13.0dip" android:text="@string/login" android:layout_alignParentRight="true" android:layout_centerVertical="true" android:textAllCaps="true" android:layout_marginEnd="13.0dip" android:layout_alignParentEnd="true" style="?attr/customButton" />
-</RelativeLayout>

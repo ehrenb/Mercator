@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="horizontal" android:background="@drawable/dialog_bg_2" android:paddingLeft="12.0dip" android:paddingRight="12.0dip" android:layout_width="fill_parent" android:layout_height="78.0dip" android:weightSum="5.0"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <TextView android:textSize="14.0sp" android:textStyle="bold" android:gravity="center|left" android:id="@id/textView3" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_marginRight="20.0dip" android:text="@string/be_the_first_to_send_feedback_about_this_store" android:layout_weight="3.0" />
-    <Button android:textSize="@dimen/text_size_small" android:layout_gravity="center" android:id="@id/comment_store_button" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/comment_store" android:layout_weight="2.0" android:textAllCaps="true" />
-</LinearLayout>

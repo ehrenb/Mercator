@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout android:id="@id/store_recycler_coordinator_layout" android:layout_width="fill_parent" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <include android:layout_width="fill_parent" android:layout_height="fill_parent" layout="@layout/recycler_fragment" />\
-</android.support.design.widget.CoordinatorLayout>
