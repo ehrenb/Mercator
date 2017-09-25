@@ -36,6 +36,19 @@ Browse to http://127.0.0.1:5000
 
 ### Screenshots ###
 
+![Results](https://github.com/ehrenb/Mercator/blob/master/docs/results.png)
+Initial results page after completed analysis
+
+![Full graph](https://github.com/ehrenb/Mercator/blob/master/docs/full2.png)
+Full application graph (components and native code)
+
+![Component graph](https://github.com/ehrenb/Mercator/blob/master/docs/component.png)
+Component subgraph containing only Activities, Providers, Receiers, and Providers
+
+![Source code](https://github.com/ehrenb/Mercator/blob/master/docs/source.png)
+Source code viewer (displaying source for a receiver) when selecting a node
+
+
 
 ### Tips ###
 
