@@ -8,7 +8,7 @@ import time
 import threading
 
 from androguard.session import Session, Save
-from androguard.misc import AnalyzeAPK, save_session
+from androguard.misc import AnalyzeAPK#, save_session
 from networkx.readwrite import json_graph
 
 from Mercator.utils.ClassAnalysis import ClassAnalysis
@@ -91,14 +91,14 @@ class Analysis(threading.Thread):
         app.logger.info('new analysis')
         s = Session()
         self.status = 'Decompile APK'
-        a, d, dx = AnalyzeAPK(self.target_file, decompiler='dad', session=s)
+        a, d, dx = AnalyzeAPK(self.target_file, session=s)
         
         if self.session_save_file:
             #Save(s, self.session_save_file)
             sys.setrecursionlimit(100000000)
             self.status = 'Saving session file'
-            save_session([a,d,dx], self.session_save_file)
-
+            #save_session([a,d,dx], self.session_save_file)
+            Save(s, self.session_save_file)
         cached_analyses.append({'md5': self.md5,
                                 'analysis': (a,d,dx)})
 

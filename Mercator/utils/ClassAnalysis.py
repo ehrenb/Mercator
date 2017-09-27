@@ -60,13 +60,15 @@ class ClassAnalysis():
                         'component_type': None}#None if native class, otherwise, provider/receiver/activity/service
         
         converted = convert_to_dot_notation(class_result['name'])
-        if converted in self.a.get_activities():
+        print(converted)
+        print(self.a.get_activities())
+        if converted in [s.decode('utf8') for s in self.a.get_activities()]:
             class_result['component_type'] = ComponentType.ACTIVITY
-        elif converted in self.a.get_receivers():
+        elif converted in [s.decode('utf8') for s in self.a.get_receivers()]:
             class_result['component_type'] = ComponentType.RECEIVER
-        elif converted in self.a.get_services():
+        elif converted in [s.decode('utf8') for s in self.a.get_services()]:
             class_result['component_type'] = ComponentType.SERVICE
-        elif converted in self.a.get_providers():
+        elif converted in [s.decode('utf8') for s in self.a.get_providers()]:
             class_result['component_type'] = ComponentType.PROVIDER
 
         # src = self.c.get_source()

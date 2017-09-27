@@ -3,7 +3,7 @@ import os
 import time
 
 from androguard.session import Session, Load
-from androguard.misc import AnalyzeAPK, load_session
+from androguard.misc import AnalyzeAPK#, load_session
 from flask import jsonify, request
 
 from Mercator import app, analysis_dir, upload_dir, cached_analyses, socketio
@@ -52,7 +52,13 @@ def get_class_source(class_name, md5):
         app.logger.info('nothing cached, loading session')
         analyze_start_time = time.time()
         session_save_file = os.path.join(md5_analysis_dir, md5+'_androguard.session')
-        a, d, dx = load_session(session_save_file, binary=True)
+        #a, d, dx = load_session(session_save_file, binary=True)
+        s =  Load(session_save_file)
+        a = next (iter (s.analyzed_apk.values()))[0]
+        #print(a)
+        d, dx= next (iter (s.analyzed_dex.values()))
+        print(d)
+        print(dx)
         analyze_end_time = time.time()
         elapsed = analyze_end_time - analyze_start_time
         app.logger.info('Reloading Session took {} seconds'.format(elapsed))

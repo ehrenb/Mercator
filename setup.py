@@ -17,8 +17,20 @@ setup(
                       'networkx',
                       'eventlet',
                       'flask-socketio',
+                      'androguard',
                       ],
     setup_requires=['setuptools'],
-
+    dependency_links=[
+      'git+https://github.com/androguard/androguard.git#egg=androguard-v3.1.0-pre.2',
+    ]
 
   )
+"""
+https://github.com/androguard/androguard/tree/v3.1.0-pre.2
+  install_requires=[
+      'private_package_name==1.1',
+  ],
+  dependency_links=[
+      'git+ssh://git@github.com/username/private_repo.git#egg=private_package_name-1.1',
+  ]
+"""
