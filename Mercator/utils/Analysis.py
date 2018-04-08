@@ -56,6 +56,7 @@ class Analysis(threading.Thread):
         self.component_subgraph_out_path= component_subgraph_out_path
         self.session_save_file = session_save_file
         self.status = ''
+        self.main_activity = None
         self.paused = threading.Event()
         app.logger.info(socketio.async_mode)
         super().__init__()
@@ -70,7 +71,7 @@ class Analysis(threading.Thread):
         with open(self.apk_metadata_out_path,'w') as f:
             data = {'md5':self.md5,
                     'package':a.get_package(),
-                    'main_activity': a.get_main_activity(),
+                    'main_activity': self.main_activity,
                     'classes': [],
                     'num_classes': len(result_classes),
                     'analysis_total_time': analysis_total_time,
@@ -90,29 +91,40 @@ class Analysis(threading.Thread):
     def run(self):
         app.logger.info('new analysis')
         s = Session()
-        self.status = 'Decompile APK'
-        a, d, dx = AnalyzeAPK(self.target_file, session=s)
-        
+        self.status = 'Analyzing APK'
+        a, d, dx = AnalyzeAPK(self.target_file, session=s)#APK,list[DalvikVMFormat],Analysis
+        print(type(a), type(d[0]), type(dx))
+        #cache activities, receivers, services, and providers, because for some reason, saving the Session causes a bug, breaking getters
+        """i.e. bytecodes/apk.py", line 582, in get_elements
+                for item in self.xml[i].findall('.//' + tag_name):
+            TypeError: string indices must be integers """
+        activities = a.get_activities()
+        receivers = a.get_receivers()
+        services = a.get_services()
+        providers = a.get_providers()
+        self.main_activity = a.get_main_activity()
         if self.session_save_file:
-            #Save(s, self.session_save_file)
             sys.setrecursionlimit(100000000)
             self.status = 'Saving session file'
-            #save_session([a,d,dx], self.session_save_file)
             Save(s, self.session_save_file)
+
         cached_analyses.append({'md5': self.md5,
                                 'analysis': (a,d,dx)})
 
         #gather all classes from dexs 'd'
-        classes = get_all_classes_from_dexs(d)
+        #classes = get_all_classes_from_dexs(d)
+        classes = dx.classes
         total_num = len(classes)
         done = 0#num of done classes
         #result_classes contains the completed analysis info for each class run through the ClassAnalysis object
         result_classes = []
         analysis_start_time = time.time()
         
+
+
         self.status = 'Getting all classes'
-        for c in classes:
-            ca = ClassAnalysis(c, a)
+        for c_name, c_analysis in classes.items():
+            ca = ClassAnalysis(c_name, c_analysis, activities, receivers, services, providers)
             ca_result = ca.run()
             result_classes.append(ca_result)
             done+=1

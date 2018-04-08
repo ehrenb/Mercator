@@ -13,16 +13,16 @@ setup(
     version='0.1',
     author='Branden Ehrenreich',
     packages=['Mercator'],
-    install_requires=['flask',
+    install_requires=['Flask',
                       'networkx',
                       'eventlet',
                       'flask-socketio',
                       'androguard',
                       ],
     setup_requires=['setuptools'],
-    dependency_links=[
-      'git+https://github.com/androguard/androguard.git#egg=androguard-v3.1.0-pre.2',
-    ]
+  #  dependency_links=[
+  #    'git+https://github.com/androguard/androguard.git#egg=androguard-v3.1.0-pre.2',
+  #  ]
 
   )
 """
