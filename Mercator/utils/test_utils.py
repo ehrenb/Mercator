@@ -5,8 +5,9 @@ from androguard.misc import AnalyzeAPK
 
 
 
-a, d, dx = AnalyzeAPK('test_apks/instagram.apk', decompiler='dex2jad', session=Session())
+a, d, dx = AnalyzeAPK('/home/branden/apks/dendroid.apk', session=Session())
 print('here')
 acts = a.get_activities()
 print('here2')
 print(acts)
+
