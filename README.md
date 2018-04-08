@@ -1,27 +1,15 @@
 # Mercator #
 
-Mercator is a reverse engineering aid for analyzing inter-component and class communication of Android applications using graph theory.  It can be used to quickly and intuitively find interesting (or weed out uninteresting) sections of code. 
+Mercator is a reverse engineering aid for analyzing inter-component and class communication of Android applications using graph theory.  It can be used to:
 
-# Technologies #
-### Androguard
-The Androguard framework is used to pull important information such as class/function names, source code, parameters, static variables, and cross-references between code from APKs.
-
-### NetworkX
-NetworkX is a Python graphing library chosen for its ease of use out-of-box and popular interfacing with other tools.
-
-### Flask
-A familiar and popular Python web framework.
-
-### Ace Editor
-A code editor for displaying decompiled Java source code.
-
+*  Quickly trace code accessible from Android components
+*  Cut down time analyzing obfuscated code 
+*  Identify unnecessary and unused "dead" code
 
 ### Installation ###
-Mercator requires Python 3.3 and up.
+Mercator requires Python 3.3 and up. I recommend using virtualenv to isolate the installation:
 ```bash
 cd Mercator
-pip install -e .
-cd libs/androguard
 pip install -e .
 export FLASK_APP=Mercator
 ```
@@ -48,8 +36,6 @@ Component subgraph containing only Activities, Providers, Receiers, and Provider
 ![Source code](https://github.com/ehrenb/Mercator/blob/master/docs/source.png)
 Source code viewer (displaying source for a receiver) when selecting a node
 
-
-
 ### Tips ###
 
 * The ego graph radius is adjustable by raising or reducing the radius GET paremeter (it defaults to 2)
@@ -68,3 +54,26 @@ Analysis directories contain the following JSON files:
 * <md5>_component_subgraph - a subgraph containing only the Android components in the "_graph.json" files
 * <md5>_beforenetworkx - _graph.json, but not in networkx format (for debugging)
 * <md5>_metadata.json - high level description data about the APK 
+
+## TODOs ##
+
+* Visualize node edges to display why an edge was made between two nodes
+* UI 
+  * Adjustable radius
+  * Key for node colors
+  * Colored edges based on relationship (field r/w, method r/w, class r/w)
+* View for assembly instructions
+* Apply path finding algorithms from NetworkX
+
+# Technologies #
+### Androguard
+The Androguard framework is used to extract important information such as class/function names, source code, parameters, static variables, and cross-references from code in APKs.
+
+### NetworkX
+NetworkX is a Python graphing library chosen for its ease of use out-of-box and popular interfacing with other tools.
+
+### Flask
+A familiar and popular Python web framework.
+
+### Ace Editor
+A code editor for displaying decompiled Java source code.
