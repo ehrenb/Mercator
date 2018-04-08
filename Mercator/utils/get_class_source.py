@@ -56,7 +56,10 @@ def get_class_source(class_name, md5):
         s =  Load(session_save_file)
         a = next (iter (s.analyzed_apk.values()))[0]
         #print(a)
-        d, dx= next (iter (s.analyzed_dex.values()))
+        #d, dx = next (iter (s.analyzed_dex.values()))
+        d = [tmp_d for tmp_d in s.analyzed_dex.values()]
+        dx = s.analyzed_vms
+        print(a)
         print(d)
         print(dx)
         analyze_end_time = time.time()
@@ -73,8 +76,11 @@ def get_class_source(class_name, md5):
     class_data_src = None
     #find the matching class' src based on name
     for c in classes:
-        if c.name == class_name:
-            class_data_src = c.get_source()
+        if c.orig_class.get_name() == class_name:
+            if c.external:
+                class_data_src = 'EXTERNAL'
+            else:
+                class_data_src = c.orig_class.get_source()
             break
 
     src_end_time = time.time()

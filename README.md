@@ -64,6 +64,7 @@ Analysis directories contain the following JSON files:
   * Colored edges based on relationship (field r/w, method r/w, class r/w)
 * View for assembly instructions
 * Apply path finding algorithms from NetworkX
+* Color code "external" classes
 
 # Technologies #
 ### Androguard

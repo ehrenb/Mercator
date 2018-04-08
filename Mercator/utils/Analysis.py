@@ -8,7 +8,7 @@ import time
 import threading
 
 from androguard.session import Session, Save
-from androguard.misc import AnalyzeAPK#, save_session
+from androguard.misc import AnalyzeAPK
 from networkx.readwrite import json_graph
 
 from Mercator.utils.ClassAnalysis import ClassAnalysis
