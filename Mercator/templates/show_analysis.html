@@ -51,7 +51,7 @@
 
 <style type="text/css" media="screen">
     #editor { 
-        height : 300px;
+        height : 600px;
     }
 </style>
 
@@ -266,7 +266,7 @@ function selectableForceDirectedGraph() {
     function dragended(d) {
         //d3.select(self).classed("dragging", false);
         node.filter(function(d) { return d.selected; })
-        .each(function(d) { d.fixed &= ~6; })
+        .each(function(d) { d.fixed = true; })//&= ~6; })
 
     }
 
@@ -287,7 +287,7 @@ function selectableForceDirectedGraph() {
 
         var force = d3.layout.force()
         .charge(-120)
-        .linkDistance(30)
+        .linkDistance(60)
         .nodes(graph.nodes)
         .links(graph.links)
         .size([width, height])

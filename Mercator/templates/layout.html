@@ -12,11 +12,9 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="../favicon.ico">
-    <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
-    <script>window.jQuery || document.write('<script src="{{ url_for("static", filename="js/jquery.min.js") }}"><\/script>')</script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+    <!-- <script>window.jQuery || document.write('<script src="{{ url_for("static", filename="js/jquery.min.js") }}"><\/script>')</script> -->
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.5/socket.io.min.js"></script>
-
-    <title>Fixed Top Navbar Example for Bootstrap</title>
 
     <!-- Bootstrap core CSS -->
     <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
@@ -59,33 +57,39 @@
   <body>
 
     <!-- Fixed navbar -->
-    <nav class="navbar navbar-default navbar-fixed-top">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container">
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">Mercator</a>
+          <a class="navbar-brand" href="{{ url_for('index') }}">Mercator</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+           </button>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="{{ url_for('index') }}">Home</a></li>
-            <li><a href="{{ url_for('show_all_analyses') }}">View All</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li><a href="#">Action</a></li>
-              </ul>
+            <li class="nav-item active">
+              <a href="{{ url_for('index') }}" class="nav-link">Home</a>
             </li>
+            <li class="nav-item">
+              <a href="{{ url_for('show_all_analyses') }}" class="nav-link">View All</a>
+            </li>
+            <li class="nav-item">
+              <a href="https://github.com/ehrenb/Mercator" class="nav-link">Contact</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+               Settings</a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </li>
+
           </ul>
         </div><!--/.nav-collapse -->
-      </div>
-      <div id="log"></div>
-    </nav>
+      </div><!-- end container -->
+  </nav>
 
     <div class="container">
 
