@@ -58,10 +58,11 @@ def get_class_source(class_name, md5):
         #print(a)
         #d, dx = next (iter (s.analyzed_dex.values()))
         d = [tmp_d for tmp_d in s.analyzed_dex.values()]
-        dx = s.analyzed_vms
-        print(a)
-        print(d)
-        print(dx)
+        app.logger.info(len(s.analyzed_vms.values()))
+        dx = list(s.analyzed_vms.values())[0]
+        app.logger.info(a)
+        app.logger.info(d)
+        app.logger.info(dx)
         analyze_end_time = time.time()
         elapsed = analyze_end_time - analyze_start_time
         app.logger.info('Reloading Session took {} seconds'.format(elapsed))
@@ -70,17 +71,17 @@ def get_class_source(class_name, md5):
                                 'analysis':(a,d,dx)})
 
     #gather all classes from dexs 'd'
-    classes = get_all_classes_from_dexs(d)
+    classes = dx.classes#get_all_classes_from_dexs(d)
 
     src_start_time = time.time()
     class_data_src = None
     #find the matching class' src based on name
-    for c in classes:
-        if c.orig_class.get_name() == class_name:
-            if c.external:
+    for c_name, c_analysis in classes.items():
+        if c_name == class_name:
+            if c_analysis.external:
                 class_data_src = 'EXTERNAL'
             else:
-                class_data_src = c.orig_class.get_source()
+                class_data_src = c_analysis.orig_class.get_source()
             break
 
     src_end_time = time.time()

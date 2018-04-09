@@ -110,7 +110,7 @@ class Analysis(threading.Thread):
 
         cached_analyses.append({'md5': self.md5,
                                 'analysis': (a,d,dx)})
-
+        
         #gather all classes from dexs 'd'
         #classes = get_all_classes_from_dexs(d)
         classes = dx.classes
