@@ -29,7 +29,7 @@
         <th>components</th>
         </tr>
         {% for class in app_metadata["classes"] %}
-            {% if class["component_type"] is not none %}
+            {% if class["component_type"] in ('activity', 'provider', 'receiver', 'service') %}
                 <tr>
                     <td><a href="{{ url_for('show_individual_analysis', class_name=class['name'], radius=2, md5=md5) }}">{{ class["name"] }} </a></td>
                 </tr>

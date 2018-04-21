@@ -11,7 +11,7 @@ import sys
 #from multiprocessing import Process, Queue
 from androguard.core.analysis.analysis import ExternalClass, ExternalMethod
 
-from Mercator.utils.ComponentType import ComponentType
+from Mercator.utils.ComponentType import ComponentType, NonComponentType
 
 logger = logging.getLogger('mercator')
 
@@ -64,29 +64,36 @@ class ClassAnalysis():
 
     def run(self):
         """"Run full analysis on class c"""
-        if self.c_analysis.is_external():
-            access_flags = 'EXTERNAL'
-        else:
-            access_flags = self.c_analysis.orig_class.get_access_flags_string()
+
         class_result = {'name': self.c_name,#the classes name
-                        'access_flags': access_flags, #the access flags for the class (public, final, etself.c.)
                         'source': None, #the source of the class (excluding for now)
                         'xref_from': [], #the classes that this class references
                         'xref_to': [], #the classes that reference this class
                         'fields': [], #the static fields of the class
                         'methods': [], #methods of the class, also containing xrefs from/to
                         'component_type': None}#None if native class, otherwise, provider/receiver/activity/service
-        converted = convert_to_dot_notation(class_result['name'])
-        print(converted)
-        #print(self.a.get_activities())
-        if converted in self.activities:
-            class_result['component_type'] = ComponentType.ACTIVITY
-        elif converted in self.receivers:
-            class_result['component_type'] = ComponentType.RECEIVER
-        elif converted in self.services:
-            class_result['component_type'] = ComponentType.SERVICE
-        elif converted in self.providers:
-            class_result['component_type'] = ComponentType.PROVIDER
+
+        if self.c_analysis.is_external():
+            access_flags = 'EXTERNAL'
+            class_result['component_type'] = NonComponentType.EXTERNAL
+        else:
+            access_flags = self.c_analysis.orig_class.get_access_flags_string()
+            converted = convert_to_dot_notation(class_result['name'])
+            #print(self.a.get_activities())
+            if converted in self.activities:
+                class_result['component_type'] = ComponentType.ACTIVITY
+            elif converted in self.receivers:
+                class_result['component_type'] = ComponentType.RECEIVER
+            elif converted in self.services:
+                class_result['component_type'] = ComponentType.SERVICE
+            elif converted in self.providers:
+                class_result['component_type'] = ComponentType.PROVIDER
+            else:
+                class_result['component_type'] = NonComponentType.INTERNAL
+
+        class_result['access_flags'] = access_flags#the access flags for the class (public, final, etself.c.)
+
+
 
         # src = self.c.get_source()
         # try:

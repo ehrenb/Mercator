@@ -8,7 +8,7 @@ import time
 import networkx as nx
 from networkx.readwrite import json_graph
 
-from Mercator.utils.ComponentType import ComponentType
+from Mercator.utils.ComponentType import ComponentType, NonComponentType
 
 logger = logging.getLogger('mercator')
 
@@ -26,7 +26,9 @@ def get_color_component(c):
         return "green"#green 5 
     if c['component_type'] == ComponentType.SERVICE:
         return "orange"#orange 7
-    else:
+    if c['component_type'] == NonComponentType.INTERNAL:
+        return "white"
+    if c['component_type'] == NonComponentType.EXTERNAL:
         return "black" #1 #blue
 
 def create_graph(classes=[], json_path=None):
