@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 
 
 graph = None
-with open('../../../analysis/02e231f85558f37da6802142440736f6/02e231f85558f37da6802142440736f6_component_graph.json') as f:
+with open('02e231f85558f37da6802142440736f6/02e231f85558f37da6802142440736f6_component_graph.json') as f:
     graph = json.load(f)
 nx_graph = json_graph.node_link_graph(graph)
 
