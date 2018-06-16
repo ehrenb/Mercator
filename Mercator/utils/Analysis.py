@@ -12,6 +12,7 @@ from androguard.misc import AnalyzeAPK
 from networkx.readwrite import json_graph
 
 from Mercator.utils.ClassAnalysis import ClassAnalysis
+from Mercator.utils.ComponentType import ComponentType, NonComponentType
 from Mercator.utils.graph import create_graph, write_graph, get_class_subgraph
 
 from Mercator import cached_analyses,socketio, app
@@ -161,7 +162,7 @@ class Analysis(threading.Thread):
             self.status = 'Getting component nodes from graph'
             for node in graph:
                 node_tmp = graph.node[node]
-                if node_tmp['attr_dict']['component_type']:
+                if node_tmp['attr_dict']['component_type'] != NonComponentType.EXTERNAL and node_tmp['attr_dict']['component_type'] != NonComponentType.INTERNAL:
                     component_names.append(node_tmp['attr_dict']['name'])
             self.status = 'Creating subgraph containing only components'
             subgraph = get_class_subgraph(graph, class_names=component_names)
