@@ -14,6 +14,11 @@ pip install -e .
 export FLASK_APP=Mercator
 ```
 
+If you want to do any manual plotting of the networkx graphs, install python3-tk:
+```bash
+sudo apt-get install python3-tk
+```
+
 ### Running ###
 
 ```bash

@@ -18,6 +18,7 @@ setup(
                       'eventlet',
                       'flask-socketio',
                       'androguard',
+                      'matplotlib'
                       ],
     setup_requires=['setuptools'],
   #  dependency_links=[
