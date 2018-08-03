@@ -5,6 +5,7 @@ Mercator is a reverse engineering aid for analyzing inter-component and class co
 *  Quickly trace code accessible from Android components
 *  Cut down time analyzing obfuscated code 
 *  Identify unnecessary and unused "dead" code
+*  See how I've used Mercator's NetworkX output to find inter-component paths: http://behren.me/discovering_code_paths_1.php
 
 ### Installation ###
 Mercator requires Python 3.3 and up. I recommend using virtualenv to isolate the installation:
