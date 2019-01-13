@@ -344,9 +344,10 @@ function selectableForceDirectedGraph() {
                     }
             var row = table.insertRow(0);
             var nameCell = row.insertCell(0);
-            nameCell.innerHTML =  d.attr_dict.name ;
+            nameCell.innerHTML =  d.name ;
+
             //setCode(d.name);
-            socket.emit('code_request', {class_name: d.attr_dict.name, md5: "{{ md5 }}" });
+            socket.emit('code_request', {class_name: d.name, md5: "{{ md5 }}" });
 
 
         })
@@ -375,13 +376,12 @@ function selectableForceDirectedGraph() {
 
     // add titles for mouseover blurbs
     node.append("title")
-        .text(function(d) { 
-            if ('name' in d.attr_dict)
-                return d.attr_dict.name;
+        .text(function(d) {
+            if ('name' in d)
+                return d.name;
             else
                 return d.id; 
         });
-    //});
 
 
     // function setCode(class_name) {

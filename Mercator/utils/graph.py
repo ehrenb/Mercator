@@ -43,11 +43,12 @@ def create_graph(classes=[], json_path=None):
     start = time.time()
     G=nx.MultiDiGraph()
     for idx, c in enumerate(classes):
-        G.add_node(idx, attr_dict=c, color=get_color_component(c))
+        G.add_node(idx, **c, color=get_color_component(c))
+
     end = time.time()
     elapsed = end-start
-    print('done adding nodes took {}'.format(end-start))
-
+    print('done adding {} nodes took {}'.format(G.number_of_nodes(),end-start))
+    print(G.node[0])
 
     print('before tmp_G')
     start = time.time()
@@ -55,7 +56,7 @@ def create_graph(classes=[], json_path=None):
     print('after tmp_G')
     end = time.time()
     elapsed = end-start
-    print('done adding nodes tmp_G took {}'.format(end-start))
+    print('done adding {} nodes tmp_G took {}'.format(tmp_G.number_of_nodes(), end-start))
 
     return add_edges(tmp_G)
 
@@ -90,7 +91,7 @@ def add_edges(G):
         #print('edges class xref_from')
         start = time.time()
         edges = [d[2] for d in G.edges(n,data=True)]
-        for xref_from_name in G.node[n]['attr_dict']['xref_from']:
+        for xref_from_name in G.node[n]['xref_from']:
             method_xref_from_name = xref_from_name['method']#unused
             class_xref_from_name = xref_from_name['class']
             class_xref_from_n = __map_lookup(n_to_class_name_map, class_xref_from_name)
@@ -106,9 +107,8 @@ def add_edges(G):
                 dedupe_end_time = time.time()
                 #print('dedupe time took {}'.format(dedupe_end_time - dedupe_start_time))
                 total_class_xref_from+=1
-                G.add_edge(class_xref_from_n, n, attr_dict=xref_from_name) if class_xref_from_n else None
+                G.add_edge(class_xref_from_n, n, **xref_from_name) if class_xref_from_n else None
             #print('add_edge {class_xref_from_name} -> {n}'.format(class_xref_from_name=class_xref_from_name, n=n))
-            #G.add_edge(class_xref_from_name, n, attr_dict=xref_from_name) #if class_xref_from_n else None
         end = time.time()
         elapsed = end-start
         #print(' adding edges class xref_from took {}'.format(end-start))
@@ -116,7 +116,7 @@ def add_edges(G):
         #class xref to(n -> ?)
         #print('edges class xref_to')
         start = time.time()
-        for xref_to_name in G.node[n]['attr_dict']['xref_to']:
+        for xref_to_name in G.node[n]['xref_to']:
             method_xref_to_name = xref_to_name['method']#unused
             class_xref_to_name = xref_to_name['class']
             class_xref_to_n = __map_lookup(n_to_class_name_map, class_xref_to_name)
@@ -131,8 +131,7 @@ def add_edges(G):
                 dedupe_end_time = time.time()
                 #print('dedupe time took {}'.format(dedupe_end_time - dedupe_start_time))
                 total_class_xref_to+=1
-                G.add_edge(n, class_xref_to_n, attr_dict=xref_to_name) if class_xref_to_n else None
-#            G.add_edge(n, class_xref_to_name, attr_dict=xref_to_name) #if class_xref_to_n else None
+                G.add_edge(n, class_xref_to_n, **xref_to_name) if class_xref_to_n else None
         end = time.time()
         elapsed = end-start
         #print(' adding edges class xref_to took {}'.format(end-start))
@@ -140,7 +139,7 @@ def add_edges(G):
         #print('edges methods xref_from')
         start = time.time()
         #method xref from (todo: check suspected overlap with above) (? -> n)
-        for method in G.node[n]['attr_dict']['methods']:
+        for method in G.node[n]['methods']:
             for xref_from_name in method['xref_from']:
                 method_xref_from_name = xref_from_name['method']
                 class_xref_from_name = xref_from_name['class']
@@ -156,8 +155,8 @@ def add_edges(G):
                     dedupe_end_time = time.time()
                     #print('dedupe time took {}'.format(dedupe_end_time - dedupe_start_time))
                     total_method_xref_from += 1
-                    G.add_edge(class_xref_from_n, n, attr_dict=xref_from_name) if class_xref_from_n else None
-#                G.add_edge(class_xref_from_name, n, attr_dict=xref_from_name) #if class_xref_from_n else None
+                    G.add_edge(class_xref_from_n, n, **xref_from_name) if class_xref_from_n else None
+
         end = time.time()
         elapsed = end-start
         #print(' adding edges method xref_from took {}'.format(end-start))
@@ -166,7 +165,7 @@ def add_edges(G):
         #print('edges methods xref_to')
         start = time.time()
         #method xref to(n -> ?)
-        for xref_to_name in G.node[n]['attr_dict']['methods']:
+        for xref_to_name in G.node[n]['methods']:
             for xref_to_name in method['xref_to']:
                 method_xref_to_name = xref_to_name['method']
                 class_xref_to_name = xref_to_name['class']
@@ -183,7 +182,7 @@ def add_edges(G):
                     dedupe_end_time = time.time()
                     #print('dedupe time took {}'.format(dedupe_end_time - dedupe_start_time))
                     total_method_xref_to += 1
-                    G.add_edge(n, class_xref_to_n, attr_dict=xref_to_name) if class_xref_to_n else None
+                    G.add_edge(n, class_xref_to_n, **xref_to_name) if class_xref_to_n else None
         end = time.time()
         elapsed = end-start
         #print(' adding edges method xref_to took {}'.format(end-start))
@@ -268,8 +267,8 @@ def write_graph(G, out_file):
 def build_n_to_class_name_map(G):
     m = {}
     for n in G:
-        #pprint(G.node[n])
-        m[n] = G.node[n]['attr_dict']['name']
+        pprint(G.node[n])
+        m[n] = G.node[n]['name']
     return m
 
 

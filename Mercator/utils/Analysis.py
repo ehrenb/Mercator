@@ -162,8 +162,8 @@ class Analysis(threading.Thread):
             self.status = 'Getting component nodes from graph'
             for node in graph:
                 node_tmp = graph.node[node]
-                if node_tmp['attr_dict']['component_type'] != NonComponentType.EXTERNAL and node_tmp['attr_dict']['component_type'] != NonComponentType.INTERNAL:
-                    component_names.append(node_tmp['attr_dict']['name'])
+                if node_tmp['component_type'] != NonComponentType.EXTERNAL and node_tmp['component_type'] != NonComponentType.INTERNAL:
+                    component_names.append(node_tmp['name'])
             self.status = 'Creating subgraph containing only components'
             subgraph = get_class_subgraph(graph, class_names=component_names)
             self.status = 'Writing subgraph to disk'
